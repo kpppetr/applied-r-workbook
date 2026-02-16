@@ -215,9 +215,7 @@ mean(vote_share_per_district)
 To calculate this correlation
 
 ```{r}
-#| error: true
-cor(vote_share_per_district, voters_per_district, "spearman")
-
+cor(vote_share_per_district, voters_per_district)
 ```
 
 If we want to store the correlation above we can do so by running:
@@ -233,8 +231,7 @@ Many functions in R have default arguments. You can change these by specifying t
 For example, the `cor()` function uses the Pearson method by default. To use Spearman correlation instead, run:
 
 ```{r}
-cor(vote_share_per_district,voters_per_district,method = "spearman")
-
+cor(vote_share_per_district, voters_per_district, method = "spearman")
 ```
 
 ## Function help files
@@ -248,7 +245,7 @@ You can open a function’s help file by typing a question mark before its name.
 If you run the function without naming the argument, R does not know how to interpret `"spearman"` and returns an error.
 
 ```{r}
-cor(vote_share_per_district, voters_per_district, "spearman")
+try(cor(vote_share_per_district, voters_per_district, "spearman"))
 ```
 
 ## Packages

@@ -1,0 +1,1260 @@
+---
+title: "Workbook: Applied R for Migration, Disaster, and Conflict Studies"
+editor: source
+---
+
+# Workbook: Applied R for Migration, Disaster, and Conflict Studies
+
+# Getting started
+
+Welcome! In this workbook you’ll learn the basics of R and RStudio and run your first code.
+
+## What are R and RStudio?
+
+-   **R** is the programming language we’ll use for data analysis and visualization.
+-   **RStudio** is a user-friendly app that makes it easier to write and run R code.
+
+## Step 1 — Install R
+
+1.  Go to the CRAN download page for R:
+    -   https://cran.r-project.org/
+2.  Click your operating system:
+    -   Windows / macOS / Linux
+3.  Download and install using the default options.
+
+## Step 2 — Install RStudio
+
+1.  Go to the RStudio Desktop download page:
+    -   https://posit.co/download/rstudio-desktop/
+2.  Download the free RStudio Desktop installer.
+3.  Install it (default options are usually fine).
+
+## Step 3 — Check it works
+
+Open RStudio.
+
+In the Console (bottom-left), type:
+
+```{r}
+1 + 1
+```
+
+---
+title: "Lesson 1: Projects, working directory, scripts, and running code"
+editor: source
+---
+
+# Lesson 1: Projects, working directory, scripts, and running code
+
+## RStudio Projects
+
+RStudio Projects help you keep all files for one project in a single, organized folder. This includes scripts, data, and any outputs you create. Projects are especially useful when you are working on more than one project at the same time.
+
+Each project has its own working directory, which tells R where to look for files and where to save new ones.
+
+### Create a new RStudio Project
+
+1.  In RStudio, go to File → New Project\
+2.  Choose New Directory\
+3.  Select New Project\
+4.  Choose a location on your computer and click Create Project
+
+RStudio will open the new project and create a folder on your computer. Save all files related to this project inside that folder.
+
+## The working directory
+
+When you create a new RStudio Project, the working directory is set automatically to the project folder. The working directory is the default location where R looks for files and saves new ones.
+
+It is good practice to organize your project by creating sub-folders, such as `data`, `scripts`, and `figures`. When a project is first created, the only file in the folder is the `.Rproj` file, which you use to reopen the project later.
+
+## The RStudio interface
+
+When you open RStudio or create a new project, you will see a window divided into three main panes.
+
+The console (top left) is where you run R code and see output.
+
+The environment pane (top right) shows the objects and data currently loaded in your R session.
+
+The files, plots, and help pane lets you view files in your project folder, see plots, and access help. When you create a new project, the only file you will see at first is the `.Rproj` file.
+
+## Running code
+
+You can use R as a calculator. For example, try typing `1 + 1` in the Console and pressing Enter.
+
+In practice, we usually write code in scripts rather than directly in the Console. Scripts let you keep a record of your work, edit it later, share it with others, and run the same code again.
+
+To open a new script, go to File \> New File \> R Script, or click the document icon with a plus sign and select R Script. This will open a new pane where you can write code.
+
+On the first line of your script, type:
+
+```{r}
+1+1
+```
+
+A nice feature of scripts is that you can run multiple lines of code at once. To do this, highlight the lines you want to run and press the Run button or use Ctrl + Enter (Cmd + Enter on macOS).
+
+```{r}
+1 + 1
+2 * 4
+3 + 8 * 2
+```
+
+## Commenting in a script
+
+Comments are notes you add to your code to explain what it does. In R, anything that comes after `#` on a line is a comment and will not be run as code.
+
+For example:
+
+```{r}
+1 + 1   # I want to add one and one
+2 * 4   # This line multiplies two by four
+3 + 8 * 2   # You can do multiple operations in one line
+```
+
+## Objects
+
+An object is something that R stores so you can use it later. Objects can be numbers, text, collections of values, data sets, functions, or even groups of other objects.
+
+Every object must have a unique name, called an identifier, which you use to access it in R.
+
+## Creating and naming objects
+
+Objects in R must have unique names. If you reuse a name, the old object is replaced.
+
+Object names must: - start with a letter\
+- not contain spaces\
+- not use special characters
+
+You can create an object using `<-`, for example:
+
+```{r}
+my_first_object <- 32
+```
+
+Once an object is created, you can treat it like any other number and use it in calculations.
+
+```{r}
+my_first_object * 2 + 4
+```
+
+You can also create multiple objects and use them together.
+
+```{r}
+another_object <- 21
+my_first_object + another_object
+```
+
+If you want to change the value of an object, you can overwrite it by assigning a new value to the same name.
+
+```{r}
+another_object <- 15
+my_first_object + another_object
+```
+
+## A practical example
+
+```{r}
+voting_pop <- 9321800     # Number of people who voted
+vote_share <- 0.52       # Vote share of the party
+
+number_of_votes <- voting_pop * vote_share
+number_of_votes
+```
+
+## Vectors
+
+If you want to work with multiple values at once, you can store them in a vector. A vector is a collection of values created using `c()`.
+
+```{r}
+vote_shares <- c(0.52, 0.44, 0.04)
+vote_shares[1]
+vote_shares[2]
+vote_shares[3]
+
+```
+
+You can then use the vector to calculate votes for each party:
+
+```{r}
+voting_pop * vote_shares
+
+```
+
+## Functions, help files, and packages
+
+Functions are what R uses to do things, such as calculations or analyses. A function takes one or more objects as input and returns a result.
+
+Functions are usually followed by parentheses, which contain the arguments.
+
+```{r}
+vote_shares <- c(0.52, 0.44, 0.04)
+sum(vote_shares)
+```
+
+Now suppose there are several electoral districts of different sizes. We have the number of voters in each district and the vote share for the first party in each district.
+
+```{r}
+voters_per_district <- c(
+  618880, 1286117, 318003, 1037879, 505025,
+  493486, 1621599, 976879, 1232128, 1231804
+)
+
+vote_share_per_district <- c(
+  0.506, 0.583, 0.618, 0.445, 0.219,
+  0.461, 0.680, 0.280, 0.532, 0.612
+)
+```
+
+We can now make some calculations on these vectors. For instance, by running
+
+```{r}
+mean(vote_share_per_district)
+
+```
+
+To calculate this correlation
+
+```{r}
+cor(vote_share_per_district,voters_per_district)
+
+```
+
+If we want to store the correlation above we can do so by running:
+
+```{r}
+size_share_correlation <- cor(vote_share_per_district,voters_per_district)
+```
+
+## Default arguments
+
+Many functions in R have default arguments. You can change these by specifying them explicitly.
+
+For example, the `cor()` function uses the Pearson method by default. To use Spearman correlation instead, run:
+
+```{r}
+cor(vote_share_per_district,voters_per_district,method = "spearman")
+
+```
+
+## Function help files
+
+You can open a function’s help file by typing a question mark before its name.
+
+```{r}
+?cor
+```
+
+If you run the function without naming the argument, R does not know how to interpret `"spearman"` and returns an error.
+
+```{r}
+cor(vote_share_per_district, voters_per_district, "spearman")
+```
+
+## Packages
+
+Packages are collections of functions (and sometimes data) that extend what R can do. Many packages are available through CRAN.
+
+To install a package, run:
+
+```{r}
+install.packages("dplyr")
+library(dplyr)
+
+```
+
+## Calling functions from a package
+
+When a package is loaded, you can usually call its functions by name. Problems can occur if different packages have functions with the same name.
+
+You can avoid this by calling a function directly from a package using `package::function`.
+
+```{r}
+stats::lag(x)
+dplyr::lag(x)
+```
+
+```{r}
+lag(vote_shares) # lag function from the latest loaded package
+```
+
+```{r}
+stats::lag(vote_shares) # lag function explicitly called from the stats package
+```
+
+```{r}
+dplyr::lag(vote_shares) # lag function explicitly called from the dplyr package
+```
+
+## Exercise: Working with objects, vectors, and functions
+
+In this exercise, you will practice creating objects, using vectors, writing comments, and applying functions in R.
+
+### Part 1: Set up your project
+
+1.  Create a new RStudio Project in a new directory.
+2.  Open a new R script inside the project.
+3.  Add a comment at the top of the script explaining what this script does.
+
+------------------------------------------------------------------------
+
+### Part 2: Create objects
+
+The total number of voters in a country is 8,750,000.
+
+1.  Create an object called `total_voters` and assign this value to it.
+2.  Three political parties received the following vote shares:
+    -   Party A: 0.47\
+    -   Party B: 0.38\
+    -   Party C: 0.15
+
+Create a vector called `vote_shares` containing these values.
+
+------------------------------------------------------------------------
+
+### Part 3: Use objects in calculations
+
+1.  Calculate the number of votes each party received by combining `total_voters` and `vote_shares`.
+2.  Store the result in an object called `votes_per_party`.
+3.  Print the result.
+
+------------------------------------------------------------------------
+
+### Part 4: Indexing and functions
+
+1.  Use indexing to extract the vote share of Party B.
+2.  Calculate how many votes Party B received.
+3.  Use a function to check that the vote shares sum to 1.
+
+------------------------------------------------------------------------
+
+### Part 5: Packages and help files
+
+1.  Open the help file for the `sum()` function.
+2.  Install the `dplyr` package (if you have not already).
+3.  Load the package using `library()`.
+
+------------------------------------------------------------------------
+
+### Optional challenge if you finish early
+
+1.  Change the vote share of Party C to 0.18 by overwriting the original object.
+2.  Recalculate the votes per party.
+3.  Add a comment explaining what changed and why the results are different.
+
+---
+title: "Lesson 2: Data types and structures in R"
+editor: source
+---
+
+# Lesson 2: Data types and structures in R
+
+## Data types and classes
+
+So far, we have mostly worked with numbers. In R, objects can have different data types, also called classes.
+
+You can check the class of an object using the `class()` function:
+
+```{r}
+vote_shares <- c(0.52,0.44,0.04) # Vote shares of all parties of interest
+class(vote_shares)
+```
+
+R has many different object classes. For example, text data are stored as character objects.
+
+If we create a character vector with the names of the electoral districts and try to calculate a correlation with vote shares, it will not work.
+
+```{r}
+# District names
+district_names <- c("Capital", "North", "North-East",
+                    "North-West", "Western", "Central",
+                    "Mountains-West", "Mountains-East",
+                    "Big Island", "Small Island") # District names
+class(district_names)
+## [1] "character"
+# Vote share per district
+vote_share_per_district <- c(0.506, 0.583, 0.618, 
+                             0.445, 0.219, 0.461, 
+                             0.680, 0.280, 0.532, 0.612) 
+
+class(vote_share_per_district)
+## [1] "numeric"
+
+# Number of voters in each electoral district
+voters_per_district <- c(618880, 1286117, 318003, 
+                         1037879, 505025, 493486, 
+                         1621599, 976879, 1232128, 1231804) 
+
+cor(district_names,vote_shares)
+## Error in cor(district_names, vote_shares): 'x' must be numeric
+```
+
+## Missing values
+
+R uses `NA` to represent missing values. This is used when a value is \## Missing values
+
+R uses `NA` to represent missing values. This is used when a value is not available.
+
+Missing values allow you to keep incomplete data in your object. When using functions like `mean()` or `sum()`, you often need to tell R to remove missing values explicitly.
+
+If you run a function without removing missing values:
+
+```{r}
+vote_shares_with_na <- c(0.52, 0.44, NA, 0.04)
+sum(vote_shares_with_na)
+
+```
+
+```{r}
+sum(vote_shares_with_na, na.rm = TRUE)
+
+```
+
+## Datasets: vectors, matrices, data frames, and tibbles
+
+So far, we have stored data in vectors. When several vectors describe the same units (for example, districts), they can be combined into a dataset where rows are observations and columns are variables.
+
+Common dataset types in R are:
+
+-   Vectors: store a single variable.
+
+```{r}
+scores <- c(10, 15, 20)
+```
+
+-   Matrices: rectangular data where all values must be the same type.
+
+```{r}
+scores_matrix <- matrix(c(10, 15, 20, 25), nrow = 2)
+
+```
+
+-   Data frames: rectangular datasets that can contain different data types in different columns.
+
+```{r}
+scores_df <- data.frame(
+  district = c("A", "B"),
+  score = c(10, 15)
+)
+
+```
+
+-   Tibbles: a modern version of data frames with improved behavior and clearer output.
+
+## Tibbles
+
+Tibbles are a modern version of data frames and are part of the tidyverse. They are easier to work with and produce clearer output.
+
+To use tibbles, install and load the tidyverse:
+
+```{r}
+install.packages("tidyverse")
+library(tidyverse)
+```
+
+You can create a tibble using the `tibble()` function. Each vector you include becomes a column in the dataset.
+
+```{r}
+districts <- tibble(
+  district_names,
+  voters_per_district,
+  vote_share_per_district
+)
+```
+
+The tibble now has a rectangular structure, where rows are districts and columns are variables. This is what we call a dataset.
+
+By default, `tibble()` uses the names of the input vectors as column names. You can set your own names by naming the arguments:
+
+```{r}
+districts <- tibble(
+  name = district_names,
+  total_voters = voters_per_district,
+  vote_share = vote_share_per_district
+)
+```
+
+You can add a new variable by combining the tibble with another vector:
+
+```{r}
+district_type <- c(
+  "urban", "urban", "rural", "urban", "rural",
+  "rural", "rural", "urban", "rural", "rural"
+)
+
+districts_new <- bind_cols(districts, district_type)
+
+```
+
+## Characters versus factors
+
+When you print a tibble, you can see the class of each variable. The `district_type` variable is a character (`chr`).
+
+If a variable only takes a small number of values, such as `"urban"` and `"rural"`, it is often better to store it as a factor.
+
+You can convert a character variable to a factor using `as_factor()`:
+
+```{r}
+districts <- bind_cols(
+  districts,
+  urban_rural = as_factor(district_type)
+)
+
+districts
+```
+
+## Accessing elements and columns
+
+You can access a column in a tibble using the `$` sign. This returns the column as a vector.
+
+```{r}
+districts$total_voters
+districts$name
+```
+
+This is useful for applying functions to a single variable:
+
+```{r}
+mean(districts$vote_share)
+sd(districts$vote_share)
+
+```
+
+You can also use square brackets to access rows and columns. The first number is the row, the second is the column.
+
+```{r}
+districts[3, 4]
+districts[5, ]
+districts[, 1]
+
+```
+
+## Exercise following Lesson 2
+
+### Part 1: Set up your project
+
+1.  Create a new RStudio Project in a new directory.
+2.  Open a new R script inside the project.
+3.  Add a comment at the top explaining what the script does.
+
+------------------------------------------------------------------------
+
+### Part 2: Create objects and vectors
+
+Suppose a country is divided into 8 regions affected by flooding.
+
+1.  Create a character vector called `region` with the following values:\
+    `"Coastal North"`, `"Coastal South"`, `"River Delta"`, `"Capital"`, `"Central Plains"`, `"Highlands"`, `"Eastern Border"`, `"Western Border"`
+
+2.  Create a numeric vector called `population` with the population of each region:\
+    `850000, 1200000, 430000, 2100000, 970000, 620000, 540000, 480000`
+
+3.  Create a numeric vector called `flood_severity` with values between 0 and 1 indicating flood severity:\
+    `0.72, 0.65, 0.81, 0.30, 0.58, 0.22, 0.47, 0.40`
+
+------------------------------------------------------------------------
+
+### Part 3: Create a tibble
+
+1.  Load the tidyverse.
+2.  Combine the three vectors into a tibble called `flood_regions`.
+3.  Name the columns `region`, `population`, and `flood_severity`.
+4.  Print the tibble to the Console.
+
+------------------------------------------------------------------------
+
+### Part 4: Calculations using columns
+
+1.  Calculate the mean flood severity across regions.
+2.  Calculate the total population living in regions with flood data.
+3.  Calculate the number of people exposed to flooding in each region by multiplying population by flood severity.
+4.  Store the result in a new object called `exposed_population`.
+
+------------------------------------------------------------------------
+
+### Part 5: Add a new variable
+
+Suppose you classify regions as `"high risk"` or `"low risk"` based on flood severity.
+
+1.  Create a character vector called `risk_level` where regions with flood severity above 0.6 are `"high risk"`, and the rest are `"low risk"`.
+2.  Add this vector as a new column to the tibble.
+3.  Print the updated tibble.
+
+------------------------------------------------------------------------
+
+### Part 6: Explore the data
+
+1.  Use `$` to extract the `flood_severity` column and calculate its standard deviation.
+2.  Use `table()` to count how many regions are `"high risk"` and `"low risk"`.
+3.  Access the population of the Capital region using indexing.
+
+------------------------------------------------------------------------
+
+### Optional challenge if you finish early
+
+1.  Convert the `risk_level` variable to a factor.
+2.  Recalculate the exposed population assuming flood severity increases by 10% in all regions.
+3.  Add comments explaining what changed and why.
+
+# Lesson 3: Data in R
+
+## Data import
+
+When importing data into R, the most important thing to know is the file format, which is indicated by the file ending. The file format determines which function you use to read the data.
+
+Common data file formats include: - `.csv`: comma-separated values, widely used across software - `.txt`: text files with a fixed delimiter - `.rds` and `.RData`: R-specific data files - `.dta`: Stata data files - `.xlsx`: Excel files
+
+Regardless of file format, there are two main ways to import data into R.
+
+1.  Use the Import Dataset button in the Environment pane. This works for text files (including `.csv`), Excel, Stata, SPSS, and SAS files.
+
+2.  Use import functions directly:
+
+    -   `read_csv()` for `.csv` files\
+    -   `read_dta()` for Stata files\
+    -   `read_excel()` for Excel files\
+    -   `readRDS()` and `load()` for R data files
+
+As an example, let’s load the GDIS dataset, a global dataset of geocoded disaster locations.
+
+```{r}
+gdis <- read_csv("datasets/gdis.csv")
+
+```
+
+## Checking your data
+
+After importing data, it is good practice to check that it loaded correctly.
+
+You can print the dataset, view the first rows, inspect its structure, and get basic summaries:
+
+```{r}
+head(gdis) # Print the first few rows of the data set
+str(gdis) # Print the structure of the data set
+colnames(gdis) # Print the variable names of the data set
+summary(gdis) # Print a summary of the data set
+```
+
+## Data manipulation
+
+Now that we know how to import data and work with the tidyverse, we move on to basic data manipulation. Here, data manipulation means changing a dataset by removing observations or variables, or by creating new variables.
+
+In the tidyverse, data manipulation is done using verb-functions. These are functions named after what they do, such as `filter()`, `select()`, and `mutate()`.
+
+## Filtering data
+
+Filtering means keeping only the observations that meet certain conditions. In the tidyverse, this is done with the `filter()` function.
+
+Filtering returns a new dataset, so it is usually stored as a new object.
+
+```{r}
+gdis_drought <- gdis %>%
+  filter(disastertype == "drought")
+```
+
+To keep only flood events in Pakistan, we can add another condition to `filter()`:
+
+```{r}
+gdis_flood_pakistan <- gdis %>%
+  filter(
+    disastertype == "flood",
+    country == "Pakistan"
+  )
+```
+
+## Selecting variables
+
+The `select()` function is used to keep specific columns in a dataset. Unlike `filter()`, it works on variables, not rows.
+
+You can select variables by name or by their column position.
+
+```{r}
+# using variable names (no quotation marks)
+gdis_reduced <- gdis %>%
+  select(country, year, adm3, disastertype)
+
+# using column positions
+gdis_reduced <- gdis %>%
+  select(2, 5, 11, 15)
+
+# using column positions and names
+gdis_reduced <- gdis %>%
+  select(2:5, adm3, disastertype)
+
+```
+
+## Select helpers
+
+Select helpers let you choose variables based on their names. Common helpers include `starts_with()`, `ends_with()`, `contains()`, and `everything()`.
+
+```{r}
+# select all variables that start with "adm"
+gdis_admin <- gdis %>%
+  select(starts_with("adm"))
+
+# select all variables that contain the string "geo"
+gdis_geo <- gdis %>%
+  select(contains("geo"))
+
+# select the country variable and all variables that contain "lat" or "lon"
+gdis_coords <- gdis %>%
+  select(country, contains("lat"), contains("lon"))
+
+# select using names, positions, and helpers together
+gdis_mixed <- gdis %>%
+  select(1:2, year, contains("adm"))
+
+# rearrange variables: country and year first, then admin variables, then all remaining variables
+gdis_rearranged <- gdis %>%
+  select(country, year, starts_with("adm"), everything())
+```
+
+## Mutating data
+
+The `mutate()` function is used to create new variables inside a dataset. It does not remove any existing data, so it is common to overwrite the dataset.
+
+```{r}
+gdis_reduced <- gdis_reduced %>%
+  mutate(
+    year_2005plus = year >= 2005
+  )
+```
+
+## Creating categorical and dummy variables
+
+You can create new variables based on conditions using `ifelse()` or `case_when()`.
+
+Create a dummy variable indicating whether the disaster is a flood:
+
+```{r}
+gdis_reduced <- gdis_reduced %>%
+  mutate(
+    flood_bin = ifelse(disastertype == "flood", 1, 0)
+  )
+```
+
+You can use `case_when()` to create a categorical variable with multiple categories.
+
+```{r}
+gdis <- gdis %>%
+  mutate(
+    disaster_group = case_when(
+      disastertype == "flood"   ~ "flood",
+      disastertype == "storm"   ~ "storm",
+      TRUE ~ "Other"
+    )
+  )
+```
+
+## Piping it all together
+
+Using pipes allows us to combine multiple data manipulation steps into a single workflow without creating many intermediate objects.
+
+Below, we mutate new variables, select a subset of variables, and filter the data — all in one pipeline.
+
+```{r}
+gdis_flood_pakistan <- gdis %>%
+  mutate(
+    flood_bin = ifelse(tolower(disastertype) == "flood", 1, 0),
+    post_2005 = year >= 2005
+  ) %>%
+  select(country, year, adm3, disastertype, flood_bin, post_2005) %>%
+  filter(country == "Pakistan", flood_bin == 1)
+```
+
+## Exercise 3: Importing and manipulating disaster data
+
+### Part 1: Import and inspect the data
+
+1.  Download the `gdis.csv` file and place it in your project folder.
+2.  Import the dataset into R and store it as an object called `gdis`.
+3.  Print the dataset to the Console.
+4.  Use `head()` to view the first few rows.
+5.  Use `str()` to inspect the structure of the dataset.
+6.  Use `colnames()` to list all variable names.
+
+------------------------------------------------------------------------
+
+### Part 2: Select relevant variables
+
+The `gdis` dataset contains many variables. For this exercise, keep only the following variables:
+
+-   `country`
+-   `year`
+-   `adm3`
+-   `disastertype`
+-   `latitude`
+-   `longitude`
+
+1.  Use `select()` with variable names to create a new dataset called `gdis_selected`.
+2.  Verify that the dataset contains only the selected variables.
+
+------------------------------------------------------------------------
+
+### Part 3: Filter observations
+
+Now restrict the dataset to a smaller set of observations.
+
+1.  Filter the data to include only disasters that occurred after the year 2004.
+2.  Further filter the data to include only disasters that occurred in **Bangladesh**.
+3.  Store the filtered dataset as `gdis_bangladesh`.
+
+------------------------------------------------------------------------
+
+### Part 4: Create new variables
+
+Using `mutate()`:
+
+1.  Create a dummy variable called `is_drought` that equals 1 if the disaster type is a drought and 0 otherwise.
+2.  Create a variable called `abs_latitude` that stores the absolute value of latitude.
+3.  Create a categorical variable called `disaster_group` with the following values:
+    -   `"Flood"`
+    -   `"Drought"`
+    -   `"Storm"`
+    -   `"Other"`
+
+------------------------------------------------------------------------
+
+### Part 5: Pipe it all together
+
+Rewrite Parts 2–4 as a **single pipe** starting from the original `gdis` dataset.
+
+1.  Select the relevant variables.
+2.  Filter to disasters in Bangladesh after 2004.
+3.  Create the new variables.
+4.  Store the result as `gdis_clean`.
+
+------------------------------------------------------------------------
+
+### Optional challenge
+
+1.  Count how many flood events occurred in Bangladesh after 2004.
+2.  Use `table()` to see how many observations fall into each `disaster_group`.
+3.  Add comments explaining what each step of your pipeline does.
+
+------------------------------------------------------------------------
+
+# Lesson 4: Summarizing data, grouping, and aggregation
+
+Summarizing data is useful when we want to calculate summary statistics such as means, medians, or standard deviations for variables in a dataset.
+
+As an example, let us load the GED dataset and calculate summary statistics for the number of fatalities per event.
+
+```{r}
+library(tidyverse)
+
+ged <- read_csv("datasets/GEDEvent_v25.csv")
+names(ged)
+```
+
+We can now calculate the mean, median, and standard deviation of fatalities:
+
+```{r}
+ged_summary <- ged %>%
+  summarize(
+    mean_fatalities = mean(best, na.rm = TRUE),
+    median_fatalities = median(best, na.rm = TRUE),
+    sd_fatalities = sd(best, na.rm = TRUE)
+  )
+```
+
+## Summarizing across multiple variables
+
+If you want the same summary statistic for many variables, you can use `across()` inside `summarize()`. You select variables the same way as with `select()`.
+
+For example, we can calculate the mean of all variables that start with `deaths_`:
+
+```{r}
+deaths_summary <- ged %>%
+  summarize(
+    across(starts_with("deaths_"), ~mean(.x, na.rm = TRUE))
+  )
+
+```
+
+# Grouping data
+
+Often when working with conflict data, we want to see how summary statistics vary across different groups. To do this, we group the data before summarizing it using the `group_by()` function.
+
+For example, in the GED dataset we may want to compare fatalities across different types of violence. The type of violence is stored in the `type_of_violence` variable, so we group by this variable before summarizing:
+
+```{r}
+ged_grouped <- ged %>%
+  group_by(type_of_violence) %>%
+  summarize(
+    mean_fatalities = mean(best, na.rm = TRUE),
+    sd_fatalities = sd(best, na.rm = TRUE)
+  )
+
+ged_grouped
+```
+
+We can also group by more than one variable by listing multiple variables inside `group_by()`. For example, in the GED dataset we may want to summarize fatalities by both region and type of violence.
+
+```{r}
+ged %>%
+  group_by(region, type_of_violence) %>%
+  summarize(
+    mean_fatalities = mean(best, na.rm = TRUE),
+    sd_fatalities = sd(best, na.rm = TRUE),
+    n = n()
+  )
+```
+
+## Aggregation
+
+Aggregation means moving from a more detailed unit of analysis to a more coarse one. In practice, this is done by grouping the data and then summarizing it. When we aggregate data, each row in the resulting dataset represents a group rather than an individual observation.
+
+For example, suppose we want to create a country-year dataset that contains: - the total number of fatalities - the number of conflict events - separated by type of violence
+
+We can do this by grouping by `country`, `year`, and `type_of_violence`, and then summarizing:
+
+```{r}
+ged_country_year <- ged %>%
+  group_by(country, year, type_of_violence) %>%
+  summarize(
+    total_fatalities = sum(best, na.rm = TRUE),
+    n_events = n()
+  ) %>%
+  ungroup()
+
+ged_country_year
+```
+
+## Group manipulation
+
+A common example is creating lagged variables. For instance, when analyzing conflict intensity, we may want to control for the number of fatalities in the previous year. To do this, we use the `lag()` function.
+
+For example, suppose we have a country-year version of the GED data and want to create a lagged fatalities variable:
+
+```{r}
+ged_country_year <- ged_country_year %>%
+  group_by(country) %>%
+  mutate(lagged_fatalities = lag(total_fatalities)) %>%
+  ungroup()
+
+ged_country_year
+```
+
+To ensure that the lagged values are meaningful:
+
+```{r}
+ged_cy_tv1 <- ged_country_year %>%
+  filter(type_of_violence == 1) %>%
+  group_by(country) %>%
+  mutate(lagged_fatalities = lag(total_fatalities)) %>%
+  ungroup()
+
+ged_cy_tv1
+```
+
+## Re-shaping data
+
+So far, we have mostly worked with tidy datasets. Tidy data follow three principles:
+
+-   Each variable has its own column\
+-   Each observation has its own row\
+-   Each value has its own cell
+
+Not all datasets come tidy. For example, the `net_migration` dataset stores yearly values as separate columns:
+
+```{r}
+library(tidyverse)
+
+net_migration <- read_csv("datasets/Kummu_net_migration.csv")
+names(net_migration)
+```
+
+## Making data tidy by pivoting
+
+Data are too wide when information that should be stored as values is instead stored across multiple columns. To fix these problems, we reshape the data using pivoting.
+
+The tidyverse provides two functions for this purpose: `pivot_longer()` and `pivot_wider()`. These functions allow us to convert data between wide and long formats so that each variable has its own column and each observation its own row.
+
+```{r}
+net_migration_long <- net_migration %>%
+  pivot_longer(
+    cols = `2000`:`2019`,
+    names_to = "year",
+    values_to = "net_migration"
+  )
+
+net_migration_long
+```
+
+We can now see that the data are tidy. Each row corresponds to a single observation.
+
+Note, however, that the `year` variable is still stored as a character variable.
+
+We can fix this using the `as.numeric()` function:
+
+```{r}
+net_migration_long <- net_migration_long %>%
+  mutate(year = as.numeric(year))
+
+net_migration_long
+```
+
+## From long to wide and wide to long
+
+The two functions `pivot_longer()` and `pivot_wider()` are inverses of each other, meaning that one can undo the operation of the other.
+
+For example, we first pivot the `net_migration` data from wide to long format.
+
+Now suppose we want to return the data to a wide format, with one column per year. We can do this using pivot_wider():
+
+```{r}
+net_migration_wide <- net_migration_long %>%
+  pivot_wider(
+    names_from = year,
+    values_from = net_migration
+  )
+net_migration_wide
+```
+
+Note that while the datasets now contain the same information, the variables may not be ordered in the same way.
+
+We can change this either by reordering variables manually using `select()`, or by using the `names_sort` argument inside `pivot_wider()`.
+
+For example, we can ensure that the year variables are ordered numerically when pivoting wider:
+
+```{r}
+net_migration_long_sorted <- net_migration_wide %>%
+  pivot_longer(
+    cols = -c(Country, iso3, GID_1, NAME_1, GID_2, NAME_2),
+    names_to = "year",
+    values_to = "net_migration"
+  )
+
+net_migration_long_sorted
+```
+
+## Exercise 4: Summarizing, grouping, and aggregating urban protest data
+
+In this exercise, you will work with a city-year dataset on urban protests, stored as USD 20 Data/cityyear.xlsx.
+
+------------------------------------------------------------------------
+
+### Part 1: Import and inspect the data
+
+1.  Import the dataset into R and store it as an object called `cityyear`.
+
+2.  Print the dataset to the Console.
+
+3.  Use `head()` to view the first few rows.
+
+4.  Use `str()` to inspect the structure of the data.
+
+5.  Use `colnames()` to list all variable names.
+
+### Part 2: Overall summaries
+
+The dataset contains information on protest activity at the city-year level.
+
+1.  Use `summarize()` to calculate:
+
+    -   the mean number of protest events (`NEVENTS`)
+    -   the mean number of deadly events (`DEATHEVENTS`)
+    -   the mean number of non-deadly events (`NODEATHEVENTS`)
+
+2.  Store the result as an object called `event_summary` and print it.
+
+### Part 3: Grouped summaries by region
+
+Now examine how protest activity varies across regions.
+
+1.  Group the data by region.
+2.  For each region, calculate:
+    -   the mean number of protest events
+    -   the standard deviation of protest events
+    -   the number of city-year observations
+3.  Store the result as `region_summary` and print it.
+
+------------------------------------------------------------------------
+
+### Part 4: Aggregation to country-year level
+
+The data are currently at the city-year level. In this part, you will aggregate the data to the country-year level.
+
+1.  Group the data by country and year.
+
+2.  Aggregate the data to calculate:
+
+    -   total number of protest events (`NEVENTS`)
+    -   total number of deadly events (`DEATHEVENTS`)
+    -   total number of non-deadly events (`NODEATHEVENTS`)
+    -   number of cities observed per country-year
+
+3.  Store the result as `countryyear`.
+
+4.  Ungroup and print the dataset.
+
+### Part 5: Group manipulation and lagged variables
+
+We now treat the country-year dataset as panel data.
+
+1.  Group `countryyear` by country.
+2.  Create a lagged variable called `lag_nevents` that contains the number of protest events in the previous year.
+3.  Ungroup the data.
+4.  Print the resulting dataset.
+
+------------------------------------------------------------------------
+
+### Optional if you finish early
+
+1.  Restrict the country-year dataset to a single region of your choice.
+2.  Identify the country-year with the highest number of protest events in that region.
+3.  Add comments explaining what each step of your pipeline does.
+
+------------------------------------------------------------------------
+
+# Lesson 5: Merging data
+
+Now that we know how to import data, aggregate data, and reshape data, we turn to merging data.
+
+Often, we want to combine information from different datasets in order to analyze multiple processes at the same time. As long as the data are tidy and share the same unit of analysis, merging is straightforward. Problems arise when datasets are measured at different levels or use different identifiers.
+
+In the examples below, we use two event-level datasets: - **GDIS**, which contains information on disaster events - **GED**, which contains information on conflict events
+
+Before merging, it is always good practice to inspect the variables in each dataset:
+
+```{r}
+names(gdis)
+names(ged)
+
+```
+
+## Aggregating to a common unit of analysis
+
+First, we aggregate the GDIS data to count disaster events per country-year:
+
+```{r}
+gdis_cy <- gdis %>%
+  group_by(gwno, year) %>%
+  summarize(
+    n_disasters = n()
+  ) %>%
+  ungroup()
+
+```
+
+Next, we aggregate the GED data to summarize conflict events and fatalities per country-year:
+
+```{r}
+ged_cy <- ged %>%
+  group_by(gwnoa, year) %>%
+  summarize(
+    n_conflict_events = n(),
+    total_fatalities = sum(best, na.rm = TRUE)
+  ) %>%
+  ungroup()
+
+```
+
+## Merging datasets
+
+Before aggregating and merging, we need to make sure that the merge keys have the same names in both datasets. In GDIS, the country identifier is stored as `gwno`, while in GED it is stored as `gwnoa`.
+
+```{r}
+ged_cy <- ged_cy %>%
+  rename(gwno = gwnoa)
+```
+
+We can now safely merge the two datasets using a left_join():
+
+```{r}
+countryyear_merged <- gdis_cy %>%
+  left_join(ged_cy, by = c("gwno", "year"))
+
+countryyear_merged
+
+```
+
+## Keys
+
+To merge tidy datasets, we need to identify variables that uniquely match observations across datasets. These variables are called "keys".
+
+The choice of keys depends on the unit of analysis of the data. For example: - event-level data may use an event ID and year as keys\
+- country-year data typically use country and year\
+- country-level data use a country identifier only
+
+For a merge to work correctly, the key variables must match exactly across datasets.
+
+## The `_join()` functions
+
+Once we have identified the key variables that match observations across datasets, we can merge them using the `_join()` functions. There are four main join functions, which differ only in which observations are kept:
+
+-   `inner_join()` keeps only observations present in both datasets\
+-   `left_join()` keeps all observations from the first dataset\
+-   `right_join()` keeps all observations from the second dataset\
+-   `full_join()` keeps all observations from either dataset
+
+If the key variables have different names, or if variables share names but are not keys, we must specify the matching variables explicitly using the `by` argument.
+
+```{r}
+gdis_inner_join <- inner_join(gdis_cy, ged_cy, by = c("gwno", "year"))
+gdis_left_join  <- left_join(gdis_cy,  ged_cy, by = c("gwno", "year"))
+gdis_right_join <- right_join(gdis_cy, ged_cy, by = c("gwno", "year"))
+gdis_full_join  <- full_join(gdis_cy,  ged_cy, by = c("gwno", "year"))
+```
+
+To compare how many rows each join keeps:
+
+```{r}
+nrow(gdis_inner_join)
+nrow(gdis_left_join)
+nrow(gdis_right_join)
+nrow(gdis_full_join)
+
+```
+
+## Joining on keys with different names
+
+```{r}
+countryyear_merged <- gdis_cy %>%
+  left_join(ged_cy, by = c("gwno" = "gwnoa", "year" = "year"))
+
+countryyear_merged
+```
+
+## Joining on different levels of analysis
+
+Here, we aggregate: - GDIS to an admin1–year level (more detailed) - GED to a country–year level (more aggregated)
+
+Then we merge the GED country-year information onto each admin1–year observation in GDIS.
+
+```{r}
+gdis_admin1_y <- gdis %>%
+  rename(gwnoa = gwno) %>%
+  group_by(gwnoa, year, adm1) %>%
+  summarize(
+    n_disasters = n(),
+    .groups = "drop"
+  )
+
+gdis_admin1_y
+```
+
+```{r}
+ged_country_y <- ged %>%
+  group_by(gwnoa, year) %>%
+  summarize(
+    n_conflict_events = n(),
+    total_fatalities = sum(best, na.rm = TRUE),
+    .groups = "drop"
+  )
+
+ged_country_y
+
+```
+
+Join different levels:
+
+```{r}
+gdis_admin1_with_ged <- gdis_admin1_y %>%
+  left_join(ged_country_y, by = c("gwnoa", "year"))
+
+gdis_admin1_with_ged
+
+```
+
+Because ged_country_y is at the country-year level, its values are copied to every matching admin1–year row in gdis_admin1_y.

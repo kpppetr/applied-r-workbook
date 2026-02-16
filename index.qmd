@@ -621,7 +621,6 @@ Regardless of file format, there are two main ways to import data into R.
 As an example, let’s load the GDIS dataset, a global dataset of geocoded disaster locations.
 
 ```{r}
-#| eval: false
 gdis <- read_csv("datasets/gdis.csv")
 ```
 
@@ -846,8 +845,7 @@ As an example, let us load the GED dataset and calculate summary statistics for 
 
 ```{r}
 library(tidyverse)
-
-ged <- read_csv("datasets/GEDEvent_v25.csv")
+ged <- read_csv("datasets/ged_demo.csv")
 names(ged)
 ```
 

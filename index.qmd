@@ -1143,7 +1143,7 @@ gdis_cy <- gdis %>%
 Next, we aggregate the GED data to summarize conflict events and fatalities per country-year:
 
 ```{r}
-ged_cy <- ged_demo %>%
+ged_cy <- ged %>%
   group_by(gwnoa, year) %>%
   summarize(
     n_conflict_events = n(),
@@ -1208,15 +1208,6 @@ nrow(gdis_left_join)
 nrow(gdis_right_join)
 nrow(gdis_full_join)
 
-```
-
-## Joining on keys with different names
-
-```{r}
-countryyear_merged <- gdis_cy %>%
-  left_join(ged_cy, by = c("gwno" = "gwnoa", "year" = "year"))
-
-countryyear_merged
 ```
 
 ## Joining on different levels of analysis

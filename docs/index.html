@@ -1,0 +1,2266 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.27">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Lesson 2: Data types and structures in R – Workbook</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-5b4ad623e5705c0698d39aec6f10cf02.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Workbook</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link active" href="./index.html" aria-current="page"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#workbook-applied-r-for-migration-disaster-and-conflict-studies" id="toc-workbook-applied-r-for-migration-disaster-and-conflict-studies" class="nav-link active" data-scroll-target="#workbook-applied-r-for-migration-disaster-and-conflict-studies">Workbook: Applied R for Migration, Disaster, and Conflict Studies</a></li>
+  <li><a href="#getting-started" id="toc-getting-started" class="nav-link" data-scroll-target="#getting-started">Getting started</a>
+  <ul class="collapse">
+  <li><a href="#what-are-r-and-rstudio" id="toc-what-are-r-and-rstudio" class="nav-link" data-scroll-target="#what-are-r-and-rstudio">What are R and RStudio?</a></li>
+  <li><a href="#step-1-install-r" id="toc-step-1-install-r" class="nav-link" data-scroll-target="#step-1-install-r">Step 1 — Install R</a></li>
+  <li><a href="#step-2-install-rstudio" id="toc-step-2-install-rstudio" class="nav-link" data-scroll-target="#step-2-install-rstudio">Step 2 — Install RStudio</a></li>
+  <li><a href="#step-3-check-it-works" id="toc-step-3-check-it-works" class="nav-link" data-scroll-target="#step-3-check-it-works">Step 3 — Check it works</a></li>
+  </ul></li>
+  <li><a href="#lesson-1-projects-working-directory-scripts-and-running-code" id="toc-lesson-1-projects-working-directory-scripts-and-running-code" class="nav-link" data-scroll-target="#lesson-1-projects-working-directory-scripts-and-running-code">Lesson 1: Projects, working directory, scripts, and running code</a>
+  <ul class="collapse">
+  <li><a href="#rstudio-projects" id="toc-rstudio-projects" class="nav-link" data-scroll-target="#rstudio-projects">RStudio Projects</a>
+  <ul class="collapse">
+  <li><a href="#create-a-new-rstudio-project" id="toc-create-a-new-rstudio-project" class="nav-link" data-scroll-target="#create-a-new-rstudio-project">Create a new RStudio Project</a></li>
+  </ul></li>
+  <li><a href="#the-working-directory" id="toc-the-working-directory" class="nav-link" data-scroll-target="#the-working-directory">The working directory</a></li>
+  <li><a href="#the-rstudio-interface" id="toc-the-rstudio-interface" class="nav-link" data-scroll-target="#the-rstudio-interface">The RStudio interface</a></li>
+  <li><a href="#running-code" id="toc-running-code" class="nav-link" data-scroll-target="#running-code">Running code</a></li>
+  <li><a href="#commenting-in-a-script" id="toc-commenting-in-a-script" class="nav-link" data-scroll-target="#commenting-in-a-script">Commenting in a script</a></li>
+  <li><a href="#objects" id="toc-objects" class="nav-link" data-scroll-target="#objects">Objects</a></li>
+  <li><a href="#creating-and-naming-objects" id="toc-creating-and-naming-objects" class="nav-link" data-scroll-target="#creating-and-naming-objects">Creating and naming objects</a></li>
+  <li><a href="#a-practical-example" id="toc-a-practical-example" class="nav-link" data-scroll-target="#a-practical-example">A practical example</a></li>
+  <li><a href="#vectors" id="toc-vectors" class="nav-link" data-scroll-target="#vectors">Vectors</a></li>
+  <li><a href="#functions-help-files-and-packages" id="toc-functions-help-files-and-packages" class="nav-link" data-scroll-target="#functions-help-files-and-packages">Functions, help files, and packages</a></li>
+  <li><a href="#default-arguments" id="toc-default-arguments" class="nav-link" data-scroll-target="#default-arguments">Default arguments</a></li>
+  <li><a href="#function-help-files" id="toc-function-help-files" class="nav-link" data-scroll-target="#function-help-files">Function help files</a></li>
+  <li><a href="#packages" id="toc-packages" class="nav-link" data-scroll-target="#packages">Packages</a></li>
+  <li><a href="#calling-functions-from-a-package" id="toc-calling-functions-from-a-package" class="nav-link" data-scroll-target="#calling-functions-from-a-package">Calling functions from a package</a></li>
+  <li><a href="#exercise-working-with-objects-vectors-and-functions" id="toc-exercise-working-with-objects-vectors-and-functions" class="nav-link" data-scroll-target="#exercise-working-with-objects-vectors-and-functions">Exercise: Working with objects, vectors, and functions</a>
+  <ul class="collapse">
+  <li><a href="#part-1-set-up-your-project" id="toc-part-1-set-up-your-project" class="nav-link" data-scroll-target="#part-1-set-up-your-project">Part 1: Set up your project</a></li>
+  <li><a href="#part-2-create-objects" id="toc-part-2-create-objects" class="nav-link" data-scroll-target="#part-2-create-objects">Part 2: Create objects</a></li>
+  <li><a href="#part-3-use-objects-in-calculations" id="toc-part-3-use-objects-in-calculations" class="nav-link" data-scroll-target="#part-3-use-objects-in-calculations">Part 3: Use objects in calculations</a></li>
+  <li><a href="#part-4-indexing-and-functions" id="toc-part-4-indexing-and-functions" class="nav-link" data-scroll-target="#part-4-indexing-and-functions">Part 4: Indexing and functions</a></li>
+  <li><a href="#part-5-packages-and-help-files" id="toc-part-5-packages-and-help-files" class="nav-link" data-scroll-target="#part-5-packages-and-help-files">Part 5: Packages and help files</a></li>
+  <li><a href="#optional-challenge-if-you-finish-early" id="toc-optional-challenge-if-you-finish-early" class="nav-link" data-scroll-target="#optional-challenge-if-you-finish-early">Optional challenge if you finish early</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#lesson-2-data-types-and-structures-in-r" id="toc-lesson-2-data-types-and-structures-in-r" class="nav-link" data-scroll-target="#lesson-2-data-types-and-structures-in-r">Lesson 2: Data types and structures in R</a>
+  <ul class="collapse">
+  <li><a href="#data-types-and-classes" id="toc-data-types-and-classes" class="nav-link" data-scroll-target="#data-types-and-classes">Data types and classes</a></li>
+  <li><a href="#missing-values" id="toc-missing-values" class="nav-link" data-scroll-target="#missing-values">Missing values</a></li>
+  <li><a href="#datasets-vectors-matrices-data-frames-and-tibbles" id="toc-datasets-vectors-matrices-data-frames-and-tibbles" class="nav-link" data-scroll-target="#datasets-vectors-matrices-data-frames-and-tibbles">Datasets: vectors, matrices, data frames, and tibbles</a></li>
+  <li><a href="#tibbles" id="toc-tibbles" class="nav-link" data-scroll-target="#tibbles">Tibbles</a></li>
+  <li><a href="#characters-versus-factors" id="toc-characters-versus-factors" class="nav-link" data-scroll-target="#characters-versus-factors">Characters versus factors</a></li>
+  <li><a href="#accessing-elements-and-columns" id="toc-accessing-elements-and-columns" class="nav-link" data-scroll-target="#accessing-elements-and-columns">Accessing elements and columns</a></li>
+  <li><a href="#exercise-following-lesson-2" id="toc-exercise-following-lesson-2" class="nav-link" data-scroll-target="#exercise-following-lesson-2">Exercise following Lesson 2</a>
+  <ul class="collapse">
+  <li><a href="#part-1-set-up-your-project-1" id="toc-part-1-set-up-your-project-1" class="nav-link" data-scroll-target="#part-1-set-up-your-project-1">Part 1: Set up your project</a></li>
+  <li><a href="#part-2-create-objects-and-vectors" id="toc-part-2-create-objects-and-vectors" class="nav-link" data-scroll-target="#part-2-create-objects-and-vectors">Part 2: Create objects and vectors</a></li>
+  <li><a href="#part-3-create-a-tibble" id="toc-part-3-create-a-tibble" class="nav-link" data-scroll-target="#part-3-create-a-tibble">Part 3: Create a tibble</a></li>
+  <li><a href="#part-4-calculations-using-columns" id="toc-part-4-calculations-using-columns" class="nav-link" data-scroll-target="#part-4-calculations-using-columns">Part 4: Calculations using columns</a></li>
+  <li><a href="#part-5-add-a-new-variable" id="toc-part-5-add-a-new-variable" class="nav-link" data-scroll-target="#part-5-add-a-new-variable">Part 5: Add a new variable</a></li>
+  <li><a href="#part-6-explore-the-data" id="toc-part-6-explore-the-data" class="nav-link" data-scroll-target="#part-6-explore-the-data">Part 6: Explore the data</a></li>
+  <li><a href="#optional-challenge-if-you-finish-early-1" id="toc-optional-challenge-if-you-finish-early-1" class="nav-link" data-scroll-target="#optional-challenge-if-you-finish-early-1">Optional challenge if you finish early</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#lesson-3-data-in-r" id="toc-lesson-3-data-in-r" class="nav-link" data-scroll-target="#lesson-3-data-in-r">Lesson 3: Data in R</a>
+  <ul class="collapse">
+  <li><a href="#data-import" id="toc-data-import" class="nav-link" data-scroll-target="#data-import">Data import</a></li>
+  <li><a href="#checking-your-data" id="toc-checking-your-data" class="nav-link" data-scroll-target="#checking-your-data">Checking your data</a></li>
+  <li><a href="#data-manipulation" id="toc-data-manipulation" class="nav-link" data-scroll-target="#data-manipulation">Data manipulation</a></li>
+  <li><a href="#filtering-data" id="toc-filtering-data" class="nav-link" data-scroll-target="#filtering-data">Filtering data</a></li>
+  <li><a href="#selecting-variables" id="toc-selecting-variables" class="nav-link" data-scroll-target="#selecting-variables">Selecting variables</a></li>
+  <li><a href="#select-helpers" id="toc-select-helpers" class="nav-link" data-scroll-target="#select-helpers">Select helpers</a></li>
+  <li><a href="#mutating-data" id="toc-mutating-data" class="nav-link" data-scroll-target="#mutating-data">Mutating data</a></li>
+  <li><a href="#creating-categorical-and-dummy-variables" id="toc-creating-categorical-and-dummy-variables" class="nav-link" data-scroll-target="#creating-categorical-and-dummy-variables">Creating categorical and dummy variables</a></li>
+  <li><a href="#piping-it-all-together" id="toc-piping-it-all-together" class="nav-link" data-scroll-target="#piping-it-all-together">Piping it all together</a></li>
+  <li><a href="#exercise-3-importing-and-manipulating-disaster-data" id="toc-exercise-3-importing-and-manipulating-disaster-data" class="nav-link" data-scroll-target="#exercise-3-importing-and-manipulating-disaster-data">Exercise 3: Importing and manipulating disaster data</a>
+  <ul class="collapse">
+  <li><a href="#part-1-import-and-inspect-the-data" id="toc-part-1-import-and-inspect-the-data" class="nav-link" data-scroll-target="#part-1-import-and-inspect-the-data">Part 1: Import and inspect the data</a></li>
+  <li><a href="#part-2-select-relevant-variables" id="toc-part-2-select-relevant-variables" class="nav-link" data-scroll-target="#part-2-select-relevant-variables">Part 2: Select relevant variables</a></li>
+  <li><a href="#part-3-filter-observations" id="toc-part-3-filter-observations" class="nav-link" data-scroll-target="#part-3-filter-observations">Part 3: Filter observations</a></li>
+  <li><a href="#part-4-create-new-variables" id="toc-part-4-create-new-variables" class="nav-link" data-scroll-target="#part-4-create-new-variables">Part 4: Create new variables</a></li>
+  <li><a href="#part-5-pipe-it-all-together" id="toc-part-5-pipe-it-all-together" class="nav-link" data-scroll-target="#part-5-pipe-it-all-together">Part 5: Pipe it all together</a></li>
+  <li><a href="#optional-challenge" id="toc-optional-challenge" class="nav-link" data-scroll-target="#optional-challenge">Optional challenge</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#lesson-4-summarizing-data-grouping-and-aggregation" id="toc-lesson-4-summarizing-data-grouping-and-aggregation" class="nav-link" data-scroll-target="#lesson-4-summarizing-data-grouping-and-aggregation">Lesson 4: Summarizing data, grouping, and aggregation</a>
+  <ul class="collapse">
+  <li><a href="#summarizing-across-multiple-variables" id="toc-summarizing-across-multiple-variables" class="nav-link" data-scroll-target="#summarizing-across-multiple-variables">Summarizing across multiple variables</a></li>
+  </ul></li>
+  <li><a href="#grouping-data" id="toc-grouping-data" class="nav-link" data-scroll-target="#grouping-data">Grouping data</a>
+  <ul class="collapse">
+  <li><a href="#aggregation" id="toc-aggregation" class="nav-link" data-scroll-target="#aggregation">Aggregation</a></li>
+  <li><a href="#group-manipulation" id="toc-group-manipulation" class="nav-link" data-scroll-target="#group-manipulation">Group manipulation</a></li>
+  <li><a href="#re-shaping-data" id="toc-re-shaping-data" class="nav-link" data-scroll-target="#re-shaping-data">Re-shaping data</a></li>
+  <li><a href="#making-data-tidy-by-pivoting" id="toc-making-data-tidy-by-pivoting" class="nav-link" data-scroll-target="#making-data-tidy-by-pivoting">Making data tidy by pivoting</a></li>
+  <li><a href="#from-long-to-wide-and-wide-to-long" id="toc-from-long-to-wide-and-wide-to-long" class="nav-link" data-scroll-target="#from-long-to-wide-and-wide-to-long">From long to wide and wide to long</a></li>
+  <li><a href="#exercise-4-summarizing-grouping-and-aggregating-urban-protest-data" id="toc-exercise-4-summarizing-grouping-and-aggregating-urban-protest-data" class="nav-link" data-scroll-target="#exercise-4-summarizing-grouping-and-aggregating-urban-protest-data">Exercise 4: Summarizing, grouping, and aggregating urban protest data</a>
+  <ul class="collapse">
+  <li><a href="#part-1-import-and-inspect-the-data-1" id="toc-part-1-import-and-inspect-the-data-1" class="nav-link" data-scroll-target="#part-1-import-and-inspect-the-data-1">Part 1: Import and inspect the data</a></li>
+  <li><a href="#part-2-overall-summaries" id="toc-part-2-overall-summaries" class="nav-link" data-scroll-target="#part-2-overall-summaries">Part 2: Overall summaries</a></li>
+  <li><a href="#part-3-grouped-summaries-by-region" id="toc-part-3-grouped-summaries-by-region" class="nav-link" data-scroll-target="#part-3-grouped-summaries-by-region">Part 3: Grouped summaries by region</a></li>
+  <li><a href="#part-4-aggregation-to-country-year-level" id="toc-part-4-aggregation-to-country-year-level" class="nav-link" data-scroll-target="#part-4-aggregation-to-country-year-level">Part 4: Aggregation to country-year level</a></li>
+  <li><a href="#part-5-group-manipulation-and-lagged-variables" id="toc-part-5-group-manipulation-and-lagged-variables" class="nav-link" data-scroll-target="#part-5-group-manipulation-and-lagged-variables">Part 5: Group manipulation and lagged variables</a></li>
+  <li><a href="#optional-if-you-finish-early" id="toc-optional-if-you-finish-early" class="nav-link" data-scroll-target="#optional-if-you-finish-early">Optional if you finish early</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#lesson-5-merging-data" id="toc-lesson-5-merging-data" class="nav-link" data-scroll-target="#lesson-5-merging-data">Lesson 5: Merging data</a>
+  <ul class="collapse">
+  <li><a href="#aggregating-to-a-common-unit-of-analysis" id="toc-aggregating-to-a-common-unit-of-analysis" class="nav-link" data-scroll-target="#aggregating-to-a-common-unit-of-analysis">Aggregating to a common unit of analysis</a></li>
+  <li><a href="#merging-datasets" id="toc-merging-datasets" class="nav-link" data-scroll-target="#merging-datasets">Merging datasets</a></li>
+  <li><a href="#keys" id="toc-keys" class="nav-link" data-scroll-target="#keys">Keys</a></li>
+  <li><a href="#the-_join-functions" id="toc-the-_join-functions" class="nav-link" data-scroll-target="#the-_join-functions">The <code>_join()</code> functions</a></li>
+  <li><a href="#joining-on-different-levels-of-analysis" id="toc-joining-on-different-levels-of-analysis" class="nav-link" data-scroll-target="#joining-on-different-levels-of-analysis">Joining on different levels of analysis</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Lesson 2: Data types and structures in R</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="workbook-applied-r-for-migration-disaster-and-conflict-studies" class="level1">
+<h1>Workbook: Applied R for Migration, Disaster, and Conflict Studies</h1>
+</section>
+<section id="getting-started" class="level1">
+<h1>Getting started</h1>
+<p>Welcome! In this workbook you’ll learn the basics of R and RStudio and run your first code.</p>
+<section id="what-are-r-and-rstudio" class="level2">
+<h2 class="anchored" data-anchor-id="what-are-r-and-rstudio">What are R and RStudio?</h2>
+<ul>
+<li><strong>R</strong> is the programming language we’ll use for data analysis and visualization.</li>
+<li><strong>RStudio</strong> is a user-friendly app that makes it easier to write and run R code.</li>
+</ul>
+</section>
+<section id="step-1-install-r" class="level2">
+<h2 class="anchored" data-anchor-id="step-1-install-r">Step 1 — Install R</h2>
+<ol type="1">
+<li>Go to the CRAN download page for R:
+<ul>
+<li>https://cran.r-project.org/</li>
+</ul></li>
+<li>Click your operating system:
+<ul>
+<li>Windows / macOS / Linux</li>
+</ul></li>
+<li>Download and install using the default options.</li>
+</ol>
+</section>
+<section id="step-2-install-rstudio" class="level2">
+<h2 class="anchored" data-anchor-id="step-2-install-rstudio">Step 2 — Install RStudio</h2>
+<ol type="1">
+<li>Go to the RStudio Desktop download page:
+<ul>
+<li>https://posit.co/download/rstudio-desktop/</li>
+</ul></li>
+<li>Download the free RStudio Desktop installer.</li>
+<li>Install it (default options are usually fine).</li>
+</ol>
+</section>
+<section id="step-3-check-it-works" class="level2">
+<h2 class="anchored" data-anchor-id="step-3-check-it-works">Step 3 — Check it works</h2>
+<p>Open RStudio.</p>
+<p>In the Console (bottom-left), type:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">+</span> <span class="dv">1</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 2</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="lesson-1-projects-working-directory-scripts-and-running-code" class="level1">
+<h1>Lesson 1: Projects, working directory, scripts, and running code</h1>
+<section id="rstudio-projects" class="level2">
+<h2 class="anchored" data-anchor-id="rstudio-projects">RStudio Projects</h2>
+<p>RStudio Projects help you keep all files for one project in a single, organized folder. This includes scripts, data, and any outputs you create. Projects are especially useful when you are working on more than one project at the same time.</p>
+<p>Each project has its own working directory, which tells R where to look for files and where to save new ones.</p>
+<section id="create-a-new-rstudio-project" class="level3">
+<h3 class="anchored" data-anchor-id="create-a-new-rstudio-project">Create a new RStudio Project</h3>
+<ol type="1">
+<li>In RStudio, go to File → New Project<br>
+</li>
+<li>Choose New Directory<br>
+</li>
+<li>Select New Project<br>
+</li>
+<li>Choose a location on your computer and click Create Project</li>
+</ol>
+<p>RStudio will open the new project and create a folder on your computer. Save all files related to this project inside that folder.</p>
+</section>
+</section>
+<section id="the-working-directory" class="level2">
+<h2 class="anchored" data-anchor-id="the-working-directory">The working directory</h2>
+<p>When you create a new RStudio Project, the working directory is set automatically to the project folder. The working directory is the default location where R looks for files and saves new ones.</p>
+<p>It is good practice to organize your project by creating sub-folders, such as <code>data</code>, <code>scripts</code>, and <code>figures</code>. When a project is first created, the only file in the folder is the <code>.Rproj</code> file, which you use to reopen the project later.</p>
+</section>
+<section id="the-rstudio-interface" class="level2">
+<h2 class="anchored" data-anchor-id="the-rstudio-interface">The RStudio interface</h2>
+<p>When you open RStudio or create a new project, you will see a window divided into three main panes.</p>
+<p>The console (top left) is where you run R code and see output.</p>
+<p>The environment pane (top right) shows the objects and data currently loaded in your R session.</p>
+<p>The files, plots, and help pane lets you view files in your project folder, see plots, and access help. When you create a new project, the only file you will see at first is the <code>.Rproj</code> file.</p>
+</section>
+<section id="running-code" class="level2">
+<h2 class="anchored" data-anchor-id="running-code">Running code</h2>
+<p>You can use R as a calculator. For example, try typing <code>1 + 1</code> in the Console and pressing Enter.</p>
+<p>In practice, we usually write code in scripts rather than directly in the Console. Scripts let you keep a record of your work, edit it later, share it with others, and run the same code again.</p>
+<p>To open a new script, go to File &gt; New File &gt; R Script, or click the document icon with a plus sign and select R Script. This will open a new pane where you can write code.</p>
+<p>On the first line of your script, type:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span><span class="sc">+</span><span class="dv">1</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 2</code></pre>
+</div>
+</div>
+<p>A nice feature of scripts is that you can run multiple lines of code at once. To do this, highlight the lines you want to run and press the Run button or use Ctrl + Enter (Cmd + Enter on macOS).</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">+</span> <span class="dv">1</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 2</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> <span class="sc">*</span> <span class="dv">4</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 8</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span> <span class="sc">+</span> <span class="dv">8</span> <span class="sc">*</span> <span class="dv">2</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 19</code></pre>
+</div>
+</div>
+</section>
+<section id="commenting-in-a-script" class="level2">
+<h2 class="anchored" data-anchor-id="commenting-in-a-script">Commenting in a script</h2>
+<p>Comments are notes you add to your code to explain what it does. In R, anything that comes after <code>#</code> on a line is a comment and will not be run as code.</p>
+<p>For example:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">+</span> <span class="dv">1</span>   <span class="co"># I want to add one and one</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 2</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> <span class="sc">*</span> <span class="dv">4</span>   <span class="co"># This line multiplies two by four</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 8</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span> <span class="sc">+</span> <span class="dv">8</span> <span class="sc">*</span> <span class="dv">2</span>   <span class="co"># You can do multiple operations in one line</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 19</code></pre>
+</div>
+</div>
+</section>
+<section id="objects" class="level2">
+<h2 class="anchored" data-anchor-id="objects">Objects</h2>
+<p>An object is something that R stores so you can use it later. Objects can be numbers, text, collections of values, data sets, functions, or even groups of other objects.</p>
+<p>Every object must have a unique name, called an identifier, which you use to access it in R.</p>
+</section>
+<section id="creating-and-naming-objects" class="level2">
+<h2 class="anchored" data-anchor-id="creating-and-naming-objects">Creating and naming objects</h2>
+<p>Objects in R must have unique names. If you reuse a name, the old object is replaced.</p>
+<p>Object names must: - start with a letter<br>
+- not contain spaces<br>
+- not use special characters</p>
+<p>You can create an object using <code>&lt;-</code>, for example:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>my_first_object <span class="ot">&lt;-</span> <span class="dv">32</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Once an object is created, you can treat it like any other number and use it in calculations.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>my_first_object <span class="sc">*</span> <span class="dv">2</span> <span class="sc">+</span> <span class="dv">4</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 68</code></pre>
+</div>
+</div>
+<p>You can also create multiple objects and use them together.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>another_object <span class="ot">&lt;-</span> <span class="dv">21</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>my_first_object <span class="sc">+</span> another_object</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 53</code></pre>
+</div>
+</div>
+<p>If you want to change the value of an object, you can overwrite it by assigning a new value to the same name.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>another_object <span class="ot">&lt;-</span> <span class="dv">15</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>my_first_object <span class="sc">+</span> another_object</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 47</code></pre>
+</div>
+</div>
+</section>
+<section id="a-practical-example" class="level2">
+<h2 class="anchored" data-anchor-id="a-practical-example">A practical example</h2>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>voting_pop <span class="ot">&lt;-</span> <span class="dv">9321800</span>     <span class="co"># Number of people who voted</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>vote_share <span class="ot">&lt;-</span> <span class="fl">0.52</span>       <span class="co"># Vote share of the party</span></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>number_of_votes <span class="ot">&lt;-</span> voting_pop <span class="sc">*</span> vote_share</span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>number_of_votes</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 4847336</code></pre>
+</div>
+</div>
+</section>
+<section id="vectors" class="level2">
+<h2 class="anchored" data-anchor-id="vectors">Vectors</h2>
+<p>If you want to work with multiple values at once, you can store them in a vector. A vector is a collection of values created using <code>c()</code>.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>vote_shares <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.52</span>, <span class="fl">0.44</span>, <span class="fl">0.04</span>)</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>vote_shares[<span class="dv">1</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.52</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>vote_shares[<span class="dv">2</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.44</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>vote_shares[<span class="dv">3</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.04</code></pre>
+</div>
+</div>
+<p>You can then use the vector to calculate votes for each party:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>voting_pop <span class="sc">*</span> vote_shares</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 4847336 4101592  372872</code></pre>
+</div>
+</div>
+</section>
+<section id="functions-help-files-and-packages" class="level2">
+<h2 class="anchored" data-anchor-id="functions-help-files-and-packages">Functions, help files, and packages</h2>
+<p>Functions are what R uses to do things, such as calculations or analyses. A function takes one or more objects as input and returns a result.</p>
+<p>Functions are usually followed by parentheses, which contain the arguments.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>vote_shares <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.52</span>, <span class="fl">0.44</span>, <span class="fl">0.04</span>)</span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(vote_shares)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1</code></pre>
+</div>
+</div>
+<p>Now suppose there are several electoral districts of different sizes. We have the number of voters in each district and the vote share for the first party in each district.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>voters_per_district <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>  <span class="dv">618880</span>, <span class="dv">1286117</span>, <span class="dv">318003</span>, <span class="dv">1037879</span>, <span class="dv">505025</span>,</span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>  <span class="dv">493486</span>, <span class="dv">1621599</span>, <span class="dv">976879</span>, <span class="dv">1232128</span>, <span class="dv">1231804</span></span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-6"><a href="#cb36-6" aria-hidden="true" tabindex="-1"></a>vote_share_per_district <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a>  <span class="fl">0.506</span>, <span class="fl">0.583</span>, <span class="fl">0.618</span>, <span class="fl">0.445</span>, <span class="fl">0.219</span>,</span>
+<span id="cb36-8"><a href="#cb36-8" aria-hidden="true" tabindex="-1"></a>  <span class="fl">0.461</span>, <span class="fl">0.680</span>, <span class="fl">0.280</span>, <span class="fl">0.532</span>, <span class="fl">0.612</span></span>
+<span id="cb36-9"><a href="#cb36-9" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>We can now make some calculations on these vectors. For instance, by running</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(vote_share_per_district)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.4936</code></pre>
+</div>
+</div>
+<p>To calculate this correlation</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(vote_share_per_district, voters_per_district)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.4269525</code></pre>
+</div>
+</div>
+<p>If we want to store the correlation above we can do so by running:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>size_share_correlation <span class="ot">&lt;-</span> <span class="fu">cor</span>(vote_share_per_district,voters_per_district)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="default-arguments" class="level2">
+<h2 class="anchored" data-anchor-id="default-arguments">Default arguments</h2>
+<p>Many functions in R have default arguments. You can change these by specifying them explicitly.</p>
+<p>For example, the <code>cor()</code> function uses the Pearson method by default. To use Spearman correlation instead, run:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(vote_share_per_district, voters_per_district, <span class="at">method =</span> <span class="st">"spearman"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.3939394</code></pre>
+</div>
+</div>
+</section>
+<section id="function-help-files" class="level2">
+<h2 class="anchored" data-anchor-id="function-help-files">Function help files</h2>
+<p>You can open a function’s help file by typing a question mark before its name.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>?cor</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>If you run the function without naming the argument, R does not know how to interpret <code>"spearman"</code> and returns an error.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="fu">try</span>(<span class="fu">cor</span>(vote_share_per_district, voters_per_district, <span class="st">"spearman"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Error in cor(vote_share_per_district, voters_per_district, "spearman") : 
+  invalid 'use' argument</code></pre>
+</div>
+</div>
+</section>
+<section id="packages" class="level2">
+<h2 class="anchored" data-anchor-id="packages">Packages</h2>
+<p>Packages are collections of functions (and sometimes data) that extend what R can do. Many packages are available through CRAN.</p>
+<p>To install a package, run:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"dplyr"</span>)</span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="calling-functions-from-a-package" class="level2">
+<h2 class="anchored" data-anchor-id="calling-functions-from-a-package">Calling functions from a package</h2>
+<p>When a package is loaded, you can usually call its functions by name. Problems can occur if different packages have functions with the same name.</p>
+<p>You can avoid this by calling a function directly from a package using <code>package::function</code>.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>stats<span class="sc">::</span><span class="fu">lag</span>(x)</span>
+<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>dplyr<span class="sc">::</span><span class="fu">lag</span>(x)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="fu">lag</span>(vote_shares) <span class="co"># lag function from the latest loaded package</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.52 0.44 0.04
+attr(,"tsp")
+[1] 0 2 1</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a>stats<span class="sc">::</span><span class="fu">lag</span>(vote_shares) <span class="co"># lag function explicitly called from the stats package</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.52 0.44 0.04
+attr(,"tsp")
+[1] 0 2 1</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb53"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>dplyr<span class="sc">::</span><span class="fu">lag</span>(vote_shares) <span class="co"># lag function explicitly called from the dplyr package</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1]   NA 0.52 0.44</code></pre>
+</div>
+</div>
+</section>
+<section id="exercise-working-with-objects-vectors-and-functions" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-working-with-objects-vectors-and-functions">Exercise: Working with objects, vectors, and functions</h2>
+<p>In this exercise, you will practice creating objects, using vectors, writing comments, and applying functions in R.</p>
+<section id="part-1-set-up-your-project" class="level3">
+<h3 class="anchored" data-anchor-id="part-1-set-up-your-project">Part 1: Set up your project</h3>
+<ol type="1">
+<li>Create a new RStudio Project in a new directory.</li>
+<li>Open a new R script inside the project.</li>
+<li>Add a comment at the top of the script explaining what this script does.</li>
+</ol>
+<hr>
+</section>
+<section id="part-2-create-objects" class="level3">
+<h3 class="anchored" data-anchor-id="part-2-create-objects">Part 2: Create objects</h3>
+<p>The total number of voters in a country is 8,750,000.</p>
+<ol type="1">
+<li>Create an object called <code>total_voters</code> and assign this value to it.</li>
+<li>Three political parties received the following vote shares:
+<ul>
+<li>Party A: 0.47<br>
+</li>
+<li>Party B: 0.38<br>
+</li>
+<li>Party C: 0.15</li>
+</ul></li>
+</ol>
+<p>Create a vector called <code>vote_shares</code> containing these values.</p>
+<hr>
+</section>
+<section id="part-3-use-objects-in-calculations" class="level3">
+<h3 class="anchored" data-anchor-id="part-3-use-objects-in-calculations">Part 3: Use objects in calculations</h3>
+<ol type="1">
+<li>Calculate the number of votes each party received by combining <code>total_voters</code> and <code>vote_shares</code>.</li>
+<li>Store the result in an object called <code>votes_per_party</code>.</li>
+<li>Print the result.</li>
+</ol>
+<hr>
+</section>
+<section id="part-4-indexing-and-functions" class="level3">
+<h3 class="anchored" data-anchor-id="part-4-indexing-and-functions">Part 4: Indexing and functions</h3>
+<ol type="1">
+<li>Use indexing to extract the vote share of Party B.</li>
+<li>Calculate how many votes Party B received.</li>
+<li>Use a function to check that the vote shares sum to 1.</li>
+</ol>
+<hr>
+</section>
+<section id="part-5-packages-and-help-files" class="level3">
+<h3 class="anchored" data-anchor-id="part-5-packages-and-help-files">Part 5: Packages and help files</h3>
+<ol type="1">
+<li>Open the help file for the <code>sum()</code> function.</li>
+<li>Install the <code>dplyr</code> package (if you have not already).</li>
+<li>Load the package using <code>library()</code>.</li>
+</ol>
+<hr>
+</section>
+<section id="optional-challenge-if-you-finish-early" class="level3">
+<h3 class="anchored" data-anchor-id="optional-challenge-if-you-finish-early">Optional challenge if you finish early</h3>
+<ol type="1">
+<li>Change the vote share of Party C to 0.18 by overwriting the original object.</li>
+<li>Recalculate the votes per party.</li>
+<li>Add a comment explaining what changed and why the results are different.</li>
+</ol>
+</section>
+</section>
+</section>
+<section id="lesson-2-data-types-and-structures-in-r" class="level1">
+<h1>Lesson 2: Data types and structures in R</h1>
+<section id="data-types-and-classes" class="level2">
+<h2 class="anchored" data-anchor-id="data-types-and-classes">Data types and classes</h2>
+<p>So far, we have mostly worked with numbers. In R, objects can have different data types, also called classes.</p>
+<p>You can check the class of an object using the <code>class()</code> function:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb55"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a>vote_shares <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.52</span>,<span class="fl">0.44</span>,<span class="fl">0.04</span>) <span class="co"># Vote shares of all parties of interest</span></span>
+<span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(vote_shares)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "numeric"</code></pre>
+</div>
+</div>
+<p>R has many different object classes. For example, text data are stored as character objects.</p>
+<p>If we create a character vector with the names of the electoral districts and try to calculate a correlation with vote shares, it will not work.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb57"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="co"># District names</span></span>
+<span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a>district_names <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Capital"</span>, <span class="st">"North"</span>, <span class="st">"North-East"</span>,</span>
+<span id="cb57-3"><a href="#cb57-3" aria-hidden="true" tabindex="-1"></a>                    <span class="st">"North-West"</span>, <span class="st">"Western"</span>, <span class="st">"Central"</span>,</span>
+<span id="cb57-4"><a href="#cb57-4" aria-hidden="true" tabindex="-1"></a>                    <span class="st">"Mountains-West"</span>, <span class="st">"Mountains-East"</span>,</span>
+<span id="cb57-5"><a href="#cb57-5" aria-hidden="true" tabindex="-1"></a>                    <span class="st">"Big Island"</span>, <span class="st">"Small Island"</span>) <span class="co"># District names</span></span>
+<span id="cb57-6"><a href="#cb57-6" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(district_names)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "character"</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb59"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] "character"</span></span>
+<span id="cb59-2"><a href="#cb59-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Vote share per district</span></span>
+<span id="cb59-3"><a href="#cb59-3" aria-hidden="true" tabindex="-1"></a>vote_share_per_district <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.506</span>, <span class="fl">0.583</span>, <span class="fl">0.618</span>, </span>
+<span id="cb59-4"><a href="#cb59-4" aria-hidden="true" tabindex="-1"></a>                             <span class="fl">0.445</span>, <span class="fl">0.219</span>, <span class="fl">0.461</span>, </span>
+<span id="cb59-5"><a href="#cb59-5" aria-hidden="true" tabindex="-1"></a>                             <span class="fl">0.680</span>, <span class="fl">0.280</span>, <span class="fl">0.532</span>, <span class="fl">0.612</span>) </span>
+<span id="cb59-6"><a href="#cb59-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb59-7"><a href="#cb59-7" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(vote_share_per_district)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "numeric"</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb61"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a><span class="do">## [1] "numeric"</span></span>
+<span id="cb61-2"><a href="#cb61-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb61-3"><a href="#cb61-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Number of voters in each electoral district</span></span>
+<span id="cb61-4"><a href="#cb61-4" aria-hidden="true" tabindex="-1"></a>voters_per_district <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">618880</span>, <span class="dv">1286117</span>, <span class="dv">318003</span>, </span>
+<span id="cb61-5"><a href="#cb61-5" aria-hidden="true" tabindex="-1"></a>                         <span class="dv">1037879</span>, <span class="dv">505025</span>, <span class="dv">493486</span>, </span>
+<span id="cb61-6"><a href="#cb61-6" aria-hidden="true" tabindex="-1"></a>                         <span class="dv">1621599</span>, <span class="dv">976879</span>, <span class="dv">1232128</span>, <span class="dv">1231804</span>) </span>
+<span id="cb61-7"><a href="#cb61-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb61-8"><a href="#cb61-8" aria-hidden="true" tabindex="-1"></a><span class="fu">try</span>(<span class="fu">cor</span>(district_names, vote_shares))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Error in cor(district_names, vote_shares) : 'x' must be numeric</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb63"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Error in cor(district_names, vote_shares): 'x' must be numeric</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="missing-values" class="level2">
+<h2 class="anchored" data-anchor-id="missing-values">Missing values</h2>
+<p>R uses <code>NA</code> to represent missing values. This is used when a value is ## Missing values</p>
+<p>R uses <code>NA</code> to represent missing values. This is used when a value is not available.</p>
+<p>Missing values allow you to keep incomplete data in your object. When using functions like <code>mean()</code> or <code>sum()</code>, you often need to tell R to remove missing values explicitly.</p>
+<p>If you run a function without removing missing values:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb64"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a>vote_shares_with_na <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.52</span>, <span class="fl">0.44</span>, <span class="cn">NA</span>, <span class="fl">0.04</span>)</span>
+<span id="cb64-2"><a href="#cb64-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(vote_shares_with_na)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] NA</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb66"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(vote_shares_with_na, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1</code></pre>
+</div>
+</div>
+</section>
+<section id="datasets-vectors-matrices-data-frames-and-tibbles" class="level2">
+<h2 class="anchored" data-anchor-id="datasets-vectors-matrices-data-frames-and-tibbles">Datasets: vectors, matrices, data frames, and tibbles</h2>
+<p>So far, we have stored data in vectors. When several vectors describe the same units (for example, districts), they can be combined into a dataset where rows are observations and columns are variables.</p>
+<p>Common dataset types in R are:</p>
+<ul>
+<li>Vectors: store a single variable.</li>
+</ul>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb68"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a>scores <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">15</span>, <span class="dv">20</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<ul>
+<li>Matrices: rectangular data where all values must be the same type.</li>
+</ul>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb69"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb69-1"><a href="#cb69-1" aria-hidden="true" tabindex="-1"></a>scores_matrix <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">15</span>, <span class="dv">20</span>, <span class="dv">25</span>), <span class="at">nrow =</span> <span class="dv">2</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<ul>
+<li>Data frames: rectangular datasets that can contain different data types in different columns.</li>
+</ul>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb70"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a>scores_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb70-2"><a href="#cb70-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">district =</span> <span class="fu">c</span>(<span class="st">"A"</span>, <span class="st">"B"</span>),</span>
+<span id="cb70-3"><a href="#cb70-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">score =</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">15</span>)</span>
+<span id="cb70-4"><a href="#cb70-4" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<ul>
+<li>Tibbles: a modern version of data frames with improved behavior and clearer output.</li>
+</ul>
+</section>
+<section id="tibbles" class="level2">
+<h2 class="anchored" data-anchor-id="tibbles">Tibbles</h2>
+<p>Tibbles are a modern version of data frames and are part of the tidyverse. They are easier to work with and produce clearer output.</p>
+<p>To use tibbles, install and load the tidyverse:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb71"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"tidyverse"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb72"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+✔ dplyr     1.1.4     ✔ readr     2.1.5
+✔ forcats   1.0.0     ✔ stringr   1.5.1
+✔ ggplot2   3.5.2     ✔ tibble    3.3.0
+✔ lubridate 1.9.4     ✔ tidyr     1.3.1
+✔ purrr     1.0.4     
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()
+ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
+</div>
+</div>
+<p>You can create a tibble using the <code>tibble()</code> function. Each vector you include becomes a column in the dataset.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb74"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb74-1"><a href="#cb74-1" aria-hidden="true" tabindex="-1"></a>districts <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb74-2"><a href="#cb74-2" aria-hidden="true" tabindex="-1"></a>  district_names,</span>
+<span id="cb74-3"><a href="#cb74-3" aria-hidden="true" tabindex="-1"></a>  voters_per_district,</span>
+<span id="cb74-4"><a href="#cb74-4" aria-hidden="true" tabindex="-1"></a>  vote_share_per_district</span>
+<span id="cb74-5"><a href="#cb74-5" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>The tibble now has a rectangular structure, where rows are districts and columns are variables. This is what we call a dataset.</p>
+<p>By default, <code>tibble()</code> uses the names of the input vectors as column names. You can set your own names by naming the arguments:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb75"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb75-1"><a href="#cb75-1" aria-hidden="true" tabindex="-1"></a>districts <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb75-2"><a href="#cb75-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">name =</span> district_names,</span>
+<span id="cb75-3"><a href="#cb75-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">total_voters =</span> voters_per_district,</span>
+<span id="cb75-4"><a href="#cb75-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">vote_share =</span> vote_share_per_district</span>
+<span id="cb75-5"><a href="#cb75-5" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>You can add a new variable by combining the tibble with another vector:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb76"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb76-1"><a href="#cb76-1" aria-hidden="true" tabindex="-1"></a>district_type <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb76-2"><a href="#cb76-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">"urban"</span>, <span class="st">"urban"</span>, <span class="st">"rural"</span>, <span class="st">"urban"</span>, <span class="st">"rural"</span>,</span>
+<span id="cb76-3"><a href="#cb76-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">"rural"</span>, <span class="st">"rural"</span>, <span class="st">"urban"</span>, <span class="st">"rural"</span>, <span class="st">"rural"</span></span>
+<span id="cb76-4"><a href="#cb76-4" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb76-5"><a href="#cb76-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb76-6"><a href="#cb76-6" aria-hidden="true" tabindex="-1"></a>districts_new <span class="ot">&lt;-</span> <span class="fu">bind_cols</span>(districts, district_type)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>New names:
+• `` -&gt; `...4`</code></pre>
+</div>
+</div>
+</section>
+<section id="characters-versus-factors" class="level2">
+<h2 class="anchored" data-anchor-id="characters-versus-factors">Characters versus factors</h2>
+<p>When you print a tibble, you can see the class of each variable. The <code>district_type</code> variable is a character (<code>chr</code>).</p>
+<p>If a variable only takes a small number of values, such as <code>"urban"</code> and <code>"rural"</code>, it is often better to store it as a factor.</p>
+<p>You can convert a character variable to a factor using <code>as_factor()</code>:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb78"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb78-1"><a href="#cb78-1" aria-hidden="true" tabindex="-1"></a>districts <span class="ot">&lt;-</span> <span class="fu">bind_cols</span>(</span>
+<span id="cb78-2"><a href="#cb78-2" aria-hidden="true" tabindex="-1"></a>  districts,</span>
+<span id="cb78-3"><a href="#cb78-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">urban_rural =</span> <span class="fu">as_factor</span>(district_type)</span>
+<span id="cb78-4"><a href="#cb78-4" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb78-5"><a href="#cb78-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb78-6"><a href="#cb78-6" aria-hidden="true" tabindex="-1"></a>districts</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 10 × 4
+   name           total_voters vote_share urban_rural
+   &lt;chr&gt;                 &lt;dbl&gt;      &lt;dbl&gt; &lt;fct&gt;      
+ 1 Capital              618880      0.506 urban      
+ 2 North               1286117      0.583 urban      
+ 3 North-East           318003      0.618 rural      
+ 4 North-West          1037879      0.445 urban      
+ 5 Western              505025      0.219 rural      
+ 6 Central              493486      0.461 rural      
+ 7 Mountains-West      1621599      0.68  rural      
+ 8 Mountains-East       976879      0.28  urban      
+ 9 Big Island          1232128      0.532 rural      
+10 Small Island        1231804      0.612 rural      </code></pre>
+</div>
+</div>
+</section>
+<section id="accessing-elements-and-columns" class="level2">
+<h2 class="anchored" data-anchor-id="accessing-elements-and-columns">Accessing elements and columns</h2>
+<p>You can access a column in a tibble using the <code>$</code> sign. This returns the column as a vector.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb80"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb80-1"><a href="#cb80-1" aria-hidden="true" tabindex="-1"></a>districts<span class="sc">$</span>total_voters</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1]  618880 1286117  318003 1037879  505025  493486 1621599  976879 1232128
+[10] 1231804</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb82"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb82-1"><a href="#cb82-1" aria-hidden="true" tabindex="-1"></a>districts<span class="sc">$</span>name</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "Capital"        "North"          "North-East"     "North-West"    
+ [5] "Western"        "Central"        "Mountains-West" "Mountains-East"
+ [9] "Big Island"     "Small Island"  </code></pre>
+</div>
+</div>
+<p>This is useful for applying functions to a single variable:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb84"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb84-1"><a href="#cb84-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(districts<span class="sc">$</span>vote_share)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.4936</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb86"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb86-1"><a href="#cb86-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(districts<span class="sc">$</span>vote_share)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.1484417</code></pre>
+</div>
+</div>
+<p>You can also use square brackets to access rows and columns. The first number is the row, the second is the column.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb88"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb88-1"><a href="#cb88-1" aria-hidden="true" tabindex="-1"></a>districts[<span class="dv">3</span>, <span class="dv">4</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 1
+  urban_rural
+  &lt;fct&gt;      
+1 rural      </code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb90"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb90-1"><a href="#cb90-1" aria-hidden="true" tabindex="-1"></a>districts[<span class="dv">5</span>, ]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 4
+  name    total_voters vote_share urban_rural
+  &lt;chr&gt;          &lt;dbl&gt;      &lt;dbl&gt; &lt;fct&gt;      
+1 Western       505025      0.219 rural      </code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb92"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb92-1"><a href="#cb92-1" aria-hidden="true" tabindex="-1"></a>districts[, <span class="dv">1</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 10 × 1
+   name          
+   &lt;chr&gt;         
+ 1 Capital       
+ 2 North         
+ 3 North-East    
+ 4 North-West    
+ 5 Western       
+ 6 Central       
+ 7 Mountains-West
+ 8 Mountains-East
+ 9 Big Island    
+10 Small Island  </code></pre>
+</div>
+</div>
+</section>
+<section id="exercise-following-lesson-2" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-following-lesson-2">Exercise following Lesson 2</h2>
+<section id="part-1-set-up-your-project-1" class="level3">
+<h3 class="anchored" data-anchor-id="part-1-set-up-your-project-1">Part 1: Set up your project</h3>
+<ol type="1">
+<li>Create a new RStudio Project in a new directory.</li>
+<li>Open a new R script inside the project.</li>
+<li>Add a comment at the top explaining what the script does.</li>
+</ol>
+<hr>
+</section>
+<section id="part-2-create-objects-and-vectors" class="level3">
+<h3 class="anchored" data-anchor-id="part-2-create-objects-and-vectors">Part 2: Create objects and vectors</h3>
+<p>Suppose a country is divided into 8 regions affected by flooding.</p>
+<ol type="1">
+<li><p>Create a character vector called <code>region</code> with the following values:<br>
+<code>"Coastal North"</code>, <code>"Coastal South"</code>, <code>"River Delta"</code>, <code>"Capital"</code>, <code>"Central Plains"</code>, <code>"Highlands"</code>, <code>"Eastern Border"</code>, <code>"Western Border"</code></p></li>
+<li><p>Create a numeric vector called <code>population</code> with the population of each region:<br>
+<code>850000, 1200000, 430000, 2100000, 970000, 620000, 540000, 480000</code></p></li>
+<li><p>Create a numeric vector called <code>flood_severity</code> with values between 0 and 1 indicating flood severity:<br>
+<code>0.72, 0.65, 0.81, 0.30, 0.58, 0.22, 0.47, 0.40</code></p></li>
+</ol>
+<hr>
+</section>
+<section id="part-3-create-a-tibble" class="level3">
+<h3 class="anchored" data-anchor-id="part-3-create-a-tibble">Part 3: Create a tibble</h3>
+<ol type="1">
+<li>Load the tidyverse.</li>
+<li>Combine the three vectors into a tibble called <code>flood_regions</code>.</li>
+<li>Name the columns <code>region</code>, <code>population</code>, and <code>flood_severity</code>.</li>
+<li>Print the tibble to the Console.</li>
+</ol>
+<hr>
+</section>
+<section id="part-4-calculations-using-columns" class="level3">
+<h3 class="anchored" data-anchor-id="part-4-calculations-using-columns">Part 4: Calculations using columns</h3>
+<ol type="1">
+<li>Calculate the mean flood severity across regions.</li>
+<li>Calculate the total population living in regions with flood data.</li>
+<li>Calculate the number of people exposed to flooding in each region by multiplying population by flood severity.</li>
+<li>Store the result in a new object called <code>exposed_population</code>.</li>
+</ol>
+<hr>
+</section>
+<section id="part-5-add-a-new-variable" class="level3">
+<h3 class="anchored" data-anchor-id="part-5-add-a-new-variable">Part 5: Add a new variable</h3>
+<p>Suppose you classify regions as <code>"high risk"</code> or <code>"low risk"</code> based on flood severity.</p>
+<ol type="1">
+<li>Create a character vector called <code>risk_level</code> where regions with flood severity above 0.6 are <code>"high risk"</code>, and the rest are <code>"low risk"</code>.</li>
+<li>Add this vector as a new column to the tibble.</li>
+<li>Print the updated tibble.</li>
+</ol>
+<hr>
+</section>
+<section id="part-6-explore-the-data" class="level3">
+<h3 class="anchored" data-anchor-id="part-6-explore-the-data">Part 6: Explore the data</h3>
+<ol type="1">
+<li>Use <code>$</code> to extract the <code>flood_severity</code> column and calculate its standard deviation.</li>
+<li>Use <code>table()</code> to count how many regions are <code>"high risk"</code> and <code>"low risk"</code>.</li>
+<li>Access the population of the Capital region using indexing.</li>
+</ol>
+<hr>
+</section>
+<section id="optional-challenge-if-you-finish-early-1" class="level3">
+<h3 class="anchored" data-anchor-id="optional-challenge-if-you-finish-early-1">Optional challenge if you finish early</h3>
+<ol type="1">
+<li>Convert the <code>risk_level</code> variable to a factor.</li>
+<li>Recalculate the exposed population assuming flood severity increases by 10% in all regions.</li>
+<li>Add comments explaining what changed and why.</li>
+</ol>
+</section>
+</section>
+</section>
+<section id="lesson-3-data-in-r" class="level1">
+<h1>Lesson 3: Data in R</h1>
+<section id="data-import" class="level2">
+<h2 class="anchored" data-anchor-id="data-import">Data import</h2>
+<p>When importing data into R, the most important thing to know is the file format, which is indicated by the file ending. The file format determines which function you use to read the data.</p>
+<p>Common data file formats include: - <code>.csv</code>: comma-separated values, widely used across software - <code>.txt</code>: text files with a fixed delimiter - <code>.rds</code> and <code>.RData</code>: R-specific data files - <code>.dta</code>: Stata data files - <code>.xlsx</code>: Excel files</p>
+<p>Regardless of file format, there are two main ways to import data into R.</p>
+<ol type="1">
+<li><p>Use the Import Dataset button in the Environment pane. This works for text files (including <code>.csv</code>), Excel, Stata, SPSS, and SAS files.</p></li>
+<li><p>Use import functions directly:</p>
+<ul>
+<li><code>read_csv()</code> for <code>.csv</code> files<br>
+</li>
+<li><code>read_dta()</code> for Stata files<br>
+</li>
+<li><code>read_excel()</code> for Excel files<br>
+</li>
+<li><code>readRDS()</code> and <code>load()</code> for R data files</li>
+</ul></li>
+</ol>
+<p>As an example, let’s load the GDIS dataset, a global dataset of geocoded disaster locations.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb94"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb94-1"><a href="#cb94-1" aria-hidden="true" tabindex="-1"></a>gdis <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"datasets/gdis.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Rows: 29864 Columns: 18
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr (11): id, country, iso3, geolocation, adm1, adm2, adm3, location, hist_c...
+dbl  (7): gwno, year, geo_id, level, historical, latitude, longitude
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+</div>
+</div>
+</section>
+<section id="checking-your-data" class="level2">
+<h2 class="anchored" data-anchor-id="checking-your-data">Checking your data</h2>
+<p>After importing data, it is good practice to check that it loaded correctly.</p>
+<p>You can print the dataset, view the first rows, inspect its structure, and get basic summaries:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb96"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb96-1"><a href="#cb96-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(gdis) <span class="co"># Print the first few rows of the data set</span></span>
+<span id="cb96-2"><a href="#cb96-2" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(gdis) <span class="co"># Print the structure of the data set</span></span>
+<span id="cb96-3"><a href="#cb96-3" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(gdis) <span class="co"># Print the variable names of the data set</span></span>
+<span id="cb96-4"><a href="#cb96-4" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(gdis) <span class="co"># Print a summary of the data set</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="data-manipulation" class="level2">
+<h2 class="anchored" data-anchor-id="data-manipulation">Data manipulation</h2>
+<p>Now that we know how to import data and work with the tidyverse, we move on to basic data manipulation. Here, data manipulation means changing a dataset by removing observations or variables, or by creating new variables.</p>
+<p>In the tidyverse, data manipulation is done using verb-functions. These are functions named after what they do, such as <code>filter()</code>, <code>select()</code>, and <code>mutate()</code>.</p>
+</section>
+<section id="filtering-data" class="level2">
+<h2 class="anchored" data-anchor-id="filtering-data">Filtering data</h2>
+<p>Filtering means keeping only the observations that meet certain conditions. In the tidyverse, this is done with the <code>filter()</code> function.</p>
+<p>Filtering returns a new dataset, so it is usually stored as a new object.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb97"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb97-1"><a href="#cb97-1" aria-hidden="true" tabindex="-1"></a>gdis_drought <span class="ot">&lt;-</span> gdis <span class="sc">%&gt;%</span></span>
+<span id="cb97-2"><a href="#cb97-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(disastertype <span class="sc">==</span> <span class="st">"drought"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>To keep only flood events in Pakistan, we can add another condition to <code>filter()</code>:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb98"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb98-1"><a href="#cb98-1" aria-hidden="true" tabindex="-1"></a>gdis_flood_pakistan <span class="ot">&lt;-</span> gdis <span class="sc">%&gt;%</span></span>
+<span id="cb98-2"><a href="#cb98-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(</span>
+<span id="cb98-3"><a href="#cb98-3" aria-hidden="true" tabindex="-1"></a>    disastertype <span class="sc">==</span> <span class="st">"flood"</span>,</span>
+<span id="cb98-4"><a href="#cb98-4" aria-hidden="true" tabindex="-1"></a>    country <span class="sc">==</span> <span class="st">"Pakistan"</span></span>
+<span id="cb98-5"><a href="#cb98-5" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="selecting-variables" class="level2">
+<h2 class="anchored" data-anchor-id="selecting-variables">Selecting variables</h2>
+<p>The <code>select()</code> function is used to keep specific columns in a dataset. Unlike <code>filter()</code>, it works on variables, not rows.</p>
+<p>You can select variables by name or by their column position.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb99"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb99-1"><a href="#cb99-1" aria-hidden="true" tabindex="-1"></a><span class="co"># using variable names (no quotation marks)</span></span>
+<span id="cb99-2"><a href="#cb99-2" aria-hidden="true" tabindex="-1"></a>gdis_reduced <span class="ot">&lt;-</span> gdis <span class="sc">%&gt;%</span></span>
+<span id="cb99-3"><a href="#cb99-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(country, year, adm3, disastertype)</span>
+<span id="cb99-4"><a href="#cb99-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb99-5"><a href="#cb99-5" aria-hidden="true" tabindex="-1"></a><span class="co"># using column positions</span></span>
+<span id="cb99-6"><a href="#cb99-6" aria-hidden="true" tabindex="-1"></a>gdis_reduced <span class="ot">&lt;-</span> gdis <span class="sc">%&gt;%</span></span>
+<span id="cb99-7"><a href="#cb99-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="dv">2</span>, <span class="dv">5</span>, <span class="dv">11</span>, <span class="dv">15</span>)</span>
+<span id="cb99-8"><a href="#cb99-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb99-9"><a href="#cb99-9" aria-hidden="true" tabindex="-1"></a><span class="co"># using column positions and names</span></span>
+<span id="cb99-10"><a href="#cb99-10" aria-hidden="true" tabindex="-1"></a>gdis_reduced <span class="ot">&lt;-</span> gdis <span class="sc">%&gt;%</span></span>
+<span id="cb99-11"><a href="#cb99-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="dv">2</span><span class="sc">:</span><span class="dv">5</span>, adm3, disastertype)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="select-helpers" class="level2">
+<h2 class="anchored" data-anchor-id="select-helpers">Select helpers</h2>
+<p>Select helpers let you choose variables based on their names. Common helpers include <code>starts_with()</code>, <code>ends_with()</code>, <code>contains()</code>, and <code>everything()</code>.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb100"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb100-1"><a href="#cb100-1" aria-hidden="true" tabindex="-1"></a><span class="co"># select all variables that start with "adm"</span></span>
+<span id="cb100-2"><a href="#cb100-2" aria-hidden="true" tabindex="-1"></a>gdis_admin <span class="ot">&lt;-</span> gdis <span class="sc">%&gt;%</span></span>
+<span id="cb100-3"><a href="#cb100-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="fu">starts_with</span>(<span class="st">"adm"</span>))</span>
+<span id="cb100-4"><a href="#cb100-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb100-5"><a href="#cb100-5" aria-hidden="true" tabindex="-1"></a><span class="co"># select all variables that contain the string "geo"</span></span>
+<span id="cb100-6"><a href="#cb100-6" aria-hidden="true" tabindex="-1"></a>gdis_geo <span class="ot">&lt;-</span> gdis <span class="sc">%&gt;%</span></span>
+<span id="cb100-7"><a href="#cb100-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="fu">contains</span>(<span class="st">"geo"</span>))</span>
+<span id="cb100-8"><a href="#cb100-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb100-9"><a href="#cb100-9" aria-hidden="true" tabindex="-1"></a><span class="co"># select the country variable and all variables that contain "lat" or "lon"</span></span>
+<span id="cb100-10"><a href="#cb100-10" aria-hidden="true" tabindex="-1"></a>gdis_coords <span class="ot">&lt;-</span> gdis <span class="sc">%&gt;%</span></span>
+<span id="cb100-11"><a href="#cb100-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(country, <span class="fu">contains</span>(<span class="st">"lat"</span>), <span class="fu">contains</span>(<span class="st">"lon"</span>))</span>
+<span id="cb100-12"><a href="#cb100-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb100-13"><a href="#cb100-13" aria-hidden="true" tabindex="-1"></a><span class="co"># select using names, positions, and helpers together</span></span>
+<span id="cb100-14"><a href="#cb100-14" aria-hidden="true" tabindex="-1"></a>gdis_mixed <span class="ot">&lt;-</span> gdis <span class="sc">%&gt;%</span></span>
+<span id="cb100-15"><a href="#cb100-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>, year, <span class="fu">contains</span>(<span class="st">"adm"</span>))</span>
+<span id="cb100-16"><a href="#cb100-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb100-17"><a href="#cb100-17" aria-hidden="true" tabindex="-1"></a><span class="co"># rearrange variables: country and year first, then admin variables, then all remaining variables</span></span>
+<span id="cb100-18"><a href="#cb100-18" aria-hidden="true" tabindex="-1"></a>gdis_rearranged <span class="ot">&lt;-</span> gdis <span class="sc">%&gt;%</span></span>
+<span id="cb100-19"><a href="#cb100-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(country, year, <span class="fu">starts_with</span>(<span class="st">"adm"</span>), <span class="fu">everything</span>())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="mutating-data" class="level2">
+<h2 class="anchored" data-anchor-id="mutating-data">Mutating data</h2>
+<p>The <code>mutate()</code> function is used to create new variables inside a dataset. It does not remove any existing data, so it is common to overwrite the dataset.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb101"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb101-1"><a href="#cb101-1" aria-hidden="true" tabindex="-1"></a>gdis_reduced <span class="ot">&lt;-</span> gdis_reduced <span class="sc">%&gt;%</span></span>
+<span id="cb101-2"><a href="#cb101-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb101-3"><a href="#cb101-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">year_2005plus =</span> year <span class="sc">&gt;=</span> <span class="dv">2005</span></span>
+<span id="cb101-4"><a href="#cb101-4" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="creating-categorical-and-dummy-variables" class="level2">
+<h2 class="anchored" data-anchor-id="creating-categorical-and-dummy-variables">Creating categorical and dummy variables</h2>
+<p>You can create new variables based on conditions using <code>ifelse()</code> or <code>case_when()</code>.</p>
+<p>Create a dummy variable indicating whether the disaster is a flood:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb102"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb102-1"><a href="#cb102-1" aria-hidden="true" tabindex="-1"></a>gdis_reduced <span class="ot">&lt;-</span> gdis_reduced <span class="sc">%&gt;%</span></span>
+<span id="cb102-2"><a href="#cb102-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb102-3"><a href="#cb102-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">flood_bin =</span> <span class="fu">ifelse</span>(disastertype <span class="sc">==</span> <span class="st">"flood"</span>, <span class="dv">1</span>, <span class="dv">0</span>)</span>
+<span id="cb102-4"><a href="#cb102-4" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>You can use <code>case_when()</code> to create a categorical variable with multiple categories.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb103"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb103-1"><a href="#cb103-1" aria-hidden="true" tabindex="-1"></a>gdis <span class="ot">&lt;-</span> gdis <span class="sc">%&gt;%</span></span>
+<span id="cb103-2"><a href="#cb103-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb103-3"><a href="#cb103-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">disaster_group =</span> <span class="fu">case_when</span>(</span>
+<span id="cb103-4"><a href="#cb103-4" aria-hidden="true" tabindex="-1"></a>      disastertype <span class="sc">==</span> <span class="st">"flood"</span>   <span class="sc">~</span> <span class="st">"flood"</span>,</span>
+<span id="cb103-5"><a href="#cb103-5" aria-hidden="true" tabindex="-1"></a>      disastertype <span class="sc">==</span> <span class="st">"storm"</span>   <span class="sc">~</span> <span class="st">"storm"</span>,</span>
+<span id="cb103-6"><a href="#cb103-6" aria-hidden="true" tabindex="-1"></a>      <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">"Other"</span></span>
+<span id="cb103-7"><a href="#cb103-7" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb103-8"><a href="#cb103-8" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="piping-it-all-together" class="level2">
+<h2 class="anchored" data-anchor-id="piping-it-all-together">Piping it all together</h2>
+<p>Using pipes allows us to combine multiple data manipulation steps into a single workflow without creating many intermediate objects.</p>
+<p>Below, we mutate new variables, select a subset of variables, and filter the data — all in one pipeline.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb104"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb104-1"><a href="#cb104-1" aria-hidden="true" tabindex="-1"></a>gdis_flood_pakistan <span class="ot">&lt;-</span> gdis <span class="sc">%&gt;%</span></span>
+<span id="cb104-2"><a href="#cb104-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb104-3"><a href="#cb104-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">flood_bin =</span> <span class="fu">ifelse</span>(<span class="fu">tolower</span>(disastertype) <span class="sc">==</span> <span class="st">"flood"</span>, <span class="dv">1</span>, <span class="dv">0</span>),</span>
+<span id="cb104-4"><a href="#cb104-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">post_2005 =</span> year <span class="sc">&gt;=</span> <span class="dv">2005</span></span>
+<span id="cb104-5"><a href="#cb104-5" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb104-6"><a href="#cb104-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(country, year, adm3, disastertype, flood_bin, post_2005) <span class="sc">%&gt;%</span></span>
+<span id="cb104-7"><a href="#cb104-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(country <span class="sc">==</span> <span class="st">"Pakistan"</span>, flood_bin <span class="sc">==</span> <span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="exercise-3-importing-and-manipulating-disaster-data" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-3-importing-and-manipulating-disaster-data">Exercise 3: Importing and manipulating disaster data</h2>
+<section id="part-1-import-and-inspect-the-data" class="level3">
+<h3 class="anchored" data-anchor-id="part-1-import-and-inspect-the-data">Part 1: Import and inspect the data</h3>
+<ol type="1">
+<li>Download the <code>gdis.csv</code> file and place it in your project folder.</li>
+<li>Import the dataset into R and store it as an object called <code>gdis</code>.</li>
+<li>Print the dataset to the Console.</li>
+<li>Use <code>head()</code> to view the first few rows.</li>
+<li>Use <code>str()</code> to inspect the structure of the dataset.</li>
+<li>Use <code>colnames()</code> to list all variable names.</li>
+</ol>
+<hr>
+</section>
+<section id="part-2-select-relevant-variables" class="level3">
+<h3 class="anchored" data-anchor-id="part-2-select-relevant-variables">Part 2: Select relevant variables</h3>
+<p>The <code>gdis</code> dataset contains many variables. For this exercise, keep only the following variables:</p>
+<ul>
+<li><code>country</code></li>
+<li><code>year</code></li>
+<li><code>adm3</code></li>
+<li><code>disastertype</code></li>
+<li><code>latitude</code></li>
+<li><code>longitude</code></li>
+</ul>
+<ol type="1">
+<li>Use <code>select()</code> with variable names to create a new dataset called <code>gdis_selected</code>.</li>
+<li>Verify that the dataset contains only the selected variables.</li>
+</ol>
+<hr>
+</section>
+<section id="part-3-filter-observations" class="level3">
+<h3 class="anchored" data-anchor-id="part-3-filter-observations">Part 3: Filter observations</h3>
+<p>Now restrict the dataset to a smaller set of observations.</p>
+<ol type="1">
+<li>Filter the data to include only disasters that occurred after the year 2004.</li>
+<li>Further filter the data to include only disasters that occurred in <strong>Bangladesh</strong>.</li>
+<li>Store the filtered dataset as <code>gdis_bangladesh</code>.</li>
+</ol>
+<hr>
+</section>
+<section id="part-4-create-new-variables" class="level3">
+<h3 class="anchored" data-anchor-id="part-4-create-new-variables">Part 4: Create new variables</h3>
+<p>Using <code>mutate()</code>:</p>
+<ol type="1">
+<li>Create a dummy variable called <code>is_drought</code> that equals 1 if the disaster type is a drought and 0 otherwise.</li>
+<li>Create a variable called <code>abs_latitude</code> that stores the absolute value of latitude.</li>
+<li>Create a categorical variable called <code>disaster_group</code> with the following values:
+<ul>
+<li><code>"Flood"</code></li>
+<li><code>"Drought"</code></li>
+<li><code>"Storm"</code></li>
+<li><code>"Other"</code></li>
+</ul></li>
+</ol>
+<hr>
+</section>
+<section id="part-5-pipe-it-all-together" class="level3">
+<h3 class="anchored" data-anchor-id="part-5-pipe-it-all-together">Part 5: Pipe it all together</h3>
+<p>Rewrite Parts 2–4 as a <strong>single pipe</strong> starting from the original <code>gdis</code> dataset.</p>
+<ol type="1">
+<li>Select the relevant variables.</li>
+<li>Filter to disasters in Bangladesh after 2004.</li>
+<li>Create the new variables.</li>
+<li>Store the result as <code>gdis_clean</code>.</li>
+</ol>
+<hr>
+</section>
+<section id="optional-challenge" class="level3">
+<h3 class="anchored" data-anchor-id="optional-challenge">Optional challenge</h3>
+<ol type="1">
+<li>Count how many flood events occurred in Bangladesh after 2004.</li>
+<li>Use <code>table()</code> to see how many observations fall into each <code>disaster_group</code>.</li>
+<li>Add comments explaining what each step of your pipeline does.</li>
+</ol>
+<hr>
+</section>
+</section>
+</section>
+<section id="lesson-4-summarizing-data-grouping-and-aggregation" class="level1">
+<h1>Lesson 4: Summarizing data, grouping, and aggregation</h1>
+<p>Summarizing data is useful when we want to calculate summary statistics such as means, medians, or standard deviations for variables in a dataset.</p>
+<p>As an example, let us load the GED dataset and calculate summary statistics for the number of fatalities per event.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb105"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb105-1"><a href="#cb105-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb105-2"><a href="#cb105-2" aria-hidden="true" tabindex="-1"></a>ged <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"datasets/ged_demo.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Rows: 385918 Columns: 13
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr (4): region, adm_1, adm_2, country
+dbl (9): year, type_of_violence, deaths_a, deaths_b, deaths_civilians, best,...
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb107"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb107-1"><a href="#cb107-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(ged)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "year"             "region"           "type_of_violence" "adm_1"           
+ [5] "adm_2"            "country"          "deaths_a"         "deaths_b"        
+ [9] "deaths_civilians" "best"             "high"             "low"             
+[13] "gwnoa"           </code></pre>
+</div>
+</div>
+<p>We can now calculate the mean, median, and standard deviation of fatalities:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb109"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb109-1"><a href="#cb109-1" aria-hidden="true" tabindex="-1"></a>ged_summary <span class="ot">&lt;-</span> ged <span class="sc">%&gt;%</span></span>
+<span id="cb109-2"><a href="#cb109-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(</span>
+<span id="cb109-3"><a href="#cb109-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean_fatalities =</span> <span class="fu">mean</span>(best, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb109-4"><a href="#cb109-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">median_fatalities =</span> <span class="fu">median</span>(best, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb109-5"><a href="#cb109-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">sd_fatalities =</span> <span class="fu">sd</span>(best, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb109-6"><a href="#cb109-6" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<section id="summarizing-across-multiple-variables" class="level2">
+<h2 class="anchored" data-anchor-id="summarizing-across-multiple-variables">Summarizing across multiple variables</h2>
+<p>If you want the same summary statistic for many variables, you can use <code>across()</code> inside <code>summarize()</code>. You select variables the same way as with <code>select()</code>.</p>
+<p>For example, we can calculate the mean of all variables that start with <code>deaths_</code>:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb110"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb110-1"><a href="#cb110-1" aria-hidden="true" tabindex="-1"></a>deaths_summary <span class="ot">&lt;-</span> ged <span class="sc">%&gt;%</span></span>
+<span id="cb110-2"><a href="#cb110-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(</span>
+<span id="cb110-3"><a href="#cb110-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">across</span>(<span class="fu">starts_with</span>(<span class="st">"deaths_"</span>), <span class="sc">~</span><span class="fu">mean</span>(.x, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span>
+<span id="cb110-4"><a href="#cb110-4" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+</section>
+<section id="grouping-data" class="level1">
+<h1>Grouping data</h1>
+<p>Often when working with conflict data, we want to see how summary statistics vary across different groups. To do this, we group the data before summarizing it using the <code>group_by()</code> function.</p>
+<p>For example, in the GED dataset we may want to compare fatalities across different types of violence. The type of violence is stored in the <code>type_of_violence</code> variable, so we group by this variable before summarizing:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb111"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb111-1"><a href="#cb111-1" aria-hidden="true" tabindex="-1"></a>ged_grouped <span class="ot">&lt;-</span> ged <span class="sc">%&gt;%</span></span>
+<span id="cb111-2"><a href="#cb111-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(type_of_violence) <span class="sc">%&gt;%</span></span>
+<span id="cb111-3"><a href="#cb111-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(</span>
+<span id="cb111-4"><a href="#cb111-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean_fatalities =</span> <span class="fu">mean</span>(best, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb111-5"><a href="#cb111-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">sd_fatalities =</span> <span class="fu">sd</span>(best, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb111-6"><a href="#cb111-6" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb111-7"><a href="#cb111-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb111-8"><a href="#cb111-8" aria-hidden="true" tabindex="-1"></a>ged_grouped</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 3
+  type_of_violence mean_fatalities sd_fatalities
+             &lt;dbl&gt;           &lt;dbl&gt;         &lt;dbl&gt;
+1                1            8.75         356. 
+2                2            7.11          45.1
+3                3           20.0          451. </code></pre>
+</div>
+</div>
+<p>We can also group by more than one variable by listing multiple variables inside <code>group_by()</code>. For example, in the GED dataset we may want to summarize fatalities by both region and type of violence.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb113"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb113-1"><a href="#cb113-1" aria-hidden="true" tabindex="-1"></a>ged <span class="sc">%&gt;%</span></span>
+<span id="cb113-2"><a href="#cb113-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(region, type_of_violence) <span class="sc">%&gt;%</span></span>
+<span id="cb113-3"><a href="#cb113-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(</span>
+<span id="cb113-4"><a href="#cb113-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean_fatalities =</span> <span class="fu">mean</span>(best, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb113-5"><a href="#cb113-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">sd_fatalities =</span> <span class="fu">sd</span>(best, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb113-6"><a href="#cb113-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">n =</span> <span class="fu">n</span>()</span>
+<span id="cb113-7"><a href="#cb113-7" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`summarise()` has grouped output by 'region'. You can override using the
+`.groups` argument.</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 15 × 5
+# Groups:   region [5]
+   region      type_of_violence mean_fatalities sd_fatalities      n
+   &lt;chr&gt;                  &lt;dbl&gt;           &lt;dbl&gt;         &lt;dbl&gt;  &lt;int&gt;
+ 1 Africa                     1           25.5          986.   33487
+ 2 Africa                     2           13.2           60.9  10418
+ 3 Africa                     3           42.8          701.   24449
+ 4 Americas                   1            5.84          34.6   7088
+ 5 Americas                   2            5.45          46.9  30400
+ 6 Americas                   3            2.40          27.2  11396
+ 7 Asia                       1            6.41          32.0  80305
+ 8 Asia                       2            9.74          36.4   2234
+ 9 Asia                       3            3.62          33.1  15340
+10 Europe                     1            7.42         116.   47078
+11 Europe                     2            5.99          18.3    457
+12 Europe                     3           20.1          269.    1051
+13 Middle East                1            5.94         102.  103373
+14 Middle East                2            5.49          16.2  11473
+15 Middle East                3            5.91          23.6   7369</code></pre>
+</div>
+</div>
+<section id="aggregation" class="level2">
+<h2 class="anchored" data-anchor-id="aggregation">Aggregation</h2>
+<p>Aggregation means moving from a more detailed unit of analysis to a more coarse one. In practice, this is done by grouping the data and then summarizing it. When we aggregate data, each row in the resulting dataset represents a group rather than an individual observation.</p>
+<p>For example, suppose we want to create a country-year dataset that contains: - the total number of fatalities - the number of conflict events - separated by type of violence</p>
+<p>We can do this by grouping by <code>country</code>, <code>year</code>, and <code>type_of_violence</code>, and then summarizing:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb116"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb116-1"><a href="#cb116-1" aria-hidden="true" tabindex="-1"></a>ged_country_year <span class="ot">&lt;-</span> ged <span class="sc">%&gt;%</span></span>
+<span id="cb116-2"><a href="#cb116-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(country, year, type_of_violence) <span class="sc">%&gt;%</span></span>
+<span id="cb116-3"><a href="#cb116-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(</span>
+<span id="cb116-4"><a href="#cb116-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">total_fatalities =</span> <span class="fu">sum</span>(best, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb116-5"><a href="#cb116-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">n_events =</span> <span class="fu">n</span>()</span>
+<span id="cb116-6"><a href="#cb116-6" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb116-7"><a href="#cb116-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`summarise()` has grouped output by 'country', 'year'. You can override using
+the `.groups` argument.</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb118"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb118-1"><a href="#cb118-1" aria-hidden="true" tabindex="-1"></a>ged_country_year</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3,834 × 5
+   country      year type_of_violence total_fatalities n_events
+   &lt;chr&gt;       &lt;dbl&gt;            &lt;dbl&gt;            &lt;dbl&gt;    &lt;int&gt;
+ 1 Afghanistan  1989                1             5174      137
+ 2 Afghanistan  1989                2              237        8
+ 3 Afghanistan  1990                1             1478       39
+ 4 Afghanistan  1990                2               36        6
+ 5 Afghanistan  1991                1             3302       60
+ 6 Afghanistan  1991                2              251        4
+ 7 Afghanistan  1992                1             4287       69
+ 8 Afghanistan  1992                2               90        3
+ 9 Afghanistan  1992                3                8        4
+10 Afghanistan  1993                1             4071      105
+# ℹ 3,824 more rows</code></pre>
+</div>
+</div>
+</section>
+<section id="group-manipulation" class="level2">
+<h2 class="anchored" data-anchor-id="group-manipulation">Group manipulation</h2>
+<p>A common example is creating lagged variables. For instance, when analyzing conflict intensity, we may want to control for the number of fatalities in the previous year. To do this, we use the <code>lag()</code> function.</p>
+<p>For example, suppose we have a country-year version of the GED data and want to create a lagged fatalities variable:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb120"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb120-1"><a href="#cb120-1" aria-hidden="true" tabindex="-1"></a>ged_country_year <span class="ot">&lt;-</span> ged_country_year <span class="sc">%&gt;%</span></span>
+<span id="cb120-2"><a href="#cb120-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(country) <span class="sc">%&gt;%</span></span>
+<span id="cb120-3"><a href="#cb120-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">lagged_fatalities =</span> <span class="fu">lag</span>(total_fatalities)) <span class="sc">%&gt;%</span></span>
+<span id="cb120-4"><a href="#cb120-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>()</span>
+<span id="cb120-5"><a href="#cb120-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-6"><a href="#cb120-6" aria-hidden="true" tabindex="-1"></a>ged_country_year</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3,834 × 6
+   country     year type_of_violence total_fatalities n_events lagged_fatalities
+   &lt;chr&gt;      &lt;dbl&gt;            &lt;dbl&gt;            &lt;dbl&gt;    &lt;int&gt;             &lt;dbl&gt;
+ 1 Afghanist…  1989                1             5174      137                NA
+ 2 Afghanist…  1989                2              237        8              5174
+ 3 Afghanist…  1990                1             1478       39               237
+ 4 Afghanist…  1990                2               36        6              1478
+ 5 Afghanist…  1991                1             3302       60                36
+ 6 Afghanist…  1991                2              251        4              3302
+ 7 Afghanist…  1992                1             4287       69               251
+ 8 Afghanist…  1992                2               90        3              4287
+ 9 Afghanist…  1992                3                8        4                90
+10 Afghanist…  1993                1             4071      105                 8
+# ℹ 3,824 more rows</code></pre>
+</div>
+</div>
+<p>To ensure that the lagged values are meaningful:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb122"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb122-1"><a href="#cb122-1" aria-hidden="true" tabindex="-1"></a>ged_cy_tv1 <span class="ot">&lt;-</span> ged_country_year <span class="sc">%&gt;%</span></span>
+<span id="cb122-2"><a href="#cb122-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(type_of_violence <span class="sc">==</span> <span class="dv">1</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb122-3"><a href="#cb122-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(country) <span class="sc">%&gt;%</span></span>
+<span id="cb122-4"><a href="#cb122-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">lagged_fatalities =</span> <span class="fu">lag</span>(total_fatalities)) <span class="sc">%&gt;%</span></span>
+<span id="cb122-5"><a href="#cb122-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>()</span>
+<span id="cb122-6"><a href="#cb122-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb122-7"><a href="#cb122-7" aria-hidden="true" tabindex="-1"></a>ged_cy_tv1</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1,481 × 6
+   country     year type_of_violence total_fatalities n_events lagged_fatalities
+   &lt;chr&gt;      &lt;dbl&gt;            &lt;dbl&gt;            &lt;dbl&gt;    &lt;int&gt;             &lt;dbl&gt;
+ 1 Afghanist…  1989                1             5174      137                NA
+ 2 Afghanist…  1990                1             1478       39              5174
+ 3 Afghanist…  1991                1             3302       60              1478
+ 4 Afghanist…  1992                1             4287       69              3302
+ 5 Afghanist…  1993                1             4071      105              4287
+ 6 Afghanist…  1994                1             8937      234              4071
+ 7 Afghanist…  1995                1             5499      208              8937
+ 8 Afghanist…  1996                1             3177      221              5499
+ 9 Afghanist…  1997                1             6396      195              3177
+10 Afghanist…  1998                1             6256      194              6396
+# ℹ 1,471 more rows</code></pre>
+</div>
+</div>
+</section>
+<section id="re-shaping-data" class="level2">
+<h2 class="anchored" data-anchor-id="re-shaping-data">Re-shaping data</h2>
+<p>So far, we have mostly worked with tidy datasets. Tidy data follow three principles:</p>
+<ul>
+<li>Each variable has its own column<br>
+</li>
+<li>Each observation has its own row<br>
+</li>
+<li>Each value has its own cell</li>
+</ul>
+<p>Not all datasets come tidy. For example, the <code>net_migration</code> dataset stores yearly values as separate columns:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb124"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb124-1"><a href="#cb124-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb124-2"><a href="#cb124-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb124-3"><a href="#cb124-3" aria-hidden="true" tabindex="-1"></a>net_migration <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"datasets/Kummu_net_migration.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>New names:
+Rows: 42621 Columns: 27
+── Column specification
+──────────────────────────────────────────────────────── Delimiter: "," chr
+(6): Country, iso3, GID_1, NAME_1, GID_2, NAME_2 dbl (21): ...1, 2000, 2001,
+2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, ...
+ℹ Use `spec()` to retrieve the full column specification for this data. ℹ
+Specify the column types or set `show_col_types = FALSE` to quiet this message.
+• `` -&gt; `...1`</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb126"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb126-1"><a href="#cb126-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(net_migration)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "...1"    "Country" "iso3"    "GID_1"   "NAME_1"  "GID_2"   "NAME_2" 
+ [8] "2000"    "2001"    "2002"    "2003"    "2004"    "2005"    "2006"   
+[15] "2007"    "2008"    "2009"    "2010"    "2011"    "2012"    "2013"   
+[22] "2014"    "2015"    "2016"    "2017"    "2018"    "2019"   </code></pre>
+</div>
+</div>
+</section>
+<section id="making-data-tidy-by-pivoting" class="level2">
+<h2 class="anchored" data-anchor-id="making-data-tidy-by-pivoting">Making data tidy by pivoting</h2>
+<p>Data are too wide when information that should be stored as values is instead stored across multiple columns. To fix these problems, we reshape the data using pivoting.</p>
+<p>The tidyverse provides two functions for this purpose: <code>pivot_longer()</code> and <code>pivot_wider()</code>. These functions allow us to convert data between wide and long formats so that each variable has its own column and each observation its own row.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb128"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb128-1"><a href="#cb128-1" aria-hidden="true" tabindex="-1"></a>net_migration_long <span class="ot">&lt;-</span> net_migration <span class="sc">%&gt;%</span></span>
+<span id="cb128-2"><a href="#cb128-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(</span>
+<span id="cb128-3"><a href="#cb128-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">cols =</span> <span class="st">`</span><span class="at">2000</span><span class="st">`</span><span class="sc">:</span><span class="st">`</span><span class="at">2019</span><span class="st">`</span>,</span>
+<span id="cb128-4"><a href="#cb128-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">names_to =</span> <span class="st">"year"</span>,</span>
+<span id="cb128-5"><a href="#cb128-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">values_to =</span> <span class="st">"net_migration"</span></span>
+<span id="cb128-6"><a href="#cb128-6" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb128-7"><a href="#cb128-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb128-8"><a href="#cb128-8" aria-hidden="true" tabindex="-1"></a>net_migration_long</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 852,420 × 9
+    ...1 Country     iso3  GID_1   NAME_1     GID_2   NAME_2 year  net_migration
+   &lt;dbl&gt; &lt;chr&gt;       &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;      &lt;chr&gt;   &lt;chr&gt;  &lt;chr&gt;         &lt;dbl&gt;
+ 1     1 Afghanistan AFG   AFG.1_1 Badakhshan AFG.1.… Bahar… 2000          12.9 
+ 2     1 Afghanistan AFG   AFG.1_1 Badakhshan AFG.1.… Bahar… 2001          37.5 
+ 3     1 Afghanistan AFG   AFG.1_1 Badakhshan AFG.1.… Bahar… 2002          22.5 
+ 4     1 Afghanistan AFG   AFG.1_1 Badakhshan AFG.1.… Bahar… 2003          26.7 
+ 5     1 Afghanistan AFG   AFG.1_1 Badakhshan AFG.1.… Bahar… 2004          20.1 
+ 6     1 Afghanistan AFG   AFG.1_1 Badakhshan AFG.1.… Bahar… 2005          12.4 
+ 7     1 Afghanistan AFG   AFG.1_1 Badakhshan AFG.1.… Bahar… 2006           9.15
+ 8     1 Afghanistan AFG   AFG.1_1 Badakhshan AFG.1.… Bahar… 2007           8.77
+ 9     1 Afghanistan AFG   AFG.1_1 Badakhshan AFG.1.… Bahar… 2008           5.17
+10     1 Afghanistan AFG   AFG.1_1 Badakhshan AFG.1.… Bahar… 2009           6.46
+# ℹ 852,410 more rows</code></pre>
+</div>
+</div>
+<p>We can now see that the data are tidy. Each row corresponds to a single observation.</p>
+<p>Note, however, that the <code>year</code> variable is still stored as a character variable.</p>
+<p>We can fix this using the <code>as.numeric()</code> function:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb130"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb130-1"><a href="#cb130-1" aria-hidden="true" tabindex="-1"></a>net_migration_long <span class="ot">&lt;-</span> net_migration_long <span class="sc">%&gt;%</span></span>
+<span id="cb130-2"><a href="#cb130-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">year =</span> <span class="fu">as.numeric</span>(year))</span>
+<span id="cb130-3"><a href="#cb130-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb130-4"><a href="#cb130-4" aria-hidden="true" tabindex="-1"></a>net_migration_long</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 852,420 × 9
+    ...1 Country     iso3  GID_1   NAME_1     GID_2   NAME_2  year net_migration
+   &lt;dbl&gt; &lt;chr&gt;       &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;      &lt;chr&gt;   &lt;chr&gt;  &lt;dbl&gt;         &lt;dbl&gt;
+ 1     1 Afghanistan AFG   AFG.1_1 Badakhshan AFG.1.… Bahar…  2000         12.9 
+ 2     1 Afghanistan AFG   AFG.1_1 Badakhshan AFG.1.… Bahar…  2001         37.5 
+ 3     1 Afghanistan AFG   AFG.1_1 Badakhshan AFG.1.… Bahar…  2002         22.5 
+ 4     1 Afghanistan AFG   AFG.1_1 Badakhshan AFG.1.… Bahar…  2003         26.7 
+ 5     1 Afghanistan AFG   AFG.1_1 Badakhshan AFG.1.… Bahar…  2004         20.1 
+ 6     1 Afghanistan AFG   AFG.1_1 Badakhshan AFG.1.… Bahar…  2005         12.4 
+ 7     1 Afghanistan AFG   AFG.1_1 Badakhshan AFG.1.… Bahar…  2006          9.15
+ 8     1 Afghanistan AFG   AFG.1_1 Badakhshan AFG.1.… Bahar…  2007          8.77
+ 9     1 Afghanistan AFG   AFG.1_1 Badakhshan AFG.1.… Bahar…  2008          5.17
+10     1 Afghanistan AFG   AFG.1_1 Badakhshan AFG.1.… Bahar…  2009          6.46
+# ℹ 852,410 more rows</code></pre>
+</div>
+</div>
+</section>
+<section id="from-long-to-wide-and-wide-to-long" class="level2">
+<h2 class="anchored" data-anchor-id="from-long-to-wide-and-wide-to-long">From long to wide and wide to long</h2>
+<p>The two functions <code>pivot_longer()</code> and <code>pivot_wider()</code> are inverses of each other, meaning that one can undo the operation of the other.</p>
+<p>For example, we first pivot the <code>net_migration</code> data from wide to long format.</p>
+<p>Now suppose we want to return the data to a wide format, with one column per year. We can do this using pivot_wider():</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb132"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb132-1"><a href="#cb132-1" aria-hidden="true" tabindex="-1"></a>net_migration_wide <span class="ot">&lt;-</span> net_migration_long <span class="sc">%&gt;%</span></span>
+<span id="cb132-2"><a href="#cb132-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(</span>
+<span id="cb132-3"><a href="#cb132-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">names_from =</span> year,</span>
+<span id="cb132-4"><a href="#cb132-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">values_from =</span> net_migration</span>
+<span id="cb132-5"><a href="#cb132-5" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb132-6"><a href="#cb132-6" aria-hidden="true" tabindex="-1"></a>net_migration_wide</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 42,621 × 27
+    ...1 Country     iso3  GID_1 NAME_1 GID_2 NAME_2 `2000` `2001` `2002` `2003`
+   &lt;dbl&gt; &lt;chr&gt;       &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;  &lt;chr&gt; &lt;chr&gt;   &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;
+ 1     1 Afghanistan AFG   AFG.… Badak… AFG.… Bahar…  12.9   37.5    22.5   26.7
+ 2     2 Afghanistan AFG   AFG.… Badak… AFG.… Darwaz  19.4   17.2    45.0   28.8
+ 3     3 Afghanistan AFG   AFG.… Badak… AFG.… Fayza…  26.5   25.9    30.7   23.6
+ 4     4 Afghanistan AFG   AFG.… Badak… AFG.… Ishka… -38.9   47.3    44.6   24.8
+ 5     5 Afghanistan AFG   AFG.… Badak… AFG.… Jurm    27.4   27.0    34.5   25.1
+ 6     6 Afghanistan AFG   AFG.… Badak… AFG.… Khwah…   5.90  32.7    34.2   37.0
+ 7     7 Afghanistan AFG   AFG.… Badak… AFG.… Kishim  15.7   25.9    29.7   28.0
+ 8     8 Afghanistan AFG   AFG.… Badak… AFG.… Kuran…  52.1   19.1    29.3   43.0
+ 9     9 Afghanistan AFG   AFG.… Badak… AFG.… Ragh    28.0   24.3    29.9   26.2
+10    10 Afghanistan AFG   AFG.… Badak… AFG.… Shahr…  -8.80   8.38   40.5   34.5
+# ℹ 42,611 more rows
+# ℹ 16 more variables: `2004` &lt;dbl&gt;, `2005` &lt;dbl&gt;, `2006` &lt;dbl&gt;, `2007` &lt;dbl&gt;,
+#   `2008` &lt;dbl&gt;, `2009` &lt;dbl&gt;, `2010` &lt;dbl&gt;, `2011` &lt;dbl&gt;, `2012` &lt;dbl&gt;,
+#   `2013` &lt;dbl&gt;, `2014` &lt;dbl&gt;, `2015` &lt;dbl&gt;, `2016` &lt;dbl&gt;, `2017` &lt;dbl&gt;,
+#   `2018` &lt;dbl&gt;, `2019` &lt;dbl&gt;</code></pre>
+</div>
+</div>
+<p>Note that while the datasets now contain the same information, the variables may not be ordered in the same way.</p>
+<p>We can change this either by reordering variables manually using <code>select()</code>, or by using the <code>names_sort</code> argument inside <code>pivot_wider()</code>.</p>
+<p>For example, we can ensure that the year variables are ordered numerically when pivoting wider:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb134"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb134-1"><a href="#cb134-1" aria-hidden="true" tabindex="-1"></a>net_migration_long_sorted <span class="ot">&lt;-</span> net_migration_wide <span class="sc">%&gt;%</span></span>
+<span id="cb134-2"><a href="#cb134-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(</span>
+<span id="cb134-3"><a href="#cb134-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">cols =</span> <span class="sc">-</span><span class="fu">c</span>(Country, iso3, GID_1, NAME_1, GID_2, NAME_2),</span>
+<span id="cb134-4"><a href="#cb134-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">names_to =</span> <span class="st">"year"</span>,</span>
+<span id="cb134-5"><a href="#cb134-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">values_to =</span> <span class="st">"net_migration"</span></span>
+<span id="cb134-6"><a href="#cb134-6" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb134-7"><a href="#cb134-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb134-8"><a href="#cb134-8" aria-hidden="true" tabindex="-1"></a>net_migration_long_sorted</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 895,041 × 8
+   Country     iso3  GID_1   NAME_1     GID_2     NAME_2  year  net_migration
+   &lt;chr&gt;       &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;      &lt;chr&gt;     &lt;chr&gt;   &lt;chr&gt;         &lt;dbl&gt;
+ 1 Afghanistan AFG   AFG.1_1 Badakhshan AFG.1.1_1 Baharak ...1           1   
+ 2 Afghanistan AFG   AFG.1_1 Badakhshan AFG.1.1_1 Baharak 2000          12.9 
+ 3 Afghanistan AFG   AFG.1_1 Badakhshan AFG.1.1_1 Baharak 2001          37.5 
+ 4 Afghanistan AFG   AFG.1_1 Badakhshan AFG.1.1_1 Baharak 2002          22.5 
+ 5 Afghanistan AFG   AFG.1_1 Badakhshan AFG.1.1_1 Baharak 2003          26.7 
+ 6 Afghanistan AFG   AFG.1_1 Badakhshan AFG.1.1_1 Baharak 2004          20.1 
+ 7 Afghanistan AFG   AFG.1_1 Badakhshan AFG.1.1_1 Baharak 2005          12.4 
+ 8 Afghanistan AFG   AFG.1_1 Badakhshan AFG.1.1_1 Baharak 2006           9.15
+ 9 Afghanistan AFG   AFG.1_1 Badakhshan AFG.1.1_1 Baharak 2007           8.77
+10 Afghanistan AFG   AFG.1_1 Badakhshan AFG.1.1_1 Baharak 2008           5.17
+# ℹ 895,031 more rows</code></pre>
+</div>
+</div>
+</section>
+<section id="exercise-4-summarizing-grouping-and-aggregating-urban-protest-data" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-4-summarizing-grouping-and-aggregating-urban-protest-data">Exercise 4: Summarizing, grouping, and aggregating urban protest data</h2>
+<p>In this exercise, you will work with a city-year dataset on urban protests, stored as USD 20 Data/cityyear.xlsx.</p>
+<hr>
+<section id="part-1-import-and-inspect-the-data-1" class="level3">
+<h3 class="anchored" data-anchor-id="part-1-import-and-inspect-the-data-1">Part 1: Import and inspect the data</h3>
+<ol type="1">
+<li><p>Import the dataset into R and store it as an object called <code>cityyear</code>.</p></li>
+<li><p>Print the dataset to the Console.</p></li>
+<li><p>Use <code>head()</code> to view the first few rows.</p></li>
+<li><p>Use <code>str()</code> to inspect the structure of the data.</p></li>
+<li><p>Use <code>colnames()</code> to list all variable names.</p></li>
+</ol>
+</section>
+<section id="part-2-overall-summaries" class="level3">
+<h3 class="anchored" data-anchor-id="part-2-overall-summaries">Part 2: Overall summaries</h3>
+<p>The dataset contains information on protest activity at the city-year level.</p>
+<ol type="1">
+<li><p>Use <code>summarize()</code> to calculate:</p>
+<ul>
+<li>the mean number of protest events (<code>NEVENTS</code>)</li>
+<li>the mean number of deadly events (<code>DEATHEVENTS</code>)</li>
+<li>the mean number of non-deadly events (<code>NODEATHEVENTS</code>)</li>
+</ul></li>
+<li><p>Store the result as an object called <code>event_summary</code> and print it.</p></li>
+</ol>
+</section>
+<section id="part-3-grouped-summaries-by-region" class="level3">
+<h3 class="anchored" data-anchor-id="part-3-grouped-summaries-by-region">Part 3: Grouped summaries by region</h3>
+<p>Now examine how protest activity varies across regions.</p>
+<ol type="1">
+<li>Group the data by region.</li>
+<li>For each region, calculate:
+<ul>
+<li>the mean number of protest events</li>
+<li>the standard deviation of protest events</li>
+<li>the number of city-year observations</li>
+</ul></li>
+<li>Store the result as <code>region_summary</code> and print it.</li>
+</ol>
+<hr>
+</section>
+<section id="part-4-aggregation-to-country-year-level" class="level3">
+<h3 class="anchored" data-anchor-id="part-4-aggregation-to-country-year-level">Part 4: Aggregation to country-year level</h3>
+<p>The data are currently at the city-year level. In this part, you will aggregate the data to the country-year level.</p>
+<ol type="1">
+<li><p>Group the data by country and year.</p></li>
+<li><p>Aggregate the data to calculate:</p>
+<ul>
+<li>total number of protest events (<code>NEVENTS</code>)</li>
+<li>total number of deadly events (<code>DEATHEVENTS</code>)</li>
+<li>total number of non-deadly events (<code>NODEATHEVENTS</code>)</li>
+<li>number of cities observed per country-year</li>
+</ul></li>
+<li><p>Store the result as <code>countryyear</code>.</p></li>
+<li><p>Ungroup and print the dataset.</p></li>
+</ol>
+</section>
+<section id="part-5-group-manipulation-and-lagged-variables" class="level3">
+<h3 class="anchored" data-anchor-id="part-5-group-manipulation-and-lagged-variables">Part 5: Group manipulation and lagged variables</h3>
+<p>We now treat the country-year dataset as panel data.</p>
+<ol type="1">
+<li>Group <code>countryyear</code> by country.</li>
+<li>Create a lagged variable called <code>lag_nevents</code> that contains the number of protest events in the previous year.</li>
+<li>Ungroup the data.</li>
+<li>Print the resulting dataset.</li>
+</ol>
+<hr>
+</section>
+<section id="optional-if-you-finish-early" class="level3">
+<h3 class="anchored" data-anchor-id="optional-if-you-finish-early">Optional if you finish early</h3>
+<ol type="1">
+<li>Restrict the country-year dataset to a single region of your choice.</li>
+<li>Identify the country-year with the highest number of protest events in that region.</li>
+<li>Add comments explaining what each step of your pipeline does.</li>
+</ol>
+<hr>
+</section>
+</section>
+</section>
+<section id="lesson-5-merging-data" class="level1">
+<h1>Lesson 5: Merging data</h1>
+<p>Now that we know how to import data, aggregate data, and reshape data, we turn to merging data.</p>
+<p>Often, we want to combine information from different datasets in order to analyze multiple processes at the same time. As long as the data are tidy and share the same unit of analysis, merging is straightforward. Problems arise when datasets are measured at different levels or use different identifiers.</p>
+<p>In the examples below, we use two event-level datasets: - <strong>GDIS</strong>, which contains information on disaster events - <strong>GED</strong>, which contains information on conflict events</p>
+<p>Before merging, it is always good practice to inspect the variables in each dataset:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb136"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb136-1"><a href="#cb136-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(gdis)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "id"             "country"        "iso3"           "gwno"          
+ [5] "year"           "geo_id"         "geolocation"    "level"         
+ [9] "adm1"           "adm2"           "adm3"           "location"      
+[13] "historical"     "hist_country"   "disastertype"   "disasterno"    
+[17] "latitude"       "longitude"      "disaster_group"</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb138"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb138-1"><a href="#cb138-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(ged)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "year"             "region"           "type_of_violence" "adm_1"           
+ [5] "adm_2"            "country"          "deaths_a"         "deaths_b"        
+ [9] "deaths_civilians" "best"             "high"             "low"             
+[13] "gwnoa"           </code></pre>
+</div>
+</div>
+<section id="aggregating-to-a-common-unit-of-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="aggregating-to-a-common-unit-of-analysis">Aggregating to a common unit of analysis</h2>
+<p>First, we aggregate the GDIS data to count disaster events per country-year:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb140"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb140-1"><a href="#cb140-1" aria-hidden="true" tabindex="-1"></a>gdis_cy <span class="ot">&lt;-</span> gdis <span class="sc">%&gt;%</span></span>
+<span id="cb140-2"><a href="#cb140-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(gwno, year) <span class="sc">%&gt;%</span></span>
+<span id="cb140-3"><a href="#cb140-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(</span>
+<span id="cb140-4"><a href="#cb140-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">n_disasters =</span> <span class="fu">n</span>()</span>
+<span id="cb140-5"><a href="#cb140-5" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb140-6"><a href="#cb140-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`summarise()` has grouped output by 'gwno'. You can override using the
+`.groups` argument.</code></pre>
+</div>
+</div>
+<p>Next, we aggregate the GED data to summarize conflict events and fatalities per country-year:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb142"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb142-1"><a href="#cb142-1" aria-hidden="true" tabindex="-1"></a>ged_cy <span class="ot">&lt;-</span> ged <span class="sc">%&gt;%</span></span>
+<span id="cb142-2"><a href="#cb142-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(gwnoa, year) <span class="sc">%&gt;%</span></span>
+<span id="cb142-3"><a href="#cb142-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(</span>
+<span id="cb142-4"><a href="#cb142-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">n_conflict_events =</span> <span class="fu">n</span>(),</span>
+<span id="cb142-5"><a href="#cb142-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">total_fatalities =</span> <span class="fu">sum</span>(best, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb142-6"><a href="#cb142-6" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb142-7"><a href="#cb142-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`summarise()` has grouped output by 'gwnoa'. You can override using the
+`.groups` argument.</code></pre>
+</div>
+</div>
+</section>
+<section id="merging-datasets" class="level2">
+<h2 class="anchored" data-anchor-id="merging-datasets">Merging datasets</h2>
+<p>Before aggregating and merging, we need to make sure that the merge keys have the same names in both datasets. In GDIS, the country identifier is stored as <code>gwno</code>, while in GED it is stored as <code>gwnoa</code>.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb144"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb144-1"><a href="#cb144-1" aria-hidden="true" tabindex="-1"></a>ged_cy <span class="ot">&lt;-</span> ged_cy <span class="sc">%&gt;%</span></span>
+<span id="cb144-2"><a href="#cb144-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">gwno =</span> gwnoa)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>We can now safely merge the two datasets using a left_join():</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb145"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb145-1"><a href="#cb145-1" aria-hidden="true" tabindex="-1"></a>countryyear_merged <span class="ot">&lt;-</span> gdis_cy <span class="sc">%&gt;%</span></span>
+<span id="cb145-2"><a href="#cb145-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(ged_cy, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"gwno"</span>, <span class="st">"year"</span>))</span>
+<span id="cb145-3"><a href="#cb145-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb145-4"><a href="#cb145-4" aria-hidden="true" tabindex="-1"></a>countryyear_merged</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1,949 × 5
+    gwno  year n_disasters n_conflict_events total_fatalities
+   &lt;dbl&gt; &lt;dbl&gt;       &lt;int&gt;             &lt;int&gt;            &lt;dbl&gt;
+ 1     2  2000          77                 1               19
+ 2     2  2001         119                41             1583
+ 3     2  2002         233                62              880
+ 4     2  2003         300                13               65
+ 5     2  2004         118                88              378
+ 6     2  2005          70                48              108
+ 7     2  2006          96                29              246
+ 8     2  2007         138                31              186
+ 9     2  2008         139                47              291
+10     2  2009          81                53              493
+# ℹ 1,939 more rows</code></pre>
+</div>
+</div>
+</section>
+<section id="keys" class="level2">
+<h2 class="anchored" data-anchor-id="keys">Keys</h2>
+<p>To merge tidy datasets, we need to identify variables that uniquely match observations across datasets. These variables are called “keys”.</p>
+<p>The choice of keys depends on the unit of analysis of the data. For example: - event-level data may use an event ID and year as keys<br>
+- country-year data typically use country and year<br>
+- country-level data use a country identifier only</p>
+<p>For a merge to work correctly, the key variables must match exactly across datasets.</p>
+</section>
+<section id="the-_join-functions" class="level2">
+<h2 class="anchored" data-anchor-id="the-_join-functions">The <code>_join()</code> functions</h2>
+<p>Once we have identified the key variables that match observations across datasets, we can merge them using the <code>_join()</code> functions. There are four main join functions, which differ only in which observations are kept:</p>
+<ul>
+<li><code>inner_join()</code> keeps only observations present in both datasets<br>
+</li>
+<li><code>left_join()</code> keeps all observations from the first dataset<br>
+</li>
+<li><code>right_join()</code> keeps all observations from the second dataset<br>
+</li>
+<li><code>full_join()</code> keeps all observations from either dataset</li>
+</ul>
+<p>If the key variables have different names, or if variables share names but are not keys, we must specify the matching variables explicitly using the <code>by</code> argument.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb147"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb147-1"><a href="#cb147-1" aria-hidden="true" tabindex="-1"></a>gdis_inner_join <span class="ot">&lt;-</span> <span class="fu">inner_join</span>(gdis_cy, ged_cy, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"gwno"</span>, <span class="st">"year"</span>))</span>
+<span id="cb147-2"><a href="#cb147-2" aria-hidden="true" tabindex="-1"></a>gdis_left_join  <span class="ot">&lt;-</span> <span class="fu">left_join</span>(gdis_cy,  ged_cy, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"gwno"</span>, <span class="st">"year"</span>))</span>
+<span id="cb147-3"><a href="#cb147-3" aria-hidden="true" tabindex="-1"></a>gdis_right_join <span class="ot">&lt;-</span> <span class="fu">right_join</span>(gdis_cy, ged_cy, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"gwno"</span>, <span class="st">"year"</span>))</span>
+<span id="cb147-4"><a href="#cb147-4" aria-hidden="true" tabindex="-1"></a>gdis_full_join  <span class="ot">&lt;-</span> <span class="fu">full_join</span>(gdis_cy,  ged_cy, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"gwno"</span>, <span class="st">"year"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>To compare how many rows each join keeps:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb148"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb148-1"><a href="#cb148-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nrow</span>(gdis_inner_join)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 655</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb150"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb150-1"><a href="#cb150-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nrow</span>(gdis_left_join)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1949</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb152"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb152-1"><a href="#cb152-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nrow</span>(gdis_right_join)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1729</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb154"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb154-1"><a href="#cb154-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nrow</span>(gdis_full_join)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 3023</code></pre>
+</div>
+</div>
+</section>
+<section id="joining-on-different-levels-of-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="joining-on-different-levels-of-analysis">Joining on different levels of analysis</h2>
+<p>Here, we aggregate: - GDIS to an admin1–year level (more detailed) - GED to a country–year level (more aggregated)</p>
+<p>Then we merge the GED country-year information onto each admin1–year observation in GDIS.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb156"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb156-1"><a href="#cb156-1" aria-hidden="true" tabindex="-1"></a>gdis_admin1_y <span class="ot">&lt;-</span> gdis <span class="sc">%&gt;%</span></span>
+<span id="cb156-2"><a href="#cb156-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(<span class="at">gwnoa =</span> gwno) <span class="sc">%&gt;%</span></span>
+<span id="cb156-3"><a href="#cb156-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(gwnoa, year, adm1) <span class="sc">%&gt;%</span></span>
+<span id="cb156-4"><a href="#cb156-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(</span>
+<span id="cb156-5"><a href="#cb156-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">n_disasters =</span> <span class="fu">n</span>(),</span>
+<span id="cb156-6"><a href="#cb156-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">.groups =</span> <span class="st">"drop"</span></span>
+<span id="cb156-7"><a href="#cb156-7" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb156-8"><a href="#cb156-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb156-9"><a href="#cb156-9" aria-hidden="true" tabindex="-1"></a>gdis_admin1_y</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 16,220 × 4
+   gwnoa  year adm1        n_disasters
+   &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;             &lt;int&gt;
+ 1     2  2000 Alabama               5
+ 2     2  2000 Arkansas              1
+ 3     2  2000 California            3
+ 4     2  2000 Colorado              1
+ 5     2  2000 Connecticut           1
+ 6     2  2000 Florida               7
+ 7     2  2000 Georgia               5
+ 8     2  2000 Hawaii                1
+ 9     2  2000 Iowa                  1
+10     2  2000 Kentucky              2
+# ℹ 16,210 more rows</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb158"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb158-1"><a href="#cb158-1" aria-hidden="true" tabindex="-1"></a>ged_country_y <span class="ot">&lt;-</span> ged <span class="sc">%&gt;%</span></span>
+<span id="cb158-2"><a href="#cb158-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(gwnoa, year) <span class="sc">%&gt;%</span></span>
+<span id="cb158-3"><a href="#cb158-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(</span>
+<span id="cb158-4"><a href="#cb158-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">n_conflict_events =</span> <span class="fu">n</span>(),</span>
+<span id="cb158-5"><a href="#cb158-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">total_fatalities =</span> <span class="fu">sum</span>(best, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb158-6"><a href="#cb158-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">.groups =</span> <span class="st">"drop"</span></span>
+<span id="cb158-7"><a href="#cb158-7" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb158-8"><a href="#cb158-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb158-9"><a href="#cb158-9" aria-hidden="true" tabindex="-1"></a>ged_country_y</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1,729 × 4
+   gwnoa  year n_conflict_events total_fatalities
+   &lt;dbl&gt; &lt;dbl&gt;             &lt;int&gt;            &lt;dbl&gt;
+ 1     2  2000                 1               19
+ 2     2  2001                41             1583
+ 3     2  2002                62              880
+ 4     2  2003                13               65
+ 5     2  2004                88              378
+ 6     2  2005                48              108
+ 7     2  2006                29              246
+ 8     2  2007                31              186
+ 9     2  2008                47              291
+10     2  2009                53              493
+# ℹ 1,719 more rows</code></pre>
+</div>
+</div>
+<p>Join different levels:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb160"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb160-1"><a href="#cb160-1" aria-hidden="true" tabindex="-1"></a>gdis_admin1_with_ged <span class="ot">&lt;-</span> gdis_admin1_y <span class="sc">%&gt;%</span></span>
+<span id="cb160-2"><a href="#cb160-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(ged_country_y, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"gwnoa"</span>, <span class="st">"year"</span>))</span>
+<span id="cb160-3"><a href="#cb160-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb160-4"><a href="#cb160-4" aria-hidden="true" tabindex="-1"></a>gdis_admin1_with_ged</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 16,220 × 6
+   gwnoa  year adm1        n_disasters n_conflict_events total_fatalities
+   &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;             &lt;int&gt;             &lt;int&gt;            &lt;dbl&gt;
+ 1     2  2000 Alabama               5                 1               19
+ 2     2  2000 Arkansas              1                 1               19
+ 3     2  2000 California            3                 1               19
+ 4     2  2000 Colorado              1                 1               19
+ 5     2  2000 Connecticut           1                 1               19
+ 6     2  2000 Florida               7                 1               19
+ 7     2  2000 Georgia               5                 1               19
+ 8     2  2000 Hawaii                1                 1               19
+ 9     2  2000 Iowa                  1                 1               19
+10     2  2000 Kentucky              2                 1               19
+# ℹ 16,210 more rows</code></pre>
+</div>
+</div>
+<p>Because ged_country_y is at the country-year level, its values are copied to every matching admin1–year row in gdis_admin1_y.</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

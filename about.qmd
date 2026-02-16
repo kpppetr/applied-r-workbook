@@ -2,8 +2,19 @@
 title: "About"
 ---
 
-About this site
+## About this course
 
-```{r}
-1 + 1
-```
+The objective of this course is to introduce students to the statistical concepts and programming skills required to analyze event-based and spatial data related to migration, disasters, and conflict.
+
+The course emphasizes practical engagement with real-world datasets, enabling students to explore how human mobility, environmental crises, and political instability interact and shape global and regional dynamics.
+
+Throughout the workbook, students will learn how to:
+
+- import and manage data  
+- clean and transform datasets  
+- summarize and aggregate information  
+- merge multiple data sources  
+- reshape data between wide and long formats  
+- conduct basic exploratory analysis  
+
+The focus is on building a strong applied foundation in R that supports independent empirical research.

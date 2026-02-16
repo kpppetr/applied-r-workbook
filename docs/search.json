@@ -4,7 +4,14 @@
     "href": "about.html",
     "title": "About",
     "section": "",
-    "text": "About this site\n\n1 + 1\n\n[1] 2"
+    "text": "The objective of this course is to introduce students to the statistical concepts and programming skills required to analyze event-based and spatial data related to migration, disasters, and conflict.\nThe course emphasizes practical engagement with real-world datasets, enabling students to explore how human mobility, environmental crises, and political instability interact and shape global and regional dynamics.\nThroughout the workbook, students will learn how to:\n\nimport and manage data\n\nclean and transform datasets\n\nsummarize and aggregate information\n\nmerge multiple data sources\n\nreshape data between wide and long formats\n\nconduct basic exploratory analysis\n\nThe focus is on building a strong applied foundation in R that supports independent empirical research."
+  },
+  {
+    "objectID": "about.html#about-this-course",
+    "href": "about.html#about-this-course",
+    "title": "About",
+    "section": "",
+    "text": "The objective of this course is to introduce students to the statistical concepts and programming skills required to analyze event-based and spatial data related to migration, disasters, and conflict.\nThe course emphasizes practical engagement with real-world datasets, enabling students to explore how human mobility, environmental crises, and political instability interact and shape global and regional dynamics.\nThroughout the workbook, students will learn how to:\n\nimport and manage data\n\nclean and transform datasets\n\nsummarize and aggregate information\n\nmerge multiple data sources\n\nreshape data between wide and long formats\n\nconduct basic exploratory analysis\n\nThe focus is on building a strong applied foundation in R that supports independent empirical research."
   },
   {
     "objectID": "index.html#what-are-r-and-rstudio",

@@ -16,350 +16,350 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "“Workbook: Applied R for Migration, Disaster, and Conflict Studies”",
+    "title": "Workbook: Applied R for Migration, Disaster, and Conflict Studies",
     "section": "",
-    "text": "Welcome! In this workbook you’ll learn the basics of R and RStudio and run your first code.\n\n\n\n\nR is the programming language we’ll use for data analysis and visualization.\nRStudio is a user-friendly app that makes it easier to write and run R code.\n\n\n\n\n\nGo to the CRAN download page for R:\n\nhttps://cran.r-project.org/\n\nClick your operating system:\n\nWindows / macOS / Linux\n\nDownload and install using the default options.\n\n\n\n\n\nGo to the RStudio Desktop download page:\n\nhttps://posit.co/download/rstudio-desktop/\n\nDownload the free RStudio Desktop installer.\nInstall it (default options are usually fine).\n\n\n\n\nOpen RStudio.\nIn the Console (bottom-left), type:\n\n1 + 1\n\n[1] 2"
+    "text": "Welcome! In this workbook you’ll learn the basics of R and RStudio and run your first code."
   },
   {
     "objectID": "index.html#getting-started",
     "href": "index.html#getting-started",
-    "title": "“Workbook: Applied R for Migration, Disaster, and Conflict Studies”",
+    "title": "Workbook: Applied R for Migration, Disaster, and Conflict Studies",
     "section": "",
     "text": "Welcome! In this workbook you’ll learn the basics of R and RStudio and run your first code."
   },
   {
     "objectID": "index.html#what-are-r-and-rstudio",
     "href": "index.html#what-are-r-and-rstudio",
-    "title": "“Workbook: Applied R for Migration, Disaster, and Conflict Studies”",
-    "section": "",
-    "text": "R is the programming language we’ll use for data analysis and visualization.\nRStudio is a user-friendly app that makes it easier to write and run R code."
+    "title": "Workbook: Applied R for Migration, Disaster, and Conflict Studies",
+    "section": "What are R and RStudio?",
+    "text": "What are R and RStudio?\n\nR is the programming language we’ll use for data analysis and visualization.\nRStudio is a user-friendly app that makes it easier to write and run R code."
   },
   {
     "objectID": "index.html#step-1-install-r",
     "href": "index.html#step-1-install-r",
-    "title": "“Workbook: Applied R for Migration, Disaster, and Conflict Studies”",
-    "section": "",
-    "text": "Go to the CRAN download page for R:\n\nhttps://cran.r-project.org/\n\nClick your operating system:\n\nWindows / macOS / Linux\n\nDownload and install using the default options."
+    "title": "Workbook: Applied R for Migration, Disaster, and Conflict Studies",
+    "section": "Step 1 — Install R",
+    "text": "Step 1 — Install R\n\nGo to the CRAN download page for R:\n\nhttps://cran.r-project.org/\n\nClick your operating system:\n\nWindows / macOS / Linux\n\nDownload and install using the default options."
   },
   {
     "objectID": "index.html#step-2-install-rstudio",
     "href": "index.html#step-2-install-rstudio",
-    "title": "“Workbook: Applied R for Migration, Disaster, and Conflict Studies”",
-    "section": "",
-    "text": "Go to the RStudio Desktop download page:\n\nhttps://posit.co/download/rstudio-desktop/\n\nDownload the free RStudio Desktop installer.\nInstall it (default options are usually fine)."
+    "title": "Workbook: Applied R for Migration, Disaster, and Conflict Studies",
+    "section": "Step 2 — Install RStudio",
+    "text": "Step 2 — Install RStudio\n\nGo to the RStudio Desktop download page:\n\nhttps://posit.co/download/rstudio-desktop/\n\nDownload the free RStudio Desktop installer.\nInstall it (default options are usually fine)."
   },
   {
     "objectID": "index.html#step-3-check-it-works",
     "href": "index.html#step-3-check-it-works",
-    "title": "“Workbook: Applied R for Migration, Disaster, and Conflict Studies”",
-    "section": "",
-    "text": "Open RStudio.\nIn the Console (bottom-left), type:\n\n1 + 1\n\n[1] 2"
+    "title": "Workbook: Applied R for Migration, Disaster, and Conflict Studies",
+    "section": "Step 3 — Check it works",
+    "text": "Step 3 — Check it works\nOpen RStudio.\nIn the Console (bottom-left), type:\n\n1 + 1\n\n[1] 2"
   },
   {
     "objectID": "index.html#rstudio-projects",
     "href": "index.html#rstudio-projects",
-    "title": "“Workbook: Applied R for Migration, Disaster, and Conflict Studies”",
+    "title": "Workbook: Applied R for Migration, Disaster, and Conflict Studies",
     "section": "RStudio Projects",
     "text": "RStudio Projects\nRStudio Projects help you keep all files for one project in a single, organized folder. This includes scripts, data, and any outputs you create. Projects are especially useful when you are working on more than one project at the same time.\nEach project has its own working directory, which tells R where to look for files and where to save new ones.\n\nCreate a new RStudio Project\n\nIn RStudio, go to File → New Project\n\nChoose New Directory\n\nSelect New Project\n\nChoose a location on your computer and click Create Project\n\nRStudio will open the new project and create a folder on your computer. Save all files related to this project inside that folder."
   },
   {
     "objectID": "index.html#the-working-directory",
     "href": "index.html#the-working-directory",
-    "title": "“Workbook: Applied R for Migration, Disaster, and Conflict Studies”",
+    "title": "Workbook: Applied R for Migration, Disaster, and Conflict Studies",
     "section": "The working directory",
     "text": "The working directory\nWhen you create a new RStudio Project, the working directory is set automatically to the project folder. The working directory is the default location where R looks for files and saves new ones.\nIt is good practice to organize your project by creating sub-folders, such as data, scripts, and figures. When a project is first created, the only file in the folder is the .Rproj file, which you use to reopen the project later."
   },
   {
     "objectID": "index.html#the-rstudio-interface",
     "href": "index.html#the-rstudio-interface",
-    "title": "“Workbook: Applied R for Migration, Disaster, and Conflict Studies”",
+    "title": "Workbook: Applied R for Migration, Disaster, and Conflict Studies",
     "section": "The RStudio interface",
     "text": "The RStudio interface\nWhen you open RStudio or create a new project, you will see a window divided into three main panes.\nThe console (top left) is where you run R code and see output.\nThe environment pane (top right) shows the objects and data currently loaded in your R session.\nThe files, plots, and help pane lets you view files in your project folder, see plots, and access help. When you create a new project, the only file you will see at first is the .Rproj file."
   },
   {
     "objectID": "index.html#running-code",
     "href": "index.html#running-code",
-    "title": "“Workbook: Applied R for Migration, Disaster, and Conflict Studies”",
+    "title": "Workbook: Applied R for Migration, Disaster, and Conflict Studies",
     "section": "Running code",
     "text": "Running code\nYou can use R as a calculator. For example, try typing 1 + 1 in the Console and pressing Enter.\nIn practice, we usually write code in scripts rather than directly in the Console. Scripts let you keep a record of your work, edit it later, share it with others, and run the same code again.\nTo open a new script, go to File &gt; New File &gt; R Script, or click the document icon with a plus sign and select R Script. This will open a new pane where you can write code.\nOn the first line of your script, type:\n\n1+1\n\n[1] 2\n\n\nA nice feature of scripts is that you can run multiple lines of code at once. To do this, highlight the lines you want to run and press the Run button or use Ctrl + Enter (Cmd + Enter on macOS).\n\n1 + 1\n\n[1] 2\n\n2 * 4\n\n[1] 8\n\n3 + 8 * 2\n\n[1] 19"
   },
   {
     "objectID": "index.html#commenting-in-a-script",
     "href": "index.html#commenting-in-a-script",
-    "title": "“Workbook: Applied R for Migration, Disaster, and Conflict Studies”",
+    "title": "Workbook: Applied R for Migration, Disaster, and Conflict Studies",
     "section": "Commenting in a script",
     "text": "Commenting in a script\nComments are notes you add to your code to explain what it does. In R, anything that comes after # on a line is a comment and will not be run as code.\nFor example:\n\n1 + 1   # I want to add one and one\n\n[1] 2\n\n2 * 4   # This line multiplies two by four\n\n[1] 8\n\n3 + 8 * 2   # You can do multiple operations in one line\n\n[1] 19"
   },
   {
     "objectID": "index.html#objects",
     "href": "index.html#objects",
-    "title": "“Workbook: Applied R for Migration, Disaster, and Conflict Studies”",
+    "title": "Workbook: Applied R for Migration, Disaster, and Conflict Studies",
     "section": "Objects",
     "text": "Objects\nAn object is something that R stores so you can use it later. Objects can be numbers, text, collections of values, data sets, functions, or even groups of other objects.\nEvery object must have a unique name, called an identifier, which you use to access it in R."
   },
   {
     "objectID": "index.html#creating-and-naming-objects",
     "href": "index.html#creating-and-naming-objects",
-    "title": "“Workbook: Applied R for Migration, Disaster, and Conflict Studies”",
+    "title": "Workbook: Applied R for Migration, Disaster, and Conflict Studies",
     "section": "Creating and naming objects",
     "text": "Creating and naming objects\nObjects in R must have unique names. If you reuse a name, the old object is replaced.\nObject names must: - start with a letter\n- not contain spaces\n- not use special characters\nYou can create an object using &lt;-, for example:\n\nmy_first_object &lt;- 32\n\nOnce an object is created, you can treat it like any other number and use it in calculations.\n\nmy_first_object * 2 + 4\n\n[1] 68\n\n\nYou can also create multiple objects and use them together.\n\nanother_object &lt;- 21\nmy_first_object + another_object\n\n[1] 53\n\n\nIf you want to change the value of an object, you can overwrite it by assigning a new value to the same name.\n\nanother_object &lt;- 15\nmy_first_object + another_object\n\n[1] 47"
   },
   {
     "objectID": "index.html#a-practical-example",
     "href": "index.html#a-practical-example",
-    "title": "“Workbook: Applied R for Migration, Disaster, and Conflict Studies”",
+    "title": "Workbook: Applied R for Migration, Disaster, and Conflict Studies",
     "section": "A practical example",
     "text": "A practical example\n\nvoting_pop &lt;- 9321800     # Number of people who voted\nvote_share &lt;- 0.52       # Vote share of the party\n\nnumber_of_votes &lt;- voting_pop * vote_share\nnumber_of_votes\n\n[1] 4847336"
   },
   {
     "objectID": "index.html#vectors",
     "href": "index.html#vectors",
-    "title": "“Workbook: Applied R for Migration, Disaster, and Conflict Studies”",
+    "title": "Workbook: Applied R for Migration, Disaster, and Conflict Studies",
     "section": "Vectors",
     "text": "Vectors\nIf you want to work with multiple values at once, you can store them in a vector. A vector is a collection of values created using c().\n\nvote_shares &lt;- c(0.52, 0.44, 0.04)\nvote_shares[1]\n\n[1] 0.52\n\nvote_shares[2]\n\n[1] 0.44\n\nvote_shares[3]\n\n[1] 0.04\n\n\nYou can then use the vector to calculate votes for each party:\n\nvoting_pop * vote_shares\n\n[1] 4847336 4101592  372872"
   },
   {
     "objectID": "index.html#functions-help-files-and-packages",
     "href": "index.html#functions-help-files-and-packages",
-    "title": "“Workbook: Applied R for Migration, Disaster, and Conflict Studies”",
+    "title": "Workbook: Applied R for Migration, Disaster, and Conflict Studies",
     "section": "Functions, help files, and packages",
     "text": "Functions, help files, and packages\nFunctions are what R uses to do things, such as calculations or analyses. A function takes one or more objects as input and returns a result.\nFunctions are usually followed by parentheses, which contain the arguments.\n\nvote_shares &lt;- c(0.52, 0.44, 0.04)\nsum(vote_shares)\n\n[1] 1\n\n\nNow suppose there are several electoral districts of different sizes. We have the number of voters in each district and the vote share for the first party in each district.\n\nvoters_per_district &lt;- c(\n  618880, 1286117, 318003, 1037879, 505025,\n  493486, 1621599, 976879, 1232128, 1231804\n)\n\nvote_share_per_district &lt;- c(\n  0.506, 0.583, 0.618, 0.445, 0.219,\n  0.461, 0.680, 0.280, 0.532, 0.612\n)\n\nWe can now make some calculations on these vectors. For instance, by running\n\nmean(vote_share_per_district)\n\n[1] 0.4936\n\n\nTo calculate this correlation\n\ncor(vote_share_per_district, voters_per_district)\n\n[1] 0.4269525\n\n\nIf we want to store the correlation above we can do so by running:\n\nsize_share_correlation &lt;- cor(vote_share_per_district,voters_per_district)"
   },
   {
     "objectID": "index.html#default-arguments",
     "href": "index.html#default-arguments",
-    "title": "“Workbook: Applied R for Migration, Disaster, and Conflict Studies”",
+    "title": "Workbook: Applied R for Migration, Disaster, and Conflict Studies",
     "section": "Default arguments",
     "text": "Default arguments\nMany functions in R have default arguments. You can change these by specifying them explicitly.\nFor example, the cor() function uses the Pearson method by default. To use Spearman correlation instead, run:\n\ncor(vote_share_per_district, voters_per_district, method = \"spearman\")\n\n[1] 0.3939394"
   },
   {
     "objectID": "index.html#function-help-files",
     "href": "index.html#function-help-files",
-    "title": "“Workbook: Applied R for Migration, Disaster, and Conflict Studies”",
+    "title": "Workbook: Applied R for Migration, Disaster, and Conflict Studies",
     "section": "Function help files",
     "text": "Function help files\nYou can open a function’s help file by typing a question mark before its name.\n\n?cor\n\nIf you run the function without naming the argument, R does not know how to interpret \"spearman\" and returns an error.\n\ntry(cor(vote_share_per_district, voters_per_district, \"spearman\"))\n\nError in cor(vote_share_per_district, voters_per_district, \"spearman\") : \n  invalid 'use' argument"
   },
   {
     "objectID": "index.html#packages",
     "href": "index.html#packages",
-    "title": "“Workbook: Applied R for Migration, Disaster, and Conflict Studies”",
+    "title": "Workbook: Applied R for Migration, Disaster, and Conflict Studies",
     "section": "Packages",
     "text": "Packages\nPackages are collections of functions (and sometimes data) that extend what R can do. Many packages are available through CRAN.\nTo install a package, run:\n\ninstall.packages(\"dplyr\")\nlibrary(dplyr)"
   },
   {
     "objectID": "index.html#calling-functions-from-a-package",
     "href": "index.html#calling-functions-from-a-package",
-    "title": "“Workbook: Applied R for Migration, Disaster, and Conflict Studies”",
+    "title": "Workbook: Applied R for Migration, Disaster, and Conflict Studies",
     "section": "Calling functions from a package",
     "text": "Calling functions from a package\nWhen a package is loaded, you can usually call its functions by name. Problems can occur if different packages have functions with the same name.\nYou can avoid this by calling a function directly from a package using package::function.\n\nstats::lag(x)\ndplyr::lag(x)\n\n\nlag(vote_shares) # lag function from the latest loaded package\n\n[1] 0.52 0.44 0.04\nattr(,\"tsp\")\n[1] 0 2 1\n\n\n\nstats::lag(vote_shares) # lag function explicitly called from the stats package\n\n[1] 0.52 0.44 0.04\nattr(,\"tsp\")\n[1] 0 2 1\n\n\n\ndplyr::lag(vote_shares) # lag function explicitly called from the dplyr package\n\n[1]   NA 0.52 0.44"
   },
   {
     "objectID": "index.html#exercise-working-with-objects-vectors-and-functions",
     "href": "index.html#exercise-working-with-objects-vectors-and-functions",
-    "title": "“Workbook: Applied R for Migration, Disaster, and Conflict Studies”",
+    "title": "Workbook: Applied R for Migration, Disaster, and Conflict Studies",
     "section": "Exercise: Working with objects, vectors, and functions",
-    "text": "Exercise: Working with objects, vectors, and functions\nIn this exercise, you will practice creating objects, using vectors, writing comments, and applying functions in R.\n\nPart 1: Set up your project\n\nCreate a new RStudio Project in a new directory.\nOpen a new R script inside the project.\nAdd a comment at the top of the script explaining what this script does.\n\n\n\n\nPart 2: Create objects\nThe total number of voters in a country is 8,750,000.\n\nCreate an object called total_voters and assign this value to it.\nThree political parties received the following vote shares:\n\nParty A: 0.47\n\nParty B: 0.38\n\nParty C: 0.15\n\n\nCreate a vector called vote_shares containing these values.\n\n\n\nPart 3: Use objects in calculations\n\nCalculate the number of votes each party received by combining total_voters and vote_shares.\nStore the result in an object called votes_per_party.\nPrint the result.\n\n\n\n\nPart 4: Indexing and functions\n\nUse indexing to extract the vote share of Party B.\nCalculate how many votes Party B received.\nUse a function to check that the vote shares sum to 1.\n\n\n\n\nPart 5: Packages and help files\n\nOpen the help file for the sum() function.\nInstall the dplyr package (if you have not already).\nLoad the package using library().\n\n\n\n\nOptional challenge if you finish early\n\nChange the vote share of Party C to 0.18 by overwriting the original object.\nRecalculate the votes per party.\nAdd a comment explaining what changed and why the results are different."
+    "text": "Exercise: Working with objects, vectors, and functions\nIn this exercise, you will practice creating objects, using vectors, writing comments, and applying functions in R.\n\nPart 1: Set up your project\n\nCreate a new RStudio Project in a new directory.\nOpen a new R script inside the project.\nAdd a comment at the top of the script explaining what this script does.\n\n\n\nPart 2: Create objects\nThe total number of voters in a country is 8,750,000.\n\nCreate an object called total_voters and assign this value to it.\nThree political parties received the following vote shares:\n\nParty A: 0.47\n\nParty B: 0.38\n\nParty C: 0.15\n\n\nCreate a vector called vote_shares containing these values.\n\n\nPart 3: Use objects in calculations\n\nCalculate the number of votes each party received by combining total_voters and vote_shares.\nStore the result in an object called votes_per_party.\nPrint the result.\n\n\n\nPart 4: Indexing and functions\n\nUse indexing to extract the vote share of Party B.\nCalculate how many votes Party B received.\nUse a function to check that the vote shares sum to 1.\n\n\n\nPart 5: Packages and help files\n\nOpen the help file for the sum() function.\nInstall the dplyr package (if you have not already).\nLoad the package using library().\n\n\n\nOptional challenge if you finish early\n\nChange the vote share of Party C to 0.18 by overwriting the original object.\nRecalculate the votes per party.\nAdd a comment explaining what changed and why the results are different."
   },
   {
     "objectID": "index.html#data-types-and-classes",
     "href": "index.html#data-types-and-classes",
-    "title": "“Workbook: Applied R for Migration, Disaster, and Conflict Studies”",
+    "title": "Workbook: Applied R for Migration, Disaster, and Conflict Studies",
     "section": "Data types and classes",
     "text": "Data types and classes\nSo far, we have mostly worked with numbers. In R, objects can have different data types, also called classes.\nYou can check the class of an object using the class() function:\n\nvote_shares &lt;- c(0.52,0.44,0.04) # Vote shares of all parties of interest\nclass(vote_shares)\n\n[1] \"numeric\"\n\n\nR has many different object classes. For example, text data are stored as character objects.\nIf we create a character vector with the names of the electoral districts and try to calculate a correlation with vote shares, it will not work.\n\n# District names\ndistrict_names &lt;- c(\"Capital\", \"North\", \"North-East\",\n                    \"North-West\", \"Western\", \"Central\",\n                    \"Mountains-West\", \"Mountains-East\",\n                    \"Big Island\", \"Small Island\") # District names\nclass(district_names)\n\n[1] \"character\"\n\n## [1] \"character\"\n# Vote share per district\nvote_share_per_district &lt;- c(0.506, 0.583, 0.618, \n                             0.445, 0.219, 0.461, \n                             0.680, 0.280, 0.532, 0.612) \n\nclass(vote_share_per_district)\n\n[1] \"numeric\"\n\n## [1] \"numeric\"\n\n# Number of voters in each electoral district\nvoters_per_district &lt;- c(618880, 1286117, 318003, \n                         1037879, 505025, 493486, \n                         1621599, 976879, 1232128, 1231804) \n\ntry(cor(district_names, vote_shares))\n\nError in cor(district_names, vote_shares) : 'x' must be numeric\n\n## Error in cor(district_names, vote_shares): 'x' must be numeric"
   },
   {
     "objectID": "index.html#missing-values",
     "href": "index.html#missing-values",
-    "title": "“Workbook: Applied R for Migration, Disaster, and Conflict Studies”",
+    "title": "Workbook: Applied R for Migration, Disaster, and Conflict Studies",
     "section": "Missing values",
     "text": "Missing values\nR uses NA to represent missing values. This is used when a value is ## Missing values\nR uses NA to represent missing values. This is used when a value is not available.\nMissing values allow you to keep incomplete data in your object. When using functions like mean() or sum(), you often need to tell R to remove missing values explicitly.\nIf you run a function without removing missing values:\n\nvote_shares_with_na &lt;- c(0.52, 0.44, NA, 0.04)\nsum(vote_shares_with_na)\n\n[1] NA\n\n\n\nsum(vote_shares_with_na, na.rm = TRUE)\n\n[1] 1"
   },
   {
     "objectID": "index.html#datasets-vectors-matrices-data-frames-and-tibbles",
     "href": "index.html#datasets-vectors-matrices-data-frames-and-tibbles",
-    "title": "“Workbook: Applied R for Migration, Disaster, and Conflict Studies”",
+    "title": "Workbook: Applied R for Migration, Disaster, and Conflict Studies",
     "section": "Datasets: vectors, matrices, data frames, and tibbles",
     "text": "Datasets: vectors, matrices, data frames, and tibbles\nSo far, we have stored data in vectors. When several vectors describe the same units (for example, districts), they can be combined into a dataset where rows are observations and columns are variables.\nCommon dataset types in R are:\n\nVectors: store a single variable.\n\n\nscores &lt;- c(10, 15, 20)\n\n\nMatrices: rectangular data where all values must be the same type.\n\n\nscores_matrix &lt;- matrix(c(10, 15, 20, 25), nrow = 2)\n\n\nData frames: rectangular datasets that can contain different data types in different columns.\n\n\nscores_df &lt;- data.frame(\n  district = c(\"A\", \"B\"),\n  score = c(10, 15)\n)\n\n\nTibbles: a modern version of data frames with improved behavior and clearer output."
   },
   {
     "objectID": "index.html#tibbles",
     "href": "index.html#tibbles",
-    "title": "“Workbook: Applied R for Migration, Disaster, and Conflict Studies”",
+    "title": "Workbook: Applied R for Migration, Disaster, and Conflict Studies",
     "section": "Tibbles",
     "text": "Tibbles\nTibbles are a modern version of data frames and are part of the tidyverse. They are easier to work with and produce clearer output.\nTo use tibbles, install and load the tidyverse:\n\ninstall.packages(\"tidyverse\")\n\n\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.2     ✔ tibble    3.3.0\n✔ lubridate 1.9.4     ✔ tidyr     1.3.1\n✔ purrr     1.0.4     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\n\nYou can create a tibble using the tibble() function. Each vector you include becomes a column in the dataset.\n\ndistricts &lt;- tibble(\n  district_names,\n  voters_per_district,\n  vote_share_per_district\n)\n\nThe tibble now has a rectangular structure, where rows are districts and columns are variables. This is what we call a dataset.\nBy default, tibble() uses the names of the input vectors as column names. You can set your own names by naming the arguments:\n\ndistricts &lt;- tibble(\n  name = district_names,\n  total_voters = voters_per_district,\n  vote_share = vote_share_per_district\n)\n\nYou can add a new variable by combining the tibble with another vector:\n\ndistrict_type &lt;- c(\n  \"urban\", \"urban\", \"rural\", \"urban\", \"rural\",\n  \"rural\", \"rural\", \"urban\", \"rural\", \"rural\"\n)\n\ndistricts_new &lt;- bind_cols(districts, district_type)\n\nNew names:\n• `` -&gt; `...4`"
   },
   {
     "objectID": "index.html#characters-versus-factors",
     "href": "index.html#characters-versus-factors",
-    "title": "“Workbook: Applied R for Migration, Disaster, and Conflict Studies”",
+    "title": "Workbook: Applied R for Migration, Disaster, and Conflict Studies",
     "section": "Characters versus factors",
     "text": "Characters versus factors\nWhen you print a tibble, you can see the class of each variable. The district_type variable is a character (chr).\nIf a variable only takes a small number of values, such as \"urban\" and \"rural\", it is often better to store it as a factor.\nYou can convert a character variable to a factor using as_factor():\n\ndistricts &lt;- bind_cols(\n  districts,\n  urban_rural = as_factor(district_type)\n)\n\ndistricts\n\n# A tibble: 10 × 4\n   name           total_voters vote_share urban_rural\n   &lt;chr&gt;                 &lt;dbl&gt;      &lt;dbl&gt; &lt;fct&gt;      \n 1 Capital              618880      0.506 urban      \n 2 North               1286117      0.583 urban      \n 3 North-East           318003      0.618 rural      \n 4 North-West          1037879      0.445 urban      \n 5 Western              505025      0.219 rural      \n 6 Central              493486      0.461 rural      \n 7 Mountains-West      1621599      0.68  rural      \n 8 Mountains-East       976879      0.28  urban      \n 9 Big Island          1232128      0.532 rural      \n10 Small Island        1231804      0.612 rural"
   },
   {
     "objectID": "index.html#accessing-elements-and-columns",
     "href": "index.html#accessing-elements-and-columns",
-    "title": "“Workbook: Applied R for Migration, Disaster, and Conflict Studies”",
+    "title": "Workbook: Applied R for Migration, Disaster, and Conflict Studies",
     "section": "Accessing elements and columns",
     "text": "Accessing elements and columns\nYou can access a column in a tibble using the $ sign. This returns the column as a vector.\n\ndistricts$total_voters\n\n [1]  618880 1286117  318003 1037879  505025  493486 1621599  976879 1232128\n[10] 1231804\n\ndistricts$name\n\n [1] \"Capital\"        \"North\"          \"North-East\"     \"North-West\"    \n [5] \"Western\"        \"Central\"        \"Mountains-West\" \"Mountains-East\"\n [9] \"Big Island\"     \"Small Island\"  \n\n\nThis is useful for applying functions to a single variable:\n\nmean(districts$vote_share)\n\n[1] 0.4936\n\nsd(districts$vote_share)\n\n[1] 0.1484417\n\n\nYou can also use square brackets to access rows and columns. The first number is the row, the second is the column.\n\ndistricts[3, 4]\n\n# A tibble: 1 × 1\n  urban_rural\n  &lt;fct&gt;      \n1 rural      \n\ndistricts[5, ]\n\n# A tibble: 1 × 4\n  name    total_voters vote_share urban_rural\n  &lt;chr&gt;          &lt;dbl&gt;      &lt;dbl&gt; &lt;fct&gt;      \n1 Western       505025      0.219 rural      \n\ndistricts[, 1]\n\n# A tibble: 10 × 1\n   name          \n   &lt;chr&gt;         \n 1 Capital       \n 2 North         \n 3 North-East    \n 4 North-West    \n 5 Western       \n 6 Central       \n 7 Mountains-West\n 8 Mountains-East\n 9 Big Island    \n10 Small Island"
   },
   {
     "objectID": "index.html#exercise-following-lesson-2",
     "href": "index.html#exercise-following-lesson-2",
-    "title": "“Workbook: Applied R for Migration, Disaster, and Conflict Studies”",
+    "title": "Workbook: Applied R for Migration, Disaster, and Conflict Studies",
     "section": "Exercise following Lesson 2",
-    "text": "Exercise following Lesson 2\n\nPart 1: Set up your project\n\nCreate a new RStudio Project in a new directory.\nOpen a new R script inside the project.\nAdd a comment at the top explaining what the script does.\n\n\n\n\nPart 2: Create objects and vectors\nSuppose a country is divided into 8 regions affected by flooding.\n\nCreate a character vector called region with the following values:\n\"Coastal North\", \"Coastal South\", \"River Delta\", \"Capital\", \"Central Plains\", \"Highlands\", \"Eastern Border\", \"Western Border\"\nCreate a numeric vector called population with the population of each region:\n850000, 1200000, 430000, 2100000, 970000, 620000, 540000, 480000\nCreate a numeric vector called flood_severity with values between 0 and 1 indicating flood severity:\n0.72, 0.65, 0.81, 0.30, 0.58, 0.22, 0.47, 0.40\n\n\n\n\nPart 3: Create a tibble\n\nLoad the tidyverse.\nCombine the three vectors into a tibble called flood_regions.\nName the columns region, population, and flood_severity.\nPrint the tibble to the Console.\n\n\n\n\nPart 4: Calculations using columns\n\nCalculate the mean flood severity across regions.\nCalculate the total population living in regions with flood data.\nCalculate the number of people exposed to flooding in each region by multiplying population by flood severity.\nStore the result in a new object called exposed_population.\n\n\n\n\nPart 5: Add a new variable\nSuppose you classify regions as \"high risk\" or \"low risk\" based on flood severity.\n\nCreate a character vector called risk_level where regions with flood severity above 0.6 are \"high risk\", and the rest are \"low risk\".\nAdd this vector as a new column to the tibble.\nPrint the updated tibble.\n\n\n\n\nPart 6: Explore the data\n\nUse $ to extract the flood_severity column and calculate its standard deviation.\nUse table() to count how many regions are \"high risk\" and \"low risk\".\nAccess the population of the Capital region using indexing.\n\n\n\n\nOptional challenge if you finish early\n\nConvert the risk_level variable to a factor.\nRecalculate the exposed population assuming flood severity increases by 10% in all regions.\nAdd comments explaining what changed and why."
+    "text": "Exercise following Lesson 2\n\nPart 1: Set up your project\n\nCreate a new RStudio Project in a new directory.\nOpen a new R script inside the project.\nAdd a comment at the top explaining what the script does.\n\n\n\nPart 2: Create objects and vectors\nSuppose a country is divided into 8 regions affected by flooding.\n\nCreate a character vector called region with the following values:\n\"Coastal North\", \"Coastal South\", \"River Delta\", \"Capital\", \"Central Plains\", \"Highlands\", \"Eastern Border\", \"Western Border\"\nCreate a numeric vector called population with the population of each region:\n850000, 1200000, 430000, 2100000, 970000, 620000, 540000, 480000\nCreate a numeric vector called flood_severity with values between 0 and 1 indicating flood severity:\n0.72, 0.65, 0.81, 0.30, 0.58, 0.22, 0.47, 0.40\n\n\n\nPart 3: Create a tibble\n\nLoad the tidyverse.\nCombine the three vectors into a tibble called flood_regions.\nName the columns region, population, and flood_severity.\nPrint the tibble to the Console.\n\n\n\nPart 4: Calculations using columns\n\nCalculate the mean flood severity across regions.\nCalculate the total population living in regions with flood data.\nCalculate the number of people exposed to flooding in each region by multiplying population by flood severity.\nStore the result in a new object called exposed_population.\n\n\n\nPart 5: Add a new variable\nSuppose you classify regions as \"high risk\" or \"low risk\" based on flood severity.\n\nCreate a character vector called risk_level where regions with flood severity above 0.6 are \"high risk\", and the rest are \"low risk\".\nAdd this vector as a new column to the tibble.\nPrint the updated tibble.\n\n\n\nPart 6: Explore the data\n\nUse $ to extract the flood_severity column and calculate its standard deviation.\nUse table() to count how many regions are \"high risk\" and \"low risk\".\nAccess the population of the Capital region using indexing.\n\n\n\nOptional challenge if you finish early\n\nConvert the risk_level variable to a factor.\nRecalculate the exposed population assuming flood severity increases by 10% in all regions.\nAdd comments explaining what changed and why."
   },
   {
     "objectID": "index.html#data-import",
     "href": "index.html#data-import",
-    "title": "“Workbook: Applied R for Migration, Disaster, and Conflict Studies”",
+    "title": "Workbook: Applied R for Migration, Disaster, and Conflict Studies",
     "section": "Data import",
     "text": "Data import\nWhen importing data into R, the most important thing to know is the file format, which is indicated by the file ending. The file format determines which function you use to read the data.\nCommon data file formats include: - .csv: comma-separated values, widely used across software - .txt: text files with a fixed delimiter - .rds and .RData: R-specific data files - .dta: Stata data files - .xlsx: Excel files\nRegardless of file format, there are two main ways to import data into R.\n\nUse the Import Dataset button in the Environment pane. This works for text files (including .csv), Excel, Stata, SPSS, and SAS files.\nUse import functions directly:\n\nread_csv() for .csv files\n\nread_dta() for Stata files\n\nread_excel() for Excel files\n\nreadRDS() and load() for R data files\n\n\nAs an example, let’s load the GDIS dataset, a global dataset of geocoded disaster locations.\n\ngdis &lt;- read_csv(\"datasets/gdis.csv\")\n\nRows: 29864 Columns: 18\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr (11): id, country, iso3, geolocation, adm1, adm2, adm3, location, hist_c...\ndbl  (7): gwno, year, geo_id, level, historical, latitude, longitude\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message."
   },
   {
     "objectID": "index.html#checking-your-data",
     "href": "index.html#checking-your-data",
-    "title": "“Workbook: Applied R for Migration, Disaster, and Conflict Studies”",
+    "title": "Workbook: Applied R for Migration, Disaster, and Conflict Studies",
     "section": "Checking your data",
     "text": "Checking your data\nAfter importing data, it is good practice to check that it loaded correctly.\nYou can print the dataset, view the first rows, inspect its structure, and get basic summaries:\n\nhead(gdis) # Print the first few rows of the data set\nstr(gdis) # Print the structure of the data set\ncolnames(gdis) # Print the variable names of the data set\nsummary(gdis) # Print a summary of the data set"
   },
   {
     "objectID": "index.html#data-manipulation",
     "href": "index.html#data-manipulation",
-    "title": "“Workbook: Applied R for Migration, Disaster, and Conflict Studies”",
+    "title": "Workbook: Applied R for Migration, Disaster, and Conflict Studies",
     "section": "Data manipulation",
     "text": "Data manipulation\nNow that we know how to import data and work with the tidyverse, we move on to basic data manipulation. Here, data manipulation means changing a dataset by removing observations or variables, or by creating new variables.\nIn the tidyverse, data manipulation is done using verb-functions. These are functions named after what they do, such as filter(), select(), and mutate()."
   },
   {
     "objectID": "index.html#filtering-data",
     "href": "index.html#filtering-data",
-    "title": "“Workbook: Applied R for Migration, Disaster, and Conflict Studies”",
+    "title": "Workbook: Applied R for Migration, Disaster, and Conflict Studies",
     "section": "Filtering data",
     "text": "Filtering data\nFiltering means keeping only the observations that meet certain conditions. In the tidyverse, this is done with the filter() function.\nFiltering returns a new dataset, so it is usually stored as a new object.\n\ngdis_drought &lt;- gdis %&gt;%\n  filter(disastertype == \"drought\")\n\nTo keep only flood events in Pakistan, we can add another condition to filter():\n\ngdis_flood_pakistan &lt;- gdis %&gt;%\n  filter(\n    disastertype == \"flood\",\n    country == \"Pakistan\"\n  )"
   },
   {
     "objectID": "index.html#selecting-variables",
     "href": "index.html#selecting-variables",
-    "title": "“Workbook: Applied R for Migration, Disaster, and Conflict Studies”",
+    "title": "Workbook: Applied R for Migration, Disaster, and Conflict Studies",
     "section": "Selecting variables",
     "text": "Selecting variables\nThe select() function is used to keep specific columns in a dataset. Unlike filter(), it works on variables, not rows.\nYou can select variables by name or by their column position.\n\n# using variable names (no quotation marks)\ngdis_reduced &lt;- gdis %&gt;%\n  select(country, year, adm3, disastertype)\n\n# using column positions\ngdis_reduced &lt;- gdis %&gt;%\n  select(2, 5, 11, 15)\n\n# using column positions and names\ngdis_reduced &lt;- gdis %&gt;%\n  select(2:5, adm3, disastertype)"
   },
   {
     "objectID": "index.html#select-helpers",
     "href": "index.html#select-helpers",
-    "title": "“Workbook: Applied R for Migration, Disaster, and Conflict Studies”",
+    "title": "Workbook: Applied R for Migration, Disaster, and Conflict Studies",
     "section": "Select helpers",
     "text": "Select helpers\nSelect helpers let you choose variables based on their names. Common helpers include starts_with(), ends_with(), contains(), and everything().\n\n# select all variables that start with \"adm\"\ngdis_admin &lt;- gdis %&gt;%\n  select(starts_with(\"adm\"))\n\n# select all variables that contain the string \"geo\"\ngdis_geo &lt;- gdis %&gt;%\n  select(contains(\"geo\"))\n\n# select the country variable and all variables that contain \"lat\" or \"lon\"\ngdis_coords &lt;- gdis %&gt;%\n  select(country, contains(\"lat\"), contains(\"lon\"))\n\n# select using names, positions, and helpers together\ngdis_mixed &lt;- gdis %&gt;%\n  select(1:2, year, contains(\"adm\"))\n\n# rearrange variables: country and year first, then admin variables, then all remaining variables\ngdis_rearranged &lt;- gdis %&gt;%\n  select(country, year, starts_with(\"adm\"), everything())"
   },
   {
     "objectID": "index.html#mutating-data",
     "href": "index.html#mutating-data",
-    "title": "“Workbook: Applied R for Migration, Disaster, and Conflict Studies”",
+    "title": "Workbook: Applied R for Migration, Disaster, and Conflict Studies",
     "section": "Mutating data",
     "text": "Mutating data\nThe mutate() function is used to create new variables inside a dataset. It does not remove any existing data, so it is common to overwrite the dataset.\n\ngdis_reduced &lt;- gdis_reduced %&gt;%\n  mutate(\n    year_2005plus = year &gt;= 2005\n  )"
   },
   {
     "objectID": "index.html#creating-categorical-and-dummy-variables",
     "href": "index.html#creating-categorical-and-dummy-variables",
-    "title": "“Workbook: Applied R for Migration, Disaster, and Conflict Studies”",
+    "title": "Workbook: Applied R for Migration, Disaster, and Conflict Studies",
     "section": "Creating categorical and dummy variables",
     "text": "Creating categorical and dummy variables\nYou can create new variables based on conditions using ifelse() or case_when().\nCreate a dummy variable indicating whether the disaster is a flood:\n\ngdis_reduced &lt;- gdis_reduced %&gt;%\n  mutate(\n    flood_bin = ifelse(disastertype == \"flood\", 1, 0)\n  )\n\nYou can use case_when() to create a categorical variable with multiple categories.\n\ngdis &lt;- gdis %&gt;%\n  mutate(\n    disaster_group = case_when(\n      disastertype == \"flood\"   ~ \"flood\",\n      disastertype == \"storm\"   ~ \"storm\",\n      TRUE ~ \"Other\"\n    )\n  )"
   },
   {
     "objectID": "index.html#piping-it-all-together",
     "href": "index.html#piping-it-all-together",
-    "title": "“Workbook: Applied R for Migration, Disaster, and Conflict Studies”",
+    "title": "Workbook: Applied R for Migration, Disaster, and Conflict Studies",
     "section": "Piping it all together",
     "text": "Piping it all together\nUsing pipes allows us to combine multiple data manipulation steps into a single workflow without creating many intermediate objects.\nBelow, we mutate new variables, select a subset of variables, and filter the data — all in one pipeline.\n\ngdis_flood_pakistan &lt;- gdis %&gt;%\n  mutate(\n    flood_bin = ifelse(tolower(disastertype) == \"flood\", 1, 0),\n    post_2005 = year &gt;= 2005\n  ) %&gt;%\n  select(country, year, adm3, disastertype, flood_bin, post_2005) %&gt;%\n  filter(country == \"Pakistan\", flood_bin == 1)"
   },
   {
     "objectID": "index.html#exercise-3-importing-and-manipulating-disaster-data",
     "href": "index.html#exercise-3-importing-and-manipulating-disaster-data",
-    "title": "“Workbook: Applied R for Migration, Disaster, and Conflict Studies”",
+    "title": "Workbook: Applied R for Migration, Disaster, and Conflict Studies",
     "section": "Exercise 3: Importing and manipulating disaster data",
-    "text": "Exercise 3: Importing and manipulating disaster data\n\nPart 1: Import and inspect the data\n\nDownload the gdis.csv file and place it in your project folder.\nImport the dataset into R and store it as an object called gdis.\nPrint the dataset to the Console.\nUse head() to view the first few rows.\nUse str() to inspect the structure of the dataset.\nUse colnames() to list all variable names.\n\n\n\n\nPart 2: Select relevant variables\nThe gdis dataset contains many variables. For this exercise, keep only the following variables:\n\ncountry\nyear\nadm3\ndisastertype\nlatitude\nlongitude\n\n\nUse select() with variable names to create a new dataset called gdis_selected.\nVerify that the dataset contains only the selected variables.\n\n\n\n\nPart 3: Filter observations\nNow restrict the dataset to a smaller set of observations.\n\nFilter the data to include only disasters that occurred after the year 2004.\nFurther filter the data to include only disasters that occurred in Bangladesh.\nStore the filtered dataset as gdis_bangladesh.\n\n\n\n\nPart 4: Create new variables\nUsing mutate():\n\nCreate a dummy variable called is_drought that equals 1 if the disaster type is a drought and 0 otherwise.\nCreate a variable called abs_latitude that stores the absolute value of latitude.\nCreate a categorical variable called disaster_group with the following values:\n\n\"Flood\"\n\"Drought\"\n\"Storm\"\n\"Other\"\n\n\n\n\n\nPart 5: Pipe it all together\nRewrite Parts 2–4 as a single pipe starting from the original gdis dataset.\n\nSelect the relevant variables.\nFilter to disasters in Bangladesh after 2004.\nCreate the new variables.\nStore the result as gdis_clean.\n\n\n\n\nOptional challenge\n\nCount how many flood events occurred in Bangladesh after 2004.\nUse table() to see how many observations fall into each disaster_group.\nAdd comments explaining what each step of your pipeline does."
+    "text": "Exercise 3: Importing and manipulating disaster data\n\nPart 1: Import and inspect the data\n\nDownload the gdis.csv file and place it in your project folder.\nImport the dataset into R and store it as an object called gdis.\nPrint the dataset to the Console.\nUse head() to view the first few rows.\nUse str() to inspect the structure of the dataset.\nUse colnames() to list all variable names.\n\n\n\nPart 2: Select relevant variables\nThe gdis dataset contains many variables. For this exercise, keep only the following variables:\n\ncountry\nyear\nadm3\ndisastertype\nlatitude\nlongitude\n\n\nUse select() with variable names to create a new dataset called gdis_selected.\nVerify that the dataset contains only the selected variables.\n\n\n\nPart 3: Filter observations\nNow restrict the dataset to a smaller set of observations.\n\nFilter the data to include only disasters that occurred after the year 2004.\nFurther filter the data to include only disasters that occurred in Bangladesh.\nStore the filtered dataset as gdis_bangladesh.\n\n\n\nPart 4: Create new variables\nUsing mutate():\n\nCreate a dummy variable called is_drought that equals 1 if the disaster type is a drought and 0 otherwise.\nCreate a variable called abs_latitude that stores the absolute value of latitude.\nCreate a categorical variable called disaster_group with the following values:\n\n\"Flood\"\n\"Drought\"\n\"Storm\"\n\"Other\"\n\n\n\n\nPart 5: Pipe it all together\nRewrite Parts 2–4 as a single pipe starting from the original gdis dataset.\n\nSelect the relevant variables.\nFilter to disasters in Bangladesh after 2004.\nCreate the new variables.\nStore the result as gdis_clean.\n\n\n\nOptional challenge\n\nCount how many flood events occurred in Bangladesh after 2004.\nUse table() to see how many observations fall into each disaster_group.\nAdd comments explaining what each step of your pipeline does."
   },
   {
     "objectID": "index.html#summarizing-across-multiple-variables",
     "href": "index.html#summarizing-across-multiple-variables",
-    "title": "“Workbook: Applied R for Migration, Disaster, and Conflict Studies”",
+    "title": "Workbook: Applied R for Migration, Disaster, and Conflict Studies",
     "section": "Summarizing across multiple variables",
     "text": "Summarizing across multiple variables\nIf you want the same summary statistic for many variables, you can use across() inside summarize(). You select variables the same way as with select().\nFor example, we can calculate the mean of all variables that start with deaths_:\n\ndeaths_summary &lt;- ged %&gt;%\n  summarize(\n    across(starts_with(\"deaths_\"), ~mean(.x, na.rm = TRUE))\n  )"
   },
   {
     "objectID": "index.html#aggregation",
     "href": "index.html#aggregation",
-    "title": "“Workbook: Applied R for Migration, Disaster, and Conflict Studies”",
+    "title": "Workbook: Applied R for Migration, Disaster, and Conflict Studies",
     "section": "Aggregation",
     "text": "Aggregation\nAggregation means moving from a more detailed unit of analysis to a more coarse one. In practice, this is done by grouping the data and then summarizing it. When we aggregate data, each row in the resulting dataset represents a group rather than an individual observation.\nFor example, suppose we want to create a country-year dataset that contains: - the total number of fatalities - the number of conflict events - separated by type of violence\nWe can do this by grouping by country, year, and type_of_violence, and then summarizing:\n\nged_country_year &lt;- ged %&gt;%\n  group_by(country, year, type_of_violence) %&gt;%\n  summarize(\n    total_fatalities = sum(best, na.rm = TRUE),\n    n_events = n()\n  ) %&gt;%\n  ungroup()\n\n`summarise()` has grouped output by 'country', 'year'. You can override using\nthe `.groups` argument.\n\nged_country_year\n\n# A tibble: 3,834 × 5\n   country      year type_of_violence total_fatalities n_events\n   &lt;chr&gt;       &lt;dbl&gt;            &lt;dbl&gt;            &lt;dbl&gt;    &lt;int&gt;\n 1 Afghanistan  1989                1             5174      137\n 2 Afghanistan  1989                2              237        8\n 3 Afghanistan  1990                1             1478       39\n 4 Afghanistan  1990                2               36        6\n 5 Afghanistan  1991                1             3302       60\n 6 Afghanistan  1991                2              251        4\n 7 Afghanistan  1992                1             4287       69\n 8 Afghanistan  1992                2               90        3\n 9 Afghanistan  1992                3                8        4\n10 Afghanistan  1993                1             4071      105\n# ℹ 3,824 more rows"
   },
   {
     "objectID": "index.html#group-manipulation",
     "href": "index.html#group-manipulation",
-    "title": "“Workbook: Applied R for Migration, Disaster, and Conflict Studies”",
+    "title": "Workbook: Applied R for Migration, Disaster, and Conflict Studies",
     "section": "Group manipulation",
     "text": "Group manipulation\nA common example is creating lagged variables. For instance, when analyzing conflict intensity, we may want to control for the number of fatalities in the previous year. To do this, we use the lag() function.\nFor example, suppose we have a country-year version of the GED data and want to create a lagged fatalities variable:\n\nged_country_year &lt;- ged_country_year %&gt;%\n  group_by(country) %&gt;%\n  mutate(lagged_fatalities = lag(total_fatalities)) %&gt;%\n  ungroup()\n\nged_country_year\n\n# A tibble: 3,834 × 6\n   country     year type_of_violence total_fatalities n_events lagged_fatalities\n   &lt;chr&gt;      &lt;dbl&gt;            &lt;dbl&gt;            &lt;dbl&gt;    &lt;int&gt;             &lt;dbl&gt;\n 1 Afghanist…  1989                1             5174      137                NA\n 2 Afghanist…  1989                2              237        8              5174\n 3 Afghanist…  1990                1             1478       39               237\n 4 Afghanist…  1990                2               36        6              1478\n 5 Afghanist…  1991                1             3302       60                36\n 6 Afghanist…  1991                2              251        4              3302\n 7 Afghanist…  1992                1             4287       69               251\n 8 Afghanist…  1992                2               90        3              4287\n 9 Afghanist…  1992                3                8        4                90\n10 Afghanist…  1993                1             4071      105                 8\n# ℹ 3,824 more rows\n\n\nTo ensure that the lagged values are meaningful:\n\nged_cy_tv1 &lt;- ged_country_year %&gt;%\n  filter(type_of_violence == 1) %&gt;%\n  group_by(country) %&gt;%\n  mutate(lagged_fatalities = lag(total_fatalities)) %&gt;%\n  ungroup()\n\nged_cy_tv1\n\n# A tibble: 1,481 × 6\n   country     year type_of_violence total_fatalities n_events lagged_fatalities\n   &lt;chr&gt;      &lt;dbl&gt;            &lt;dbl&gt;            &lt;dbl&gt;    &lt;int&gt;             &lt;dbl&gt;\n 1 Afghanist…  1989                1             5174      137                NA\n 2 Afghanist…  1990                1             1478       39              5174\n 3 Afghanist…  1991                1             3302       60              1478\n 4 Afghanist…  1992                1             4287       69              3302\n 5 Afghanist…  1993                1             4071      105              4287\n 6 Afghanist…  1994                1             8937      234              4071\n 7 Afghanist…  1995                1             5499      208              8937\n 8 Afghanist…  1996                1             3177      221              5499\n 9 Afghanist…  1997                1             6396      195              3177\n10 Afghanist…  1998                1             6256      194              6396\n# ℹ 1,471 more rows"
   },
   {
     "objectID": "index.html#re-shaping-data",
     "href": "index.html#re-shaping-data",
-    "title": "“Workbook: Applied R for Migration, Disaster, and Conflict Studies”",
+    "title": "Workbook: Applied R for Migration, Disaster, and Conflict Studies",
     "section": "Re-shaping data",
     "text": "Re-shaping data\nSo far, we have mostly worked with tidy datasets. Tidy data follow three principles:\n\nEach variable has its own column\n\nEach observation has its own row\n\nEach value has its own cell\n\nNot all datasets come tidy. For example, the net_migration dataset stores yearly values as separate columns:\n\nlibrary(tidyverse)\n\nnet_migration &lt;- read_csv(\"datasets/Kummu_net_migration.csv\")\n\nNew names:\nRows: 42621 Columns: 27\n── Column specification\n──────────────────────────────────────────────────────── Delimiter: \",\" chr\n(6): Country, iso3, GID_1, NAME_1, GID_2, NAME_2 dbl (21): ...1, 2000, 2001,\n2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, ...\nℹ Use `spec()` to retrieve the full column specification for this data. ℹ\nSpecify the column types or set `show_col_types = FALSE` to quiet this message.\n• `` -&gt; `...1`\n\nnames(net_migration)\n\n [1] \"...1\"    \"Country\" \"iso3\"    \"GID_1\"   \"NAME_1\"  \"GID_2\"   \"NAME_2\" \n [8] \"2000\"    \"2001\"    \"2002\"    \"2003\"    \"2004\"    \"2005\"    \"2006\"   \n[15] \"2007\"    \"2008\"    \"2009\"    \"2010\"    \"2011\"    \"2012\"    \"2013\"   \n[22] \"2014\"    \"2015\"    \"2016\"    \"2017\"    \"2018\"    \"2019\""
   },
   {
     "objectID": "index.html#making-data-tidy-by-pivoting",
     "href": "index.html#making-data-tidy-by-pivoting",
-    "title": "“Workbook: Applied R for Migration, Disaster, and Conflict Studies”",
+    "title": "Workbook: Applied R for Migration, Disaster, and Conflict Studies",
     "section": "Making data tidy by pivoting",
     "text": "Making data tidy by pivoting\nData are too wide when information that should be stored as values is instead stored across multiple columns. To fix these problems, we reshape the data using pivoting.\nThe tidyverse provides two functions for this purpose: pivot_longer() and pivot_wider(). These functions allow us to convert data between wide and long formats so that each variable has its own column and each observation its own row.\n\nnet_migration_long &lt;- net_migration %&gt;%\n  pivot_longer(\n    cols = `2000`:`2019`,\n    names_to = \"year\",\n    values_to = \"net_migration\"\n  )\n\nnet_migration_long\n\n# A tibble: 852,420 × 9\n    ...1 Country     iso3  GID_1   NAME_1     GID_2   NAME_2 year  net_migration\n   &lt;dbl&gt; &lt;chr&gt;       &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;      &lt;chr&gt;   &lt;chr&gt;  &lt;chr&gt;         &lt;dbl&gt;\n 1     1 Afghanistan AFG   AFG.1_1 Badakhshan AFG.1.… Bahar… 2000          12.9 \n 2     1 Afghanistan AFG   AFG.1_1 Badakhshan AFG.1.… Bahar… 2001          37.5 \n 3     1 Afghanistan AFG   AFG.1_1 Badakhshan AFG.1.… Bahar… 2002          22.5 \n 4     1 Afghanistan AFG   AFG.1_1 Badakhshan AFG.1.… Bahar… 2003          26.7 \n 5     1 Afghanistan AFG   AFG.1_1 Badakhshan AFG.1.… Bahar… 2004          20.1 \n 6     1 Afghanistan AFG   AFG.1_1 Badakhshan AFG.1.… Bahar… 2005          12.4 \n 7     1 Afghanistan AFG   AFG.1_1 Badakhshan AFG.1.… Bahar… 2006           9.15\n 8     1 Afghanistan AFG   AFG.1_1 Badakhshan AFG.1.… Bahar… 2007           8.77\n 9     1 Afghanistan AFG   AFG.1_1 Badakhshan AFG.1.… Bahar… 2008           5.17\n10     1 Afghanistan AFG   AFG.1_1 Badakhshan AFG.1.… Bahar… 2009           6.46\n# ℹ 852,410 more rows\n\n\nWe can now see that the data are tidy. Each row corresponds to a single observation.\nNote, however, that the year variable is still stored as a character variable.\nWe can fix this using the as.numeric() function:\n\nnet_migration_long &lt;- net_migration_long %&gt;%\n  mutate(year = as.numeric(year))\n\nnet_migration_long\n\n# A tibble: 852,420 × 9\n    ...1 Country     iso3  GID_1   NAME_1     GID_2   NAME_2  year net_migration\n   &lt;dbl&gt; &lt;chr&gt;       &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;      &lt;chr&gt;   &lt;chr&gt;  &lt;dbl&gt;         &lt;dbl&gt;\n 1     1 Afghanistan AFG   AFG.1_1 Badakhshan AFG.1.… Bahar…  2000         12.9 \n 2     1 Afghanistan AFG   AFG.1_1 Badakhshan AFG.1.… Bahar…  2001         37.5 \n 3     1 Afghanistan AFG   AFG.1_1 Badakhshan AFG.1.… Bahar…  2002         22.5 \n 4     1 Afghanistan AFG   AFG.1_1 Badakhshan AFG.1.… Bahar…  2003         26.7 \n 5     1 Afghanistan AFG   AFG.1_1 Badakhshan AFG.1.… Bahar…  2004         20.1 \n 6     1 Afghanistan AFG   AFG.1_1 Badakhshan AFG.1.… Bahar…  2005         12.4 \n 7     1 Afghanistan AFG   AFG.1_1 Badakhshan AFG.1.… Bahar…  2006          9.15\n 8     1 Afghanistan AFG   AFG.1_1 Badakhshan AFG.1.… Bahar…  2007          8.77\n 9     1 Afghanistan AFG   AFG.1_1 Badakhshan AFG.1.… Bahar…  2008          5.17\n10     1 Afghanistan AFG   AFG.1_1 Badakhshan AFG.1.… Bahar…  2009          6.46\n# ℹ 852,410 more rows"
   },
   {
     "objectID": "index.html#from-long-to-wide-and-wide-to-long",
     "href": "index.html#from-long-to-wide-and-wide-to-long",
-    "title": "“Workbook: Applied R for Migration, Disaster, and Conflict Studies”",
+    "title": "Workbook: Applied R for Migration, Disaster, and Conflict Studies",
     "section": "From long to wide and wide to long",
     "text": "From long to wide and wide to long\nThe two functions pivot_longer() and pivot_wider() are inverses of each other, meaning that one can undo the operation of the other.\nFor example, we first pivot the net_migration data from wide to long format.\nNow suppose we want to return the data to a wide format, with one column per year. We can do this using pivot_wider():\n\nnet_migration_wide &lt;- net_migration_long %&gt;%\n  pivot_wider(\n    names_from = year,\n    values_from = net_migration\n  )\nnet_migration_wide\n\n# A tibble: 42,621 × 27\n    ...1 Country     iso3  GID_1 NAME_1 GID_2 NAME_2 `2000` `2001` `2002` `2003`\n   &lt;dbl&gt; &lt;chr&gt;       &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;  &lt;chr&gt; &lt;chr&gt;   &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;\n 1     1 Afghanistan AFG   AFG.… Badak… AFG.… Bahar…  12.9   37.5    22.5   26.7\n 2     2 Afghanistan AFG   AFG.… Badak… AFG.… Darwaz  19.4   17.2    45.0   28.8\n 3     3 Afghanistan AFG   AFG.… Badak… AFG.… Fayza…  26.5   25.9    30.7   23.6\n 4     4 Afghanistan AFG   AFG.… Badak… AFG.… Ishka… -38.9   47.3    44.6   24.8\n 5     5 Afghanistan AFG   AFG.… Badak… AFG.… Jurm    27.4   27.0    34.5   25.1\n 6     6 Afghanistan AFG   AFG.… Badak… AFG.… Khwah…   5.90  32.7    34.2   37.0\n 7     7 Afghanistan AFG   AFG.… Badak… AFG.… Kishim  15.7   25.9    29.7   28.0\n 8     8 Afghanistan AFG   AFG.… Badak… AFG.… Kuran…  52.1   19.1    29.3   43.0\n 9     9 Afghanistan AFG   AFG.… Badak… AFG.… Ragh    28.0   24.3    29.9   26.2\n10    10 Afghanistan AFG   AFG.… Badak… AFG.… Shahr…  -8.80   8.38   40.5   34.5\n# ℹ 42,611 more rows\n# ℹ 16 more variables: `2004` &lt;dbl&gt;, `2005` &lt;dbl&gt;, `2006` &lt;dbl&gt;, `2007` &lt;dbl&gt;,\n#   `2008` &lt;dbl&gt;, `2009` &lt;dbl&gt;, `2010` &lt;dbl&gt;, `2011` &lt;dbl&gt;, `2012` &lt;dbl&gt;,\n#   `2013` &lt;dbl&gt;, `2014` &lt;dbl&gt;, `2015` &lt;dbl&gt;, `2016` &lt;dbl&gt;, `2017` &lt;dbl&gt;,\n#   `2018` &lt;dbl&gt;, `2019` &lt;dbl&gt;\n\n\nNote that while the datasets now contain the same information, the variables may not be ordered in the same way.\nWe can change this either by reordering variables manually using select(), or by using the names_sort argument inside pivot_wider().\nFor example, we can ensure that the year variables are ordered numerically when pivoting wider:\n\nnet_migration_long_sorted &lt;- net_migration_wide %&gt;%\n  pivot_longer(\n    cols = -c(Country, iso3, GID_1, NAME_1, GID_2, NAME_2),\n    names_to = \"year\",\n    values_to = \"net_migration\"\n  )\n\nnet_migration_long_sorted\n\n# A tibble: 895,041 × 8\n   Country     iso3  GID_1   NAME_1     GID_2     NAME_2  year  net_migration\n   &lt;chr&gt;       &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;      &lt;chr&gt;     &lt;chr&gt;   &lt;chr&gt;         &lt;dbl&gt;\n 1 Afghanistan AFG   AFG.1_1 Badakhshan AFG.1.1_1 Baharak ...1           1   \n 2 Afghanistan AFG   AFG.1_1 Badakhshan AFG.1.1_1 Baharak 2000          12.9 \n 3 Afghanistan AFG   AFG.1_1 Badakhshan AFG.1.1_1 Baharak 2001          37.5 \n 4 Afghanistan AFG   AFG.1_1 Badakhshan AFG.1.1_1 Baharak 2002          22.5 \n 5 Afghanistan AFG   AFG.1_1 Badakhshan AFG.1.1_1 Baharak 2003          26.7 \n 6 Afghanistan AFG   AFG.1_1 Badakhshan AFG.1.1_1 Baharak 2004          20.1 \n 7 Afghanistan AFG   AFG.1_1 Badakhshan AFG.1.1_1 Baharak 2005          12.4 \n 8 Afghanistan AFG   AFG.1_1 Badakhshan AFG.1.1_1 Baharak 2006           9.15\n 9 Afghanistan AFG   AFG.1_1 Badakhshan AFG.1.1_1 Baharak 2007           8.77\n10 Afghanistan AFG   AFG.1_1 Badakhshan AFG.1.1_1 Baharak 2008           5.17\n# ℹ 895,031 more rows"
   },
   {
     "objectID": "index.html#exercise-4-summarizing-grouping-and-aggregating-urban-protest-data",
     "href": "index.html#exercise-4-summarizing-grouping-and-aggregating-urban-protest-data",
-    "title": "“Workbook: Applied R for Migration, Disaster, and Conflict Studies”",
+    "title": "Workbook: Applied R for Migration, Disaster, and Conflict Studies",
     "section": "Exercise 4: Summarizing, grouping, and aggregating urban protest data",
-    "text": "Exercise 4: Summarizing, grouping, and aggregating urban protest data\nIn this exercise, you will work with a city-year dataset on urban protests, stored as USD 20 Data/cityyear.xlsx.\n\n\nPart 1: Import and inspect the data\n\nImport the dataset into R and store it as an object called cityyear.\nPrint the dataset to the Console.\nUse head() to view the first few rows.\nUse str() to inspect the structure of the data.\nUse colnames() to list all variable names.\n\n\n\nPart 2: Overall summaries\nThe dataset contains information on protest activity at the city-year level.\n\nUse summarize() to calculate:\n\nthe mean number of protest events (NEVENTS)\nthe mean number of deadly events (DEATHEVENTS)\nthe mean number of non-deadly events (NODEATHEVENTS)\n\nStore the result as an object called event_summary and print it.\n\n\n\nPart 3: Grouped summaries by region\nNow examine how protest activity varies across regions.\n\nGroup the data by region.\nFor each region, calculate:\n\nthe mean number of protest events\nthe standard deviation of protest events\nthe number of city-year observations\n\nStore the result as region_summary and print it.\n\n\n\n\nPart 4: Aggregation to country-year level\nThe data are currently at the city-year level. In this part, you will aggregate the data to the country-year level.\n\nGroup the data by country and year.\nAggregate the data to calculate:\n\ntotal number of protest events (NEVENTS)\ntotal number of deadly events (DEATHEVENTS)\ntotal number of non-deadly events (NODEATHEVENTS)\nnumber of cities observed per country-year\n\nStore the result as countryyear.\nUngroup and print the dataset.\n\n\n\nPart 5: Group manipulation and lagged variables\nWe now treat the country-year dataset as panel data.\n\nGroup countryyear by country.\nCreate a lagged variable called lag_nevents that contains the number of protest events in the previous year.\nUngroup the data.\nPrint the resulting dataset.\n\n\n\n\nOptional if you finish early\n\nRestrict the country-year dataset to a single region of your choice.\nIdentify the country-year with the highest number of protest events in that region.\nAdd comments explaining what each step of your pipeline does."
+    "text": "Exercise 4: Summarizing, grouping, and aggregating urban protest data\nIn this exercise, you will work with a city-year dataset on urban protests, stored as USD 20 Data/cityyear.xlsx.\n\nPart 1: Import and inspect the data\n\nImport the dataset into R and store it as an object called cityyear.\nPrint the dataset to the Console.\nUse head() to view the first few rows.\nUse str() to inspect the structure of the data.\nUse colnames() to list all variable names.\n\n\n\nPart 2: Overall summaries\nThe dataset contains information on protest activity at the city-year level.\n\nUse summarize() to calculate:\n\nthe mean number of protest events (NEVENTS)\nthe mean number of deadly events (DEATHEVENTS)\nthe mean number of non-deadly events (NODEATHEVENTS)\n\nStore the result as an object called event_summary and print it.\n\n\n\nPart 3: Grouped summaries by region\nNow examine how protest activity varies across regions.\n\nGroup the data by region.\nFor each region, calculate:\n\nthe mean number of protest events\nthe standard deviation of protest events\nthe number of city-year observations\n\nStore the result as region_summary and print it.\n\n\n\nPart 4: Aggregation to country-year level\nThe data are currently at the city-year level. In this part, you will aggregate the data to the country-year level.\n\nGroup the data by country and year.\nAggregate the data to calculate:\n\ntotal number of protest events (NEVENTS)\ntotal number of deadly events (DEATHEVENTS)\ntotal number of non-deadly events (NODEATHEVENTS)\nnumber of cities observed per country-year\n\nStore the result as countryyear.\nUngroup and print the dataset.\n\n\n\nPart 5: Group manipulation and lagged variables\nWe now treat the country-year dataset as panel data.\n\nGroup countryyear by country.\nCreate a lagged variable called lag_nevents that contains the number of protest events in the previous year.\nUngroup the data.\nPrint the resulting dataset.\n\n\n\nOptional if you finish early\n\nRestrict the country-year dataset to a single region of your choice.\nIdentify the country-year with the highest number of protest events in that region.\nAdd comments explaining what each step of your pipeline does."
   },
   {
     "objectID": "index.html#aggregating-to-a-common-unit-of-analysis",
     "href": "index.html#aggregating-to-a-common-unit-of-analysis",
-    "title": "“Workbook: Applied R for Migration, Disaster, and Conflict Studies”",
+    "title": "Workbook: Applied R for Migration, Disaster, and Conflict Studies",
     "section": "Aggregating to a common unit of analysis",
     "text": "Aggregating to a common unit of analysis\nFirst, we aggregate the GDIS data to count disaster events per country-year:\n\ngdis_cy &lt;- gdis %&gt;%\n  group_by(gwno, year) %&gt;%\n  summarize(\n    n_disasters = n()\n  ) %&gt;%\n  ungroup()\n\n`summarise()` has grouped output by 'gwno'. You can override using the\n`.groups` argument.\n\n\nNext, we aggregate the GED data to summarize conflict events and fatalities per country-year:\n\nged_cy &lt;- ged %&gt;%\n  group_by(gwnoa, year) %&gt;%\n  summarize(\n    n_conflict_events = n(),\n    total_fatalities = sum(best, na.rm = TRUE)\n  ) %&gt;%\n  ungroup()\n\n`summarise()` has grouped output by 'gwnoa'. You can override using the\n`.groups` argument."
   },
   {
     "objectID": "index.html#merging-datasets",
     "href": "index.html#merging-datasets",
-    "title": "“Workbook: Applied R for Migration, Disaster, and Conflict Studies”",
+    "title": "Workbook: Applied R for Migration, Disaster, and Conflict Studies",
     "section": "Merging datasets",
     "text": "Merging datasets\nBefore aggregating and merging, we need to make sure that the merge keys have the same names in both datasets. In GDIS, the country identifier is stored as gwno, while in GED it is stored as gwnoa.\n\nged_cy &lt;- ged_cy %&gt;%\n  rename(gwno = gwnoa)\n\nWe can now safely merge the two datasets using a left_join():\n\ncountryyear_merged &lt;- gdis_cy %&gt;%\n  left_join(ged_cy, by = c(\"gwno\", \"year\"))\n\ncountryyear_merged\n\n# A tibble: 1,949 × 5\n    gwno  year n_disasters n_conflict_events total_fatalities\n   &lt;dbl&gt; &lt;dbl&gt;       &lt;int&gt;             &lt;int&gt;            &lt;dbl&gt;\n 1     2  2000          77                 1               19\n 2     2  2001         119                41             1583\n 3     2  2002         233                62              880\n 4     2  2003         300                13               65\n 5     2  2004         118                88              378\n 6     2  2005          70                48              108\n 7     2  2006          96                29              246\n 8     2  2007         138                31              186\n 9     2  2008         139                47              291\n10     2  2009          81                53              493\n# ℹ 1,939 more rows"
   },
   {
     "objectID": "index.html#keys",
     "href": "index.html#keys",
-    "title": "“Workbook: Applied R for Migration, Disaster, and Conflict Studies”",
+    "title": "Workbook: Applied R for Migration, Disaster, and Conflict Studies",
     "section": "Keys",
     "text": "Keys\nTo merge tidy datasets, we need to identify variables that uniquely match observations across datasets. These variables are called “keys”.\nThe choice of keys depends on the unit of analysis of the data. For example: - event-level data may use an event ID and year as keys\n- country-year data typically use country and year\n- country-level data use a country identifier only\nFor a merge to work correctly, the key variables must match exactly across datasets."
   },
   {
     "objectID": "index.html#the-_join-functions",
     "href": "index.html#the-_join-functions",
-    "title": "“Workbook: Applied R for Migration, Disaster, and Conflict Studies”",
+    "title": "Workbook: Applied R for Migration, Disaster, and Conflict Studies",
     "section": "The _join() functions",
     "text": "The _join() functions\nOnce we have identified the key variables that match observations across datasets, we can merge them using the _join() functions. There are four main join functions, which differ only in which observations are kept:\n\ninner_join() keeps only observations present in both datasets\n\nleft_join() keeps all observations from the first dataset\n\nright_join() keeps all observations from the second dataset\n\nfull_join() keeps all observations from either dataset\n\nIf the key variables have different names, or if variables share names but are not keys, we must specify the matching variables explicitly using the by argument.\n\ngdis_inner_join &lt;- inner_join(gdis_cy, ged_cy, by = c(\"gwno\", \"year\"))\ngdis_left_join  &lt;- left_join(gdis_cy,  ged_cy, by = c(\"gwno\", \"year\"))\ngdis_right_join &lt;- right_join(gdis_cy, ged_cy, by = c(\"gwno\", \"year\"))\ngdis_full_join  &lt;- full_join(gdis_cy,  ged_cy, by = c(\"gwno\", \"year\"))\n\nTo compare how many rows each join keeps:\n\nnrow(gdis_inner_join)\n\n[1] 655\n\nnrow(gdis_left_join)\n\n[1] 1949\n\nnrow(gdis_right_join)\n\n[1] 1729\n\nnrow(gdis_full_join)\n\n[1] 3023"
   },
   {
     "objectID": "index.html#joining-on-different-levels-of-analysis",
     "href": "index.html#joining-on-different-levels-of-analysis",
-    "title": "“Workbook: Applied R for Migration, Disaster, and Conflict Studies”",
+    "title": "Workbook: Applied R for Migration, Disaster, and Conflict Studies",
     "section": "Joining on different levels of analysis",
     "text": "Joining on different levels of analysis\nHere, we aggregate: - GDIS to an admin1–year level (more detailed) - GED to a country–year level (more aggregated)\nThen we merge the GED country-year information onto each admin1–year observation in GDIS.\n\ngdis_admin1_y &lt;- gdis %&gt;%\n  rename(gwnoa = gwno) %&gt;%\n  group_by(gwnoa, year, adm1) %&gt;%\n  summarize(\n    n_disasters = n(),\n    .groups = \"drop\"\n  )\n\ngdis_admin1_y\n\n# A tibble: 16,220 × 4\n   gwnoa  year adm1        n_disasters\n   &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;             &lt;int&gt;\n 1     2  2000 Alabama               5\n 2     2  2000 Arkansas              1\n 3     2  2000 California            3\n 4     2  2000 Colorado              1\n 5     2  2000 Connecticut           1\n 6     2  2000 Florida               7\n 7     2  2000 Georgia               5\n 8     2  2000 Hawaii                1\n 9     2  2000 Iowa                  1\n10     2  2000 Kentucky              2\n# ℹ 16,210 more rows\n\n\n\nged_country_y &lt;- ged %&gt;%\n  group_by(gwnoa, year) %&gt;%\n  summarize(\n    n_conflict_events = n(),\n    total_fatalities = sum(best, na.rm = TRUE),\n    .groups = \"drop\"\n  )\n\nged_country_y\n\n# A tibble: 1,729 × 4\n   gwnoa  year n_conflict_events total_fatalities\n   &lt;dbl&gt; &lt;dbl&gt;             &lt;int&gt;            &lt;dbl&gt;\n 1     2  2000                 1               19\n 2     2  2001                41             1583\n 3     2  2002                62              880\n 4     2  2003                13               65\n 5     2  2004                88              378\n 6     2  2005                48              108\n 7     2  2006                29              246\n 8     2  2007                31              186\n 9     2  2008                47              291\n10     2  2009                53              493\n# ℹ 1,719 more rows\n\n\nJoin different levels:\n\ngdis_admin1_with_ged &lt;- gdis_admin1_y %&gt;%\n  left_join(ged_country_y, by = c(\"gwnoa\", \"year\"))\n\ngdis_admin1_with_ged\n\n# A tibble: 16,220 × 6\n   gwnoa  year adm1        n_disasters n_conflict_events total_fatalities\n   &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;             &lt;int&gt;             &lt;int&gt;            &lt;dbl&gt;\n 1     2  2000 Alabama               5                 1               19\n 2     2  2000 Arkansas              1                 1               19\n 3     2  2000 California            3                 1               19\n 4     2  2000 Colorado              1                 1               19\n 5     2  2000 Connecticut           1                 1               19\n 6     2  2000 Florida               7                 1               19\n 7     2  2000 Georgia               5                 1               19\n 8     2  2000 Hawaii                1                 1               19\n 9     2  2000 Iowa                  1                 1               19\n10     2  2000 Kentucky              2                 1               19\n# ℹ 16,210 more rows\n\n\nBecause ged_country_y is at the country-year level, its values are copied to every matching admin1–year row in gdis_admin1_y."
   }

@@ -1,6 +1,6 @@
-
-# "Workbook: Applied R for Migration, Disaster, and Conflict Studies"
-
+---
+title: "Workbook: Applied R for Migration, Disaster, and Conflict Studies"
+---
 
 ## Getting started
 
@@ -287,7 +287,6 @@ In this exercise, you will practice creating objects, using vectors, writing com
 2.  Open a new R script inside the project.
 3.  Add a comment at the top of the script explaining what this script does.
 
-------------------------------------------------------------------------
 
 ### Part 2: Create objects
 
@@ -301,7 +300,6 @@ The total number of voters in a country is 8,750,000.
 
 Create a vector called `vote_shares` containing these values.
 
-------------------------------------------------------------------------
 
 ### Part 3: Use objects in calculations
 
@@ -309,7 +307,6 @@ Create a vector called `vote_shares` containing these values.
 2.  Store the result in an object called `votes_per_party`.
 3.  Print the result.
 
-------------------------------------------------------------------------
 
 ### Part 4: Indexing and functions
 
@@ -317,7 +314,6 @@ Create a vector called `vote_shares` containing these values.
 2.  Calculate how many votes Party B received.
 3.  Use a function to check that the vote shares sum to 1.
 
-------------------------------------------------------------------------
 
 ### Part 5: Packages and help files
 
@@ -325,7 +321,6 @@ Create a vector called `vote_shares` containing these values.
 2.  Install the `dplyr` package (if you have not already).
 3.  Load the package using `library()`.
 
-------------------------------------------------------------------------
 
 ### Optional challenge if you finish early
 
@@ -527,7 +522,6 @@ districts[, 1]
 2.  Open a new R script inside the project.
 3.  Add a comment at the top explaining what the script does.
 
-------------------------------------------------------------------------
 
 ### Part 2: Create objects and vectors
 
@@ -542,7 +536,6 @@ Suppose a country is divided into 8 regions affected by flooding.
 3.  Create a numeric vector called `flood_severity` with values between 0 and 1 indicating flood severity:\
     `0.72, 0.65, 0.81, 0.30, 0.58, 0.22, 0.47, 0.40`
 
-------------------------------------------------------------------------
 
 ### Part 3: Create a tibble
 
@@ -551,7 +544,6 @@ Suppose a country is divided into 8 regions affected by flooding.
 3.  Name the columns `region`, `population`, and `flood_severity`.
 4.  Print the tibble to the Console.
 
-------------------------------------------------------------------------
 
 ### Part 4: Calculations using columns
 
@@ -560,7 +552,6 @@ Suppose a country is divided into 8 regions affected by flooding.
 3.  Calculate the number of people exposed to flooding in each region by multiplying population by flood severity.
 4.  Store the result in a new object called `exposed_population`.
 
-------------------------------------------------------------------------
 
 ### Part 5: Add a new variable
 
@@ -570,7 +561,6 @@ Suppose you classify regions as `"high risk"` or `"low risk"` based on flood sev
 2.  Add this vector as a new column to the tibble.
 3.  Print the updated tibble.
 
-------------------------------------------------------------------------
 
 ### Part 6: Explore the data
 
@@ -578,7 +568,6 @@ Suppose you classify regions as `"high risk"` or `"low risk"` based on flood sev
 2.  Use `table()` to count how many regions are `"high risk"` and `"low risk"`.
 3.  Access the population of the Capital region using indexing.
 
-------------------------------------------------------------------------
 
 ### Optional challenge if you finish early
 
@@ -763,7 +752,6 @@ gdis_flood_pakistan <- gdis %>%
 5.  Use `str()` to inspect the structure of the dataset.
 6.  Use `colnames()` to list all variable names.
 
-------------------------------------------------------------------------
 
 ### Part 2: Select relevant variables
 
@@ -779,7 +767,6 @@ The `gdis` dataset contains many variables. For this exercise, keep only the fol
 1.  Use `select()` with variable names to create a new dataset called `gdis_selected`.
 2.  Verify that the dataset contains only the selected variables.
 
-------------------------------------------------------------------------
 
 ### Part 3: Filter observations
 
@@ -789,7 +776,6 @@ Now restrict the dataset to a smaller set of observations.
 2.  Further filter the data to include only disasters that occurred in **Bangladesh**.
 3.  Store the filtered dataset as `gdis_bangladesh`.
 
-------------------------------------------------------------------------
 
 ### Part 4: Create new variables
 
@@ -803,7 +789,6 @@ Using `mutate()`:
     -   `"Storm"`
     -   `"Other"`
 
-------------------------------------------------------------------------
 
 ### Part 5: Pipe it all together
 
@@ -814,7 +799,6 @@ Rewrite Parts 2–4 as a **single pipe** starting from the original `gdis` datas
 3.  Create the new variables.
 4.  Store the result as `gdis_clean`.
 
-------------------------------------------------------------------------
 
 ### Optional challenge
 
@@ -822,7 +806,6 @@ Rewrite Parts 2–4 as a **single pipe** starting from the original `gdis` datas
 2.  Use `table()` to see how many observations fall into each `disaster_group`.
 3.  Add comments explaining what each step of your pipeline does.
 
-------------------------------------------------------------------------
 
 # Lesson 4: Summarizing data, grouping, and aggregation
 
@@ -1022,7 +1005,6 @@ net_migration_long_sorted
 
 In this exercise, you will work with a city-year dataset on urban protests, stored as USD 20 Data/cityyear.xlsx.
 
-------------------------------------------------------------------------
 
 ### Part 1: Import and inspect the data
 
@@ -1059,7 +1041,6 @@ Now examine how protest activity varies across regions.
     -   the number of city-year observations
 3.  Store the result as `region_summary` and print it.
 
-------------------------------------------------------------------------
 
 ### Part 4: Aggregation to country-year level
 
@@ -1087,7 +1068,6 @@ We now treat the country-year dataset as panel data.
 3.  Ungroup the data.
 4.  Print the resulting dataset.
 
-------------------------------------------------------------------------
 
 ### Optional if you finish early
 
@@ -1095,7 +1075,6 @@ We now treat the country-year dataset as panel data.
 2.  Identify the country-year with the highest number of protest events in that region.
 3.  Add comments explaining what each step of your pipeline does.
 
-------------------------------------------------------------------------
 
 # Lesson 5: Merging data
 

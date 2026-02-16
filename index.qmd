@@ -215,7 +215,8 @@ mean(vote_share_per_district)
 To calculate this correlation
 
 ```{r}
-cor(vote_share_per_district,voters_per_district)
+#| error: true
+cor(vote_share_per_district, voters_per_district, "spearman")
 
 ```
 

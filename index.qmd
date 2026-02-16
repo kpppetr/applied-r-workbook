@@ -255,6 +255,7 @@ Packages are collections of functions (and sometimes data) that extend what R ca
 To install a package, run:
 
 ```{r}
+#| eval: false
 install.packages("dplyr")
 library(dplyr)
 
@@ -267,6 +268,7 @@ When a package is loaded, you can usually call its functions by name. Problems c
 You can avoid this by calling a function directly from a package using `package::function`.
 
 ```{r}
+#| eval: false
 stats::lag(x)
 dplyr::lag(x)
 ```
@@ -382,7 +384,7 @@ voters_per_district <- c(618880, 1286117, 318003,
                          1037879, 505025, 493486, 
                          1621599, 976879, 1232128, 1231804) 
 
-cor(district_names,vote_shares)
+try(cor(district_names, vote_shares))
 ## Error in cor(district_names, vote_shares): 'x' must be numeric
 ```
 
@@ -445,7 +447,11 @@ Tibbles are a modern version of data frames and are part of the tidyverse. They 
 To use tibbles, install and load the tidyverse:
 
 ```{r}
+#| eval: false
 install.packages("tidyverse")
+```
+
+```{r}
 library(tidyverse)
 ```
 
@@ -615,8 +621,8 @@ Regardless of file format, there are two main ways to import data into R.
 As an example, let’s load the GDIS dataset, a global dataset of geocoded disaster locations.
 
 ```{r}
+#| eval: false
 gdis <- read_csv("datasets/gdis.csv")
-
 ```
 
 ## Checking your data
@@ -626,6 +632,7 @@ After importing data, it is good practice to check that it loaded correctly.
 You can print the dataset, view the first rows, inspect its structure, and get basic summaries:
 
 ```{r}
+#| eval: false
 head(gdis) # Print the first few rows of the data set
 str(gdis) # Print the structure of the data set
 colnames(gdis) # Print the variable names of the data set

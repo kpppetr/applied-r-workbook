@@ -1,7 +1,3 @@
----
-title: "Workbook: Applied R for Migration, Disaster, and Conflict Studies"
-editor: source
----
 
 # Workbook: Applied R for Migration, Disaster, and Conflict Studies
 

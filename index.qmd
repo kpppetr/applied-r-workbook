@@ -1,8 +1,8 @@
----
-title: "Workbook: Applied R for Migration, Disaster, and Conflict Studies"
----
 
-# Getting started
+# "Workbook: Applied R for Migration, Disaster, and Conflict Studies"
+
+
+## Getting started
 
 Welcome! In this workbook you’ll learn the basics of R and RStudio and run your first code.
 

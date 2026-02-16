@@ -1,5 +1,7 @@
+---
+title: "Workbook: Applied R for Migration, Disaster, and Conflict Studies"
+---
 
-# Workbook: Applied R for Migration, Disaster, and Conflict Studies
 
 # Getting started
 

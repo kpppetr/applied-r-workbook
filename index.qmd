@@ -113,7 +113,8 @@ Every object must have a unique name, called an identifier, which you use to acc
 
 Objects in R must have unique names. If you reuse a name, the old object is replaced.
 
-Object names must: - start with a letter\
+Object names must: 
+- start with a letter\
 - not contain spaces\
 - not use special characters
 
@@ -1218,3 +1219,62 @@ gdis_admin1_with_ged
 ```
 
 Because ged_country_y is at the country-year level, its values are copied to every matching admin1–year row in gdis_admin1_y.
+
+## Exercise 5: Advanced merging and interpretation
+
+In this exercise, you will merge disaster and conflict data and think carefully about keys, missing values, and levels of analysis.
+
+
+### Part 1: Recreate the country-year datasets 
+
+1. Create a country-year dataset from `gdis` that counts the number of disasters per country-year.
+2. Create a country-year dataset from `ged` that calculates:
+   - number of conflict events
+   - total fatalities
+
+### Part 2: Merge and compare join types
+
+1. Merge the two country-year datasets using:
+   - `inner_join()`
+   - `left_join()`
+   - `full_join()`
+
+2. Compare the number of rows in each result.
+
+3. In your own words, explain:
+   - Why does `inner_join()` return fewer rows?
+   - When would a `full_join()` be useful in research?
+
+### Part 3: Investigating missing values
+
+Using the left-joined dataset:
+
+1. Count how many country-years have disasters but **no recorded conflict**.
+2. Count how many country-years have conflict but **no recorded disasters**.
+3. Replace missing values in `n_conflict_events` and `total_fatalities` with 0.
+4. Explain why replacing NA with 0 can be appropriate in this context.
+
+
+### Part 4: Analytical extension
+
+1. Calculate the correlation between:
+   - number of disasters
+   - total conflict fatalities
+
+2. Create a binary variable indicating whether a country-year experienced **both** disasters and conflict.
+
+3. What proportion of country-years experience both?
+
+### Challenge 
+
+Aggregate GDIS to the **admin1–year level**, but keep GED at the country–year level.
+
+1. Merge the datasets.
+2. Explain why conflict values are duplicated across multiple rows.
+3. Discuss whether this creates:
+   - a statistical problem,
+   - or simply a change in the unit of analysis.
+
+4. Suggest how you would correctly model this structure in a regression framework.
+
+

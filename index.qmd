@@ -113,8 +113,7 @@ Every object must have a unique name, called an identifier, which you use to acc
 
 Objects in R must have unique names. If you reuse a name, the old object is replaced.
 
-Object names must: 
-- start with a letter\
+Object names must: - start with a letter\
 - not contain spaces\
 - not use special characters
 
@@ -277,57 +276,6 @@ stats::lag(vote_shares) # lag function explicitly called from the stats package
 ```{r}
 dplyr::lag(vote_shares) # lag function explicitly called from the dplyr package
 ```
-
-## Exercise: Working with objects, vectors, and functions
-
-In this exercise, you will practice creating objects, using vectors, writing comments, and applying functions in R.
-
-### Part 1: Set up your project
-
-1.  Create a new RStudio Project in a new directory.
-2.  Open a new R script inside the project.
-3.  Add a comment at the top of the script explaining what this script does.
-
-
-### Part 2: Create objects
-
-The total number of voters in a country is 8,750,000.
-
-1.  Create an object called `total_voters` and assign this value to it.
-2.  Three political parties received the following vote shares:
-    -   Party A: 0.47\
-    -   Party B: 0.38\
-    -   Party C: 0.15
-
-Create a vector called `vote_shares` containing these values.
-
-
-### Part 3: Use objects in calculations
-
-1.  Calculate the number of votes each party received by combining `total_voters` and `vote_shares`.
-2.  Store the result in an object called `votes_per_party`.
-3.  Print the result.
-
-
-### Part 4: Indexing and functions
-
-1.  Use indexing to extract the vote share of Party B.
-2.  Calculate how many votes Party B received.
-3.  Use a function to check that the vote shares sum to 1.
-
-
-### Part 5: Packages and help files
-
-1.  Open the help file for the `sum()` function.
-2.  Install the `dplyr` package (if you have not already).
-3.  Load the package using `library()`.
-
-
-### Optional challenge if you finish early
-
-1.  Change the vote share of Party C to 0.18 by overwriting the original object.
-2.  Recalculate the votes per party.
-3.  Add a comment explaining what changed and why the results are different.
 
 # Lesson 2: Data types and structures in R
 
@@ -515,67 +463,6 @@ districts[, 1]
 
 ```
 
-## Exercise following Lesson 2
-
-### Part 1: Set up your project
-
-1.  Create a new RStudio Project in a new directory.
-2.  Open a new R script inside the project.
-3.  Add a comment at the top explaining what the script does.
-
-
-### Part 2: Create objects and vectors
-
-Suppose a country is divided into 8 regions affected by flooding.
-
-1.  Create a character vector called `region` with the following values:\
-    `"Coastal North"`, `"Coastal South"`, `"River Delta"`, `"Capital"`, `"Central Plains"`, `"Highlands"`, `"Eastern Border"`, `"Western Border"`
-
-2.  Create a numeric vector called `population` with the population of each region:\
-    `850000, 1200000, 430000, 2100000, 970000, 620000, 540000, 480000`
-
-3.  Create a numeric vector called `flood_severity` with values between 0 and 1 indicating flood severity:\
-    `0.72, 0.65, 0.81, 0.30, 0.58, 0.22, 0.47, 0.40`
-
-
-### Part 3: Create a tibble
-
-1.  Load the tidyverse.
-2.  Combine the three vectors into a tibble called `flood_regions`.
-3.  Name the columns `region`, `population`, and `flood_severity`.
-4.  Print the tibble to the Console.
-
-
-### Part 4: Calculations using columns
-
-1.  Calculate the mean flood severity across regions.
-2.  Calculate the total population living in regions with flood data.
-3.  Calculate the number of people exposed to flooding in each region by multiplying population by flood severity.
-4.  Store the result in a new object called `exposed_population`.
-
-
-### Part 5: Add a new variable
-
-Suppose you classify regions as `"high risk"` or `"low risk"` based on flood severity.
-
-1.  Create a character vector called `risk_level` where regions with flood severity above 0.6 are `"high risk"`, and the rest are `"low risk"`.
-2.  Add this vector as a new column to the tibble.
-3.  Print the updated tibble.
-
-
-### Part 6: Explore the data
-
-1.  Use `$` to extract the `flood_severity` column and calculate its standard deviation.
-2.  Use `table()` to count how many regions are `"high risk"` and `"low risk"`.
-3.  Access the population of the Capital region using indexing.
-
-
-### Optional challenge if you finish early
-
-1.  Convert the `risk_level` variable to a factor.
-2.  Recalculate the exposed population assuming flood severity increases by 10% in all regions.
-3.  Add comments explaining what changed and why.
-
 # Lesson 3: Data in R
 
 ## Data import
@@ -741,72 +628,6 @@ gdis_flood_pakistan <- gdis %>%
   select(country, year, adm3, disastertype, flood_bin, post_2005) %>%
   filter(country == "Pakistan", flood_bin == 1)
 ```
-
-## Exercise 3: Importing and manipulating disaster data
-
-### Part 1: Import and inspect the data
-
-1.  Download the `gdis.csv` file and place it in your project folder.
-2.  Import the dataset into R and store it as an object called `gdis`.
-3.  Print the dataset to the Console.
-4.  Use `head()` to view the first few rows.
-5.  Use `str()` to inspect the structure of the dataset.
-6.  Use `colnames()` to list all variable names.
-
-
-### Part 2: Select relevant variables
-
-The `gdis` dataset contains many variables. For this exercise, keep only the following variables:
-
--   `country`
--   `year`
--   `adm3`
--   `disastertype`
--   `latitude`
--   `longitude`
-
-1.  Use `select()` with variable names to create a new dataset called `gdis_selected`.
-2.  Verify that the dataset contains only the selected variables.
-
-
-### Part 3: Filter observations
-
-Now restrict the dataset to a smaller set of observations.
-
-1.  Filter the data to include only disasters that occurred after the year 2004.
-2.  Further filter the data to include only disasters that occurred in **Bangladesh**.
-3.  Store the filtered dataset as `gdis_bangladesh`.
-
-
-### Part 4: Create new variables
-
-Using `mutate()`:
-
-1.  Create a dummy variable called `is_drought` that equals 1 if the disaster type is a drought and 0 otherwise.
-2.  Create a variable called `abs_latitude` that stores the absolute value of latitude.
-3.  Create a categorical variable called `disaster_group` with the following values:
-    -   `"Flood"`
-    -   `"Drought"`
-    -   `"Storm"`
-    -   `"Other"`
-
-
-### Part 5: Pipe it all together
-
-Rewrite Parts 2–4 as a **single pipe** starting from the original `gdis` dataset.
-
-1.  Select the relevant variables.
-2.  Filter to disasters in Bangladesh after 2004.
-3.  Create the new variables.
-4.  Store the result as `gdis_clean`.
-
-
-### Optional challenge
-
-1.  Count how many flood events occurred in Bangladesh after 2004.
-2.  Use `table()` to see how many observations fall into each `disaster_group`.
-3.  Add comments explaining what each step of your pipeline does.
-
 
 # Lesson 4: Summarizing data, grouping, and aggregation
 
@@ -1002,81 +823,6 @@ net_migration_long_sorted <- net_migration_wide %>%
 net_migration_long_sorted
 ```
 
-## Exercise 4: Summarizing, grouping, and aggregating urban protest data
-
-In this exercise, you will work with a city-year dataset on urban protests, stored as USD 20 Data/cityyear.xlsx.
-
-
-### Part 1: Import and inspect the data
-
-1.  Import the dataset into R and store it as an object called `cityyear`.
-
-2.  Print the dataset to the Console.
-
-3.  Use `head()` to view the first few rows.
-
-4.  Use `str()` to inspect the structure of the data.
-
-5.  Use `colnames()` to list all variable names.
-
-### Part 2: Overall summaries
-
-The dataset contains information on protest activity at the city-year level.
-
-1.  Use `summarize()` to calculate:
-
-    -   the mean number of protest events (`NEVENTS`)
-    -   the mean number of deadly events (`DEATHEVENTS`)
-    -   the mean number of non-deadly events (`NODEATHEVENTS`)
-
-2.  Store the result as an object called `event_summary` and print it.
-
-### Part 3: Grouped summaries by region
-
-Now examine how protest activity varies across regions.
-
-1.  Group the data by region.
-2.  For each region, calculate:
-    -   the mean number of protest events
-    -   the standard deviation of protest events
-    -   the number of city-year observations
-3.  Store the result as `region_summary` and print it.
-
-
-### Part 4: Aggregation to country-year level
-
-The data are currently at the city-year level. In this part, you will aggregate the data to the country-year level.
-
-1.  Group the data by country and year.
-
-2.  Aggregate the data to calculate:
-
-    -   total number of protest events (`NEVENTS`)
-    -   total number of deadly events (`DEATHEVENTS`)
-    -   total number of non-deadly events (`NODEATHEVENTS`)
-    -   number of cities observed per country-year
-
-3.  Store the result as `countryyear`.
-
-4.  Ungroup and print the dataset.
-
-### Part 5: Group manipulation and lagged variables
-
-We now treat the country-year dataset as panel data.
-
-1.  Group `countryyear` by country.
-2.  Create a lagged variable called `lag_nevents` that contains the number of protest events in the previous year.
-3.  Ungroup the data.
-4.  Print the resulting dataset.
-
-
-### Optional if you finish early
-
-1.  Restrict the country-year dataset to a single region of your choice.
-2.  Identify the country-year with the highest number of protest events in that region.
-3.  Add comments explaining what each step of your pipeline does.
-
-
 # Lesson 5: Merging data
 
 Now that we know how to import data, aggregate data, and reshape data, we turn to merging data.
@@ -1219,62 +965,5 @@ gdis_admin1_with_ged
 ```
 
 Because ged_country_y is at the country-year level, its values are copied to every matching admin1–year row in gdis_admin1_y.
-
-## Exercise 5: Advanced merging and interpretation
-
-In this exercise, you will merge disaster and conflict data and think carefully about keys, missing values, and levels of analysis.
-
-
-### Part 1: Recreate the country-year datasets 
-
-1. Create a country-year dataset from `gdis` that counts the number of disasters per country-year.
-2. Create a country-year dataset from `ged` that calculates:
-   - number of conflict events
-   - total fatalities
-
-### Part 2: Merge and compare join types
-
-1. Merge the two country-year datasets using:
-   - `inner_join()`
-   - `left_join()`
-   - `full_join()`
-
-2. Compare the number of rows in each result.
-
-3. In your own words, explain:
-   - Why does `inner_join()` return fewer rows?
-   - When would a `full_join()` be useful in research?
-
-### Part 3: Investigating missing values
-
-Using the left-joined dataset:
-
-1. Count how many country-years have disasters but **no recorded conflict**.
-2. Count how many country-years have conflict but **no recorded disasters**.
-3. Replace missing values in `n_conflict_events` and `total_fatalities` with 0.
-4. Explain why replacing NA with 0 can be appropriate in this context.
-
-
-### Part 4: Analytical extension
-
-1. Calculate the correlation between:
-   - number of disasters
-   - total conflict fatalities
-
-2. Create a binary variable indicating whether a country-year experienced **both** disasters and conflict.
-
-3. What proportion of country-years experience both?
-
-### Challenge 
-
-Aggregate GDIS to the **admin1–year level**, but keep GED at the country–year level.
-
-1. Merge the datasets.
-2. Explain why conflict values are duplicated across multiple rows.
-3. Discuss whether this creates:
-   - a statistical problem,
-   - or simply a change in the unit of analysis.
-
-4. Suggest how you would correctly model this structure in a regression framework.
 
 

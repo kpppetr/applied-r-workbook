@@ -321,8 +321,6 @@ try(cor(district_names, vote_shares))
 
 ## Missing values
 
-R uses `NA` to represent missing values. This is used when a value is \## Missing values
-
 R uses `NA` to represent missing values. This is used when a value is not available.
 
 Missing values allow you to keep incomplete data in your object. When using functions like `mean()` or `sum()`, you often need to tell R to remove missing values explicitly.
@@ -966,4 +964,711 @@ gdis_admin1_with_ged
 
 Because ged_country_y is at the country-year level, its values are copied to every matching admin1–year row in gdis_admin1_y.
 
+# Lesson 6: Descriptive statistics
 
+Now that we know how to import data, manipulate datasets, reshape data, and merge different sources, we turn to descriptive statistics.
+
+Descriptive statistics help us summarize the main characteristics of a dataset. They allow us to understand the distribution of variables, identify patterns, and detect unusual observations.
+
+In R, descriptive statistics are calculated using functions such as:
+
+-   `mean()` for averages
+-   `median()` for the middle value
+-   `sd()` for standard deviation
+-   `min()` and `max()` for the range
+-   `summary()` for a quick overview
+
+In the examples below, we again use the GED conflict dataset.
+
+Before calculating statistics, it is good practice to inspect the variables in the dataset:
+
+```{r}
+names(ged)
+
+```
+
+We can also obtain a quick overview of a variable using the summary() function.
+
+```{r}
+summary(ged$best)
+
+```
+
+## Grouped Summaries
+
+Often we want to compare statistics across different groups in the data. This can be done using group_by() together with summarize().
+
+For example, we can calculate summary statistics for different types of violence.
+
+```{r}
+library(dplyr)
+ged_type_summary <- ged %>%
+  group_by(type_of_violence) %>%
+  summarize(
+    mean_fatalities = mean(best, na.rm = TRUE),
+    sd_fatalities = sd(best, na.rm = TRUE),
+    n_events = n()
+  )
+
+ged_type_summary
+
+```
+
+We can also summarize the data by year to observe how conflict changes over time.
+
+```{r}
+ged_yearly <- ged %>%
+  group_by(year) %>%
+  summarize(
+    total_fatalities = sum(best, na.rm = TRUE),
+    n_events = n(),
+    mean_fatalities = mean(best, na.rm = TRUE)
+  )
+
+ged_yearly
+
+```
+
+For categorical variables, we often want to count how many observations fall into each category.
+
+The table() function provides a simple way to do this.
+
+```{r}
+table(ged$type_of_violence)
+```
+
+Using the tidyverse, we can produce the same result with count().
+
+```{r}
+library(tidyverse)
+ged %>%
+  count(type_of_violence)
+```
+
+Descriptive statistics help us answer basic questions about our data. For example:
+
+-   What is the average number of deaths per year?
+-   Which country had the highest number of fatalities?
+-   How many conflict events occur in each region?
+
+We can answer these questions by combining functions such as `group_by()` and `summarize()`.
+
+Average fatalities per year
+
+```{r}
+ged %>%
+  group_by(year) %>%
+  summarize(
+    total_fatalities = sum(best, na.rm = TRUE),
+    mean_fatalities = mean(best, na.rm = TRUE)
+  )
+```
+
+Country with the highest number of fatalities
+
+```{r}
+ged %>%
+  group_by(country) %>%
+  summarize(
+    total_fatalities = sum(best, na.rm = TRUE)
+  ) %>%
+  arrange(desc(total_fatalities))
+```
+
+Number of conflict events per region
+
+```{r}
+ged %>%
+  count(region)
+```
+
+## Calculating multiple statistics at once
+
+Using base R functions is useful for quick checks, but when working with datasets it is often more convenient to calculate several statistics at the same time using the tidyverse.
+
+```{r}
+ged_summary <- ged %>%
+  summarize(
+    mean_fatalities = mean(best, na.rm = TRUE),
+    median_fatalities = median(best, na.rm = TRUE),
+    sd_fatalities = sd(best, na.rm = TRUE),
+    min_fatalities = min(best, na.rm = TRUE),
+    max_fatalities = max(best, na.rm = TRUE)
+  )
+
+ged_summary
+```
+
+## Cross-tabulations
+
+Sometimes we want to examine the relationship between two categorical variables. A common descriptive tool for this is a cross-tabulation.
+
+A cross-tabulation counts how many observations fall into each combination of two variables.
+
+For example, we might want to see how conflict events are distributed across countries and types of violence.
+
+```{r}
+table(ged$country, ged$type_of_violence)
+```
+
+We can produce the same result using the tidyverse with count():
+
+```{r}
+ged %>%
+  count(country, type_of_violence)
+```
+
+## Creating dummy variables for cross-tabulations
+
+Sometimes it is useful to convert a variable into a dummy variable. A dummy variable takes the value 1 if a condition is true and 0 otherwise.
+
+For example, we may want to distinguish between conflict events that caused fatalities and those that did not.
+
+```{r}
+ged$conflict_dummy <- ifelse(ged$best > 0, 1, 0)
+
+names(ged)
+```
+
+We can now create a cross-tabulation to see how fatal and non-fatal events are distributed across countries. This table shows how many conflict events with and without fatalities occurred in each country.
+
+```{r}
+table(ged$country, ged$conflict_dummy)
+```
+
+## Finding the largest values
+
+Sometimes we want to identify which year or country had the largest number of fatalities. We can do this by sorting the data using arrange().
+
+For example, we can calculate total fatalities per year and then sort them from highest to lowest.
+
+```{r}
+ged_year_summary <- ged %>%
+  group_by(year) %>%
+  summarize(
+    total_fatalities = sum(best, na.rm = TRUE),
+    n_events = n(),
+    .groups = "drop"
+  )
+
+ged_year_summary
+```
+
+Now we sort the years by total fatalities. The desc() function tells R to sort values in descending order, meaning the largest values appear first.
+
+```{r}
+ged_year_summary %>%
+  arrange(desc(total_fatalities))
+```
+
+# Lesson 7: Plotting in R using ggplot2
+
+In this chapter, we will explore ggplot, one of the most powerful tools for data visualisation in R. ggplot is part of the tidyverse and allows you to create figures in a highly flexible and structured way.
+
+Since ggplot offers so many possibilities, this chapter will focus on the basics: understanding how ggplot works, creating some of the most common plot types, and learning where to look for more help and ideas.
+
+## What is `ggplot()`?
+
+`ggplot()` is a plotting function in the `ggplot2` package, which is part of the `tidyverse`. It builds plots by adding layers with the `+` operator, making it a flexible and powerful tool for data visualisation.
+
+## The basic building blocks of `ggplot()`
+
+Plots created with `ggplot()` are built from three main components:
+
+-   Data: the dataset you want to visualise
+-   Aesthetics: the variables you want to map to the plot, such as the `x`- and `y`-axes
+-   Geometries: the type of plot you want to draw, such as points, bars, or lines
+
+#### Data
+
+To use `ggplot()`, your data should be stored as a `tibble` or `data.frame`. This is because `ggplot()` relies on variable names to map data to the plot. If your data is stored as a matrix or vector, you will first need to convert it.
+
+#### Aesthetics
+
+Aesthetics control which variables are shown in a plot and how they are displayed. In `ggplot()`, they are defined inside `aes()`. The exact aesthetics you use depend on the type of plot you want to create, but some of the most common are:
+
+-   `x`: the variable shown on the x-axis\
+-   `y`: the variable shown on the y-axis\
+-   `color`: the variable mapped to colour\
+-   `size`: the variable mapped to size
+
+#### Geometries
+
+Geometries are the layers that determine what kind of plot is drawn. In `ggplot()`, they are added with `geom_*()` functions, and every plot needs at least one geometry. Different geometries require different aesthetics. For example, `geom_point()` needs both `x` and `y`, while `geom_histogram()` only requires `x`.
+
+Some common geometries are:
+
+-   `geom_point()`: scatterplot
+-   `geom_bar()`: bar plot
+-   `geom_histogram()`: histogram
+-   `geom_density()`: density plot
+-   `geom_boxplot()`: boxplot
+
+## Creating plots in `ggplot()`
+
+Now that we have covered the basic building blocks of `ggplot()`, we can start creating plots. Since `ggplot2` is part of the `tidyverse`, we will often use the pipe operator `%>%` to make our code easier to read.
+
+### Scatterplots
+
+A scatterplot is useful for showing the relationship between two continuous variables. Each point represents one observation in the data.
+
+To create a scatterplot in `ggplot()`, we use `geom_point()`. First, we specify the dataset and map variables to the `x`- and `y`-axes inside `aes()`. Then we add `geom_point()` with `+`.
+
+In this example, we plot the relationship between electoral democracy, measured by `v2x_polyarchy`, and political participation, measured by `v2x_participation`.
+
+```{r}
+library(ggplot2)
+V_Dem <- read_csv("datasets/V_Dem.csv")
+V_Dem %>%
+  ggplot(aes(x = v2x_partipdem, y = v2x_polyarchy))
+```
+
+```{r}
+V_Dem %>%
+  ggplot(aes(x = v2x_partipdem, y = v2x_polyarchy)) +
+  geom_point()
+```
+
+We can make the scatterplot more informative by adding colour. Here, we map the variable `government` to the `color` aesthetic, which allows us to distinguish countries with different types of governments in the plot.
+
+```{r}
+V_Dem %>%
+  ggplot(aes(x = v2x_partipdem, y = v2x_polyarchy, color = government)) +
+  geom_point()
+```
+
+The plot now uses different colours for different types of government. `ggplot()` also adds a legend automatically, since colour is not shown on either axis and needs to be explained.
+
+### Histograms
+
+Histograms are useful for showing the distribution of a single variable. The values of the variable are shown on the x-axis, while the y-axis shows how many observations fall within each range of values, called bins.
+
+To create a histogram in `ggplot()`, we use `geom_histogram()`. For this type of plot, we only need to specify the `x` aesthetic. In the example below, we plot the distribution of `v2x_polyarchy`.
+
+```{r}
+V_Dem %>%
+  ggplot(aes(x = v2x_polyarchy)) +
+  geom_histogram()
+```
+
+From the plot, we can see that the distribution of the variable is skewed to the right, i.e. there are more countries with high levels of democracy than there are countries with low levels of democracy.
+
+#### Changing the number of bins
+
+The appearance of a histogram depends a lot on the number of bins used. By default, `ggplot()` uses 30 bins, but this can be changed with the `bins` or `binwidth` argument in `geom_histogram()`.
+
+In the example below, we change the number of bins to 10.
+
+```{r}
+V_Dem %>%
+  ggplot(aes(x = v2x_polyarchy)) +
+  geom_histogram(bins = 10)
+```
+
+We can also use colour to compare the distribution of `v2x_polyarchy` across continents by mapping `continent` to the `fill` aesthetic. By default, `ggplot()` stacks the bars for each group on top of each other. This shows the total number of observations in each bin, but it can make comparisons between groups harder.
+
+A common alternative is to change the `position` argument to `"dodge"`, which places the bars for each continent side by side. This makes it easier to compare the distributions across groups.
+
+```{r}
+V_Dem %>%
+  ggplot(aes(x = v2x_polyarchy, fill = continent)) +
+  geom_histogram(bins = 10, position = "dodge")
+```
+
+### Boxplots
+
+Boxplots are useful for showing the distribution of a continuous variable across different groups. They display the median and the spread of the data, making them especially helpful for comparing distributions between categories.
+
+To create a boxplot in `ggplot()`, we use `geom_boxplot()`. One variable should be categorical and the other continuous. For a vertical boxplot, the categorical variable is mapped to `x` and the continuous variable to `y`.
+
+```{r}
+V_Dem %>%
+  ggplot(aes(x = continent, y = v2x_polyarchy)) +
+  geom_boxplot()
+```
+
+```{r}
+V_Dem %>%
+  ggplot(aes(x = v2x_polyarchy, y = continent)) +
+  geom_boxplot()
+```
+
+### Adding multiple geometries to a plot
+
+So far, we have used one geometry at a time, but `ggplot()` also allows us to add multiple geometries to the same figure. For example, in a scatterplot we can add both points and a regression line.
+
+Any new geometry will use the same data and aesthetics unless we specify otherwise. In the example below, we add `geom_smooth()` to the scatterplot to draw a linear regression line.
+
+```{r}
+V_Dem %>%
+  ggplot(aes(x = v2x_partipdem, y = v2x_polyarchy)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE)
+```
+
+We can continue adding layers in the same way. For example, we can add a horizontal line to show the mean value of `v2x_polyarchy`. This can help us compare the observations to the overall average in the data.
+
+```{r}
+V_Dem %>%
+  ggplot(aes(x = v2x_partipdem, y = v2x_polyarchy)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE) +
+  geom_hline(
+    yintercept = mean(V_Dem$v2x_polyarchy, na.rm = TRUE),
+    linetype = "dashed"
+  )
+```
+
+## Modifying the appearance of a plot
+
+So far, we have focused on how to create plots in `ggplot()`. We can also improve how a plot looks by changing labels, titles, scales, and colours.
+
+A simple and common modification is to improve the axis labels. By default, `ggplot()` uses the variable names as labels, but these can be changed with `labs()`. In the example below, we give the axes more descriptive names.
+
+```{r}
+V_Dem %>%
+  ggplot(aes(x = v2x_partipdem, y = v2x_polyarchy)) +
+  geom_point() +
+  labs(x = "Participatory democracy", y = "Electoral democracy")
+```
+
+We can also add a title to the plot using the `title` argument inside `labs()`. The same function can also be used to rename the legend labels, which makes the plot easier to interpret.
+
+```{r}
+V_Dem %>%
+  ggplot(aes(x = v2x_partipdem, 
+             y = v2x_polyarchy, 
+             color = government)) +
+  geom_point() +
+  labs(
+    x = "Participatory democracy",
+    y = "Electoral democracy",
+    color = "Government",
+    title = "Participatory and electoral democracy"
+  )
+```
+
+A simple way to change the appearance of a plot is to use a pre-defined theme. For example, `theme_minimal()` removes many of the default background elements and gives the plot a cleaner look.
+
+```{r}
+V_Dem %>%
+  ggplot(aes(x = v2x_partipdem, y = v2x_polyarchy, color = government)) +
+  geom_point() +
+  scale_x_continuous(
+    breaks = seq(0, 1, 0.1),
+    name = "Participatory democracy"
+  ) +
+  scale_y_continuous(
+    breaks = seq(0, 1, 0.1),
+    name = "Electoral democracy"
+  ) +
+  labs(
+    color = "Government",
+    title = "Participatory and electoral democracy"
+  ) +
+  theme_minimal()
+```
+
+### Faceting
+
+Faceting allows us to split one plot into several smaller plots based on a grouping variable. This is useful when we want to compare patterns across categories. In `ggplot2`, this is commonly done with `facet_wrap()` or `facet_grid()`.
+
+In the example below, we use `facet_wrap()` to create a separate scatterplot for each type of government. This makes it easier to compare the relationship between participatory democracy and electoral democracy across groups.
+
+```{r}
+V_Dem %>%
+  ggplot(aes(x = v2x_partipdem, y = v2x_polyarchy)) +
+  geom_point() +
+  facet_wrap(~government) +
+  labs(
+    x = "Participatory democracy",
+    y = "Electoral democracy",
+    title = "Participatory and electoral democracy by government type"
+  ) +
+  theme_minimal()
+```
+
+### Saving plots
+
+When you have created a plot you want to keep, you can save it directly from `R` using `ggsave()`. By default, `ggsave()` saves the most recently displayed plot. You can choose the file name, dimensions, and file format.
+
+For example, the code below saves the last plot as a PDF file.
+
+```{r}
+ggsave(
+  filename = "my_plot.pdf",
+  width = 10,
+  height = 10,
+  device = "pdf"
+)
+```
+
+# Lesson 8: Regression Analysis in `R`
+
+In this chapter, we introduce the basics of regression analysis in `R`. Regression analysis is a statistical method used to examine the relationship between a dependent variable and one or more independent variables.
+
+## Linear regression
+
+Linear regression is used when the dependent variable is continuous. The simplest version includes one independent variable, but regression models can also include several predictors. In `R`, linear regression is estimated using the `lm()` function.
+
+Before estimating a regression model, we should first specify a theoretical model describing the expected relationship between the dependent and independent variables. In general form, this can be written as:
+
+$Y_i = \beta_0 + \beta_1 X_{1i} + \beta_2 X_{2i} + \dots + \beta_k X_{ki} + \varepsilon_i$
+
+Where $Y_i$ is the dependent variable, $X_{1i} \dots X_{ki}$ are the independent variables, $\beta_0$ is the intercept, $\beta_1 \dots \beta_k$ are the coefficients, and $\varepsilon_i$ is the error term.
+
+The purpose of regression analysis is to estimate these coefficients and assess the direction and strength of the relationships between variables.
+
+## Running a regression in `R`
+
+To run a linear regression in `R`, we usually use the `lm()` function. The two main arguments are a formula and a data object.
+
+In `R`, formulas are written using `~`, with the dependent variable on the left-hand side and the independent variables on the right-hand side:
+
+`dependent_variable ~ independent_variable_1 + independent_variable_2`
+
+For example, a formula can also be saved as an object:
+
+`my_formula <- dependent_variable ~ independent_variable_1 + independent_variable_2`
+
+In practice, we usually store our variables in a `data.frame` or `tibble`, and then specify that dataset using the `data =` argument in `lm()`. `R` will then look for the variables named in the formula inside that dataset.
+
+```{r}
+library(tidyverse)
+
+model <- lm(v2x_polyarchy ~ v2x_partipdem, data = V_Dem)
+```
+
+And for multiple independent variables, you can add them with \`+\`. For example, if you also want to include the military dimension index, \`v2x_ex_military\`, you can write:
+
+```{r}
+model_multiple <- lm(v2x_polyarchy ~ v2x_partipdem + v2x_ex_military, data = V_Dem)
+```
+
+### Viewing the results
+
+The objects `model` and `model_multiple` contain the estimated regression models. If we print the objects directly, `R` will only show limited information, such as the formula and the estimated coefficients.
+
+```{r}
+model_multiple
+```
+
+To see a fuller summary of the regression results, we can use the `summary()` function. This provides more detailed output, including coefficient estimates, standard errors, `t`-values, `p`-values, and measures such as `R-squared`, which are useful when interpreting the model.
+
+```{r}
+summary(model_multiple)
+```
+
+In simple terms, countries with higher levels of participatory democracy also tend to have higher levels of electoral democracy. Greater military influence over executive power is associated with slightly lower levels of electoral democracy, but this relationship is much weaker.
+
+## Regression with conflict data and World Bank indicators
+
+We will now move to using conflict data merged with World Bank indicators. In this section, we use the dataset `ged_world_bank.csv`, which contains country-year conflict measures together with socioeconomic indicators from the World Bank.
+
+We begin with a simple linear regression where `total_fatalities` is the dependent variable and `gdp_pc` is the independent variable.
+
+```{r}
+df <- read_csv("datasets/ged_world_bank.csv")
+
+lm1 <- lm(total_fatalities ~ gdp_pc, data = df)
+summary(lm1)
+```
+
+We can also extend the model by including more than one independent variable. For example, we may want to examine whether both GDP per capita and population are associated with total fatalities.
+
+```{r}
+lm2 <- lm(log(total_fatalities+1) ~ log(gdp_pc+1) + population, data = df)
+summary(lm2)
+```
+
+The intercept is the predicted value of `log(total_fatalities + 1)` when both `log(gdp_pc + 1)` and `population` are equal to 0. On its own, this is usually not very meaningful, but it is needed to define the regression line.
+
+The coefficient for `log(gdp_pc + 1)` is negative and statistically significant. This suggests that countries with higher GDP per capita tend to have lower levels of conflict fatalities, holding population constant.
+
+The coefficient for `population` is positive and statistically significant. This suggests that more populous countries tend to have higher levels of conflict fatalities, holding GDP per capita constant.
+
+Both predictors are statistically significant, which means their relationships with conflict fatalities are unlikely to be due to random chance in this sample.
+
+## What is logit regression?
+
+Sometimes the dependent variable is binary, for example whether a country-year experienced conflict or not. In this case, ordinary least squares (`OLS`) regression is not ideal because predicted values can fall below `0` or above `1`, and the assumptions about the error term are not well suited to a binary outcome.
+
+Logit regression is designed for binary dependent variables. Instead of modelling the outcome directly, it models the probability that the outcome equals `1`. The coefficients from a logit model are expressed in log-odds, which means they are not interpreted in exactly the same way as coefficients from a linear regression.
+
+```{r}
+df$conflict_dummy <- ifelse(df$total_fatalities > 0, 1, 0)
+
+logit1 <- glm(conflict_dummy ~ log(gdp_pc + 1),
+              data = df,
+              family = binomial(link = "logit"))
+
+summary(logit1)
+```
+
+## Comparing `OLS` and logit regression
+
+`OLS` is used for continuous outcomes, while logit regression is used for binary outcomes such as conflict yes/no. `OLS` can predict any real number, but logit regression predicts probabilities between `0` and `1`.
+
+Their coefficients are also interpreted differently. In `OLS`, coefficients show changes in the dependent variable. In logit regression, coefficients are expressed in log-odds.
+
+For `OLS`, model fit is often assessed using `R²` and adjusted `R²`, which show the share of variance explained. For logit models, we more often use measures such as `AIC`, `BIC`, pseudo-`R²`, or `AUC`; lower `AIC` and `BIC` values generally indicate better fit.
+
+# Lesson 9: Out-of-the-box tools for making tables and figures in `R`
+
+We now move to another important tool for presenting results in `R`: tables. Tables are useful for summarising data and regression results in a clear and structured way. In this chapter, we focus on two popular packages for making tables: `stargazer` and `modelsummary`.
+
+## `stargazer`
+
+The `stargazer` package is commonly used to create publication-style tables for summary statistics and regression models.
+
+By default, `stargazer()` produces LaTeX output, but this can be changed by setting `type = "text"` or `type = "html"`. In this chapter, we use `type = "text"` because the output is easy to read and can be copied into Word or other text editors.
+
+To illustrate this, we can use the regression model from the previous chapter and display the results with `stargazer()`.
+
+```{r}
+library(stargazer)
+
+lm2 <- lm(log(total_fatalities + 1) ~ log(gdp_pc + 1) + population, data = df)
+
+stargazer(lm2, type = "text")
+```
+
+`stargazer()` is also useful when we want to compare several models side by side. To do this, we simply pass multiple model objects to the function.
+
+In the example below, we compare two linear regression models and one logit model based on our conflict and World Bank data.
+
+```{r}
+library(stargazer)
+
+lm1 <- lm(total_fatalities ~ gdp_pc, data = df)
+
+lm2 <- lm(log(total_fatalities + 1) ~ log(gdp_pc + 1) + population, data = df)
+
+stargazer(lm1, lm2, type = "text")
+```
+
+We can also export `stargazer()` tables directly to a file using the `out` argument. This is useful if we want to save the table as a text, HTML, or LaTeX file for use in another document.
+
+```{r}
+library(stargazer)
+
+stargazer(lm1, lm2, type = "text", out = "regression_table.txt")
+stargazer(lm1, lm2,  type = "html", out = "regression_table.html")
+stargazer(lm1, lm2, type = "latex", out = "regression_table.tex")
+```
+
+## `modelsummary`
+
+`modelsummary` is a newer package for creating summary tables and regression tables in `R`. Compared to `stargazer`, it is generally more flexible and works well with modern `R` workflows.
+
+One useful feature is the `datasummary_skim()` function, which can quickly produce summary statistics for either numeric or categorical variables.
+
+Below, we use `datasummary_skim()` with our `df` dataset.
+
+```{r}
+library(modelsummary)
+
+df %>%
+  select(total_fatalities, gdp_pc, edu, child_mort, population) %>%
+  datasummary_skim(type = "numeric")
+```
+
+We can also customise which statistics are shown by using the `datasummary()` function. In `datasummary()`, the left-hand side of the formula specifies the variable or variables to summarise, and the right-hand side specifies which summary statistics to display.
+
+For example, if we want to show the mean, standard deviation, and number of observations for `total_fatalities`, we can write:
+
+```{r}
+library(modelsummary)
+
+datasummary(total_fatalities ~ mean + sd + N, data = df)
+```
+
+To produce regression tables with `modelsummary`, we use the `modelsummary()` function. We simply pass a list of model objects, and `modelsummary()` will display them side by side in a table.
+
+```{r}
+library(modelsummary)
+
+modelsummary(list(lm1, lm2, logit1))
+```
+
+We can also export tables created with `modelsummary()` by using the `output` argument. The file format is determined by the file extension, for example `.txt`, `.html`, `.docx`, or `.xlsx`.
+
+```{r}
+modelsummary(
+  list(
+    "OLS 1" = lm1,
+    "OLS 2" = lm2,
+    "Logit 1" = logit1
+  ),
+  output = "regression.txt"
+)
+```
+
+## The `corrplot` package
+
+The `corrplot` package is useful for visualising correlation matrices. To use it, we first create a correlation matrix with `cor()`, which calculates correlations between numeric variables. We can then display that matrix with `corrplot()`.
+
+```{r}
+library(corrplot)
+library(tidyverse)
+
+df_cor <- df %>%
+  select(total_fatalities, gdp_pc, edu, child_mort, population) %>%
+  cor(use = "pairwise.complete.obs")
+
+corrplot(df_cor)
+```
+
+We can also customise the correlation plot by changing the arguments inside `corrplot()`. For example, we can sort variables by their correlations, change the display method, and show only the upper or lower part of the matrix to make the figure easier to read.
+
+```{r}
+corrplot(df_cor, order = "AOE", method = "pie", type = "upper")
+```
+
+Another useful option is `corrplot.mixed()`, which combines two display styles in the same figure. For example, we can show the correlations as ellipses in the upper half and as numbers in the lower half of the matrix.
+
+```{r}
+corrplot.mixed(df_cor, order = "AOE", upper = "ellipse", lower = "number")
+```
+
+## The `marginaleffects` package
+
+Another useful package is `marginaleffects`, which helps us interpret statistical models in more substantive terms.
+
+One useful function is `avg_slopes()`, which calculates average marginal effects. These show how the predicted probability of the outcome changes, on average, when an independent variable increases by one unit.
+
+Using our logit model, we can calculate the average marginal effect of `log(gdp_pc + 1)` on the probability of conflict.
+
+```{r}
+library(marginaleffects)
+logit2 <- glm(conflict_dummy ~ log(gdp_pc + 1)+ edu + population + child_mort,
+              data = df,
+              family = binomial(link = "logit"))
+
+avg_slopes(logit2)
+```
+
+We can also visualise predicted probabilities with `plot_predictions()`. This allows us to see how the predicted probability of conflict changes across different values of an independent variable.
+
+```{r}
+plot_predictions(
+  logit1,
+  condition = "edu"
+)
+```
+
+Here we can see that the predicted probability of conflict changes as education levels increase. The overall pattern is negative, meaning that higher levels of school enrollment are associated with a lower predicted probability of conflict. The confidence interval becomes wider at higher values of education, which suggests greater uncertainty in that part of the distribution.
+
+A useful feature of plots created with `marginaleffects` is that they are ordinary `ggplot` objects. This means that we can customise them in the same way as other `ggplot()` figures.
+
+```{r}
+plot_predictions(
+  logit2,
+  condition = "edu"
+) +
+  labs(
+    x = "Primary school enrolment",
+    y = "Predicted probability of conflict"
+  ) +
+  theme_minimal()
+```

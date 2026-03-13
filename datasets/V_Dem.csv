@@ -1,0 +1,601 @@
+country_name,year,COWcode,v2x_polyarchy,v2x_libdem,v2x_partipdem,e_wb_pop,e_gdp,e_gdppc,v2x_ex_military,government,continent
+Mexico,2000,70,0.664,0.481,0.418,97873442,312023.341,29.475,0,Republic/Democracy,Americas
+Mexico,2001,70,0.677,0.489,0.423,99394288,318859.46,29.721,0,Republic/Democracy,Americas
+Mexico,2002,70,0.688,0.495,0.428,100917081,323230.791,29.761,0,Republic/Democracy,Americas
+Mexico,2003,70,0.699,0.502,0.436,102429341,328858.217,29.941,0,Republic/Democracy,Americas
+Mexico,2004,70,0.71,0.511,0.443,103945813,339273.714,30.521,0,Republic/Democracy,Americas
+Mexico,2005,70,0.71,0.511,0.443,105442402,351274.699,31.174,0.059,Republic/Democracy,Americas
+Mexico,2006,70,0.671,0.479,0.416,106886790,363774.274,31.873,0.088,Republic/Democracy,Americas
+Mexico,2007,70,0.637,0.452,0.395,108302973,373544.108,32.268,0.088,Republic/Democracy,Americas
+Mexico,2008,70,0.642,0.455,0.4,109684489,378916.61,32.279,0.088,Republic/Democracy,Americas
+Mexico,2009,70,0.648,0.46,0.403,111049428,377959.787,31.734,0.088,Republic/Democracy,Americas
+Mexico,2010,70,0.661,0.47,0.413,112532401,389752.673,32.25,0.088,Republic/Democracy,Americas
+Mexico,2011,70,0.66,0.469,0.411,114150481,403799.234,32.958,0.088,Republic/Democracy,Americas
+Mexico,2012,70,0.649,0.461,0.405,115755909,415850.355,33.482,0.088,Republic/Democracy,Americas
+Mexico,2013,70,0.623,0.425,0.375,117290686,423815.579,33.742,0.1,Republic/Democracy,Americas
+Mexico,2014,70,0.62,0.424,0.374,118755887,429987.309,33.886,0.1,Republic/Democracy,Americas
+Mexico,2015,70,0.639,0.433,0.398,120149897,432220.1,33.828,0.115,Republic/Democracy,Americas
+Mexico,2016,70,0.64,0.433,0.395,121519221,440041.959,34.098,0.115,Republic/Democracy,Americas
+Mexico,2017,70,0.635,0.439,0.405,122839258,449152.118,34.425,0.077,Republic/Democracy,Americas
+Mexico,2018,70,0.675,0.455,0.426,124013861,455569.106,34.575,0.125,Republic/Democracy,Americas
+Mexico,2019,70,0.685,0.434,0.416,125085311,456743.982,34.308,0.182,Republic/Democracy,Americas
+Mexico,2020,70,0.663,0.406,0.408,125998302,NA,NA,0.136,Republic/Democracy,Americas
+Mexico,2021,70,0.618,0.37,0.394,126705138,NA,NA,0.091,Republic/Democracy,Americas
+Mexico,2022,70,0.586,0.334,0.406,127504125,NA,NA,0.1,Republic/Democracy,Americas
+Mexico,2023,70,0.549,0.307,0.387,NA,NA,NA,0.1,Republic/Democracy,Americas
+Mexico,2024,70,0.505,0.251,0.345,NA,NA,NA,0.111,Republic/Democracy,Americas
+Sweden,2000,380,0.911,0.877,0.685,8872109,80951.195,85.449,0,Constitutional monarchy,Europe
+Sweden,2001,380,0.911,0.877,0.683,8895960,82737.245,87.077,0,Constitutional monarchy,Europe
+Sweden,2002,380,0.91,0.876,0.68,8924958,85098.974,88.98,0,Constitutional monarchy,Europe
+Sweden,2003,380,0.909,0.874,0.683,8958229,87297.55,90.906,0,Constitutional monarchy,Europe
+Sweden,2004,380,0.909,0.874,0.683,8993531,90013.789,93.453,0,Constitutional monarchy,Europe
+Sweden,2005,380,0.909,0.874,0.683,9029572,92533.885,95.634,0,Constitutional monarchy,Europe
+Sweden,2006,380,0.911,0.877,0.685,9080505,95806.555,98.394,0,Constitutional monarchy,Europe
+Sweden,2007,380,0.915,0.881,0.689,9148092,98600.736,100.437,0,Constitutional monarchy,Europe
+Sweden,2008,380,0.915,0.881,0.685,9219637,99369.612,100.491,0,Constitutional monarchy,Europe
+Sweden,2009,380,0.915,0.881,0.682,9298515,98928.992,99.215,0,Constitutional monarchy,Europe
+Sweden,2010,380,0.915,0.882,0.679,9378126,101512.839,100.824,0,Constitutional monarchy,Europe
+Sweden,2011,380,0.917,0.884,0.677,9449213,103361.436,101.7,0,Constitutional monarchy,Europe
+Sweden,2012,380,0.918,0.887,0.675,9519374,104043.225,101.698,0,Constitutional monarchy,Europe
+Sweden,2013,380,0.918,0.887,0.671,9600379,104939.272,101.86,0,Constitutional monarchy,Europe
+Sweden,2014,380,0.916,0.886,0.663,9696110,106011.107,102.222,0,Constitutional monarchy,Europe
+Sweden,2015,380,0.916,0.883,0.659,9799186,106341.731,102.067,0,Constitutional monarchy,Europe
+Sweden,2016,380,0.917,0.884,0.659,9923085,108333.4,103.264,0,Constitutional monarchy,Europe
+Sweden,2017,380,0.917,0.884,0.656,10057698,111287.254,105.145,0,Constitutional monarchy,Europe
+Sweden,2018,380,0.91,0.878,0.654,10175214,113307.603,106.273,0,Constitutional monarchy,Europe
+Sweden,2019,380,0.902,0.871,0.65,10278887,114258.133,106.746,0,Constitutional monarchy,Europe
+Sweden,2020,380,0.902,0.87,0.649,10353442,NA,NA,0,Constitutional monarchy,Europe
+Sweden,2021,380,0.903,0.869,0.651,10415811,NA,NA,0,Constitutional monarchy,Europe
+Sweden,2022,380,0.896,0.864,0.645,10486941,NA,NA,0,Constitutional monarchy,Europe
+Sweden,2023,380,0.881,0.845,0.63,NA,NA,NA,0,Constitutional monarchy,Europe
+Sweden,2024,380,0.881,0.845,0.63,NA,NA,NA,0,Constitutional monarchy,Europe
+Ghana,2000,452,0.671,0.58,0.355,19665502,11334.533,5.555,0.25,Republic/Democracy,Africa
+Ghana,2001,452,0.726,0.628,0.387,20195577,11697.724,5.607,0.25,Republic/Democracy,Africa
+Ghana,2002,452,0.733,0.635,0.39,20758326,12189.5,5.714,0.25,Republic/Democracy,Africa
+Ghana,2003,452,0.733,0.638,0.393,21329514,12817.572,5.866,0.25,Republic/Democracy,Africa
+Ghana,2004,452,0.744,0.648,0.398,21906444,13560,6.054,0.25,Republic/Democracy,Africa
+Ghana,2005,452,0.736,0.639,0.392,22496951,14360.712,6.252,0.158,Republic/Democracy,Africa
+Ghana,2006,452,0.736,0.639,0.39,23098586,15262.711,6.471,0.158,Republic/Democracy,Africa
+Ghana,2007,452,0.738,0.64,0.39,23708320,16244.66,6.7,0.158,Republic/Democracy,Africa
+Ghana,2008,452,0.737,0.639,0.387,24326087,17444.423,7.019,0.158,Republic/Democracy,Africa
+Ghana,2009,452,0.759,0.659,0.399,24950762,18565.738,7.293,0.158,Republic/Democracy,Africa
+Ghana,2010,452,0.766,0.671,0.402,25574719,20156.102,7.728,0.175,Republic/Democracy,Africa
+Ghana,2011,452,0.766,0.671,0.399,26205941,22396.116,8.378,0.175,Republic/Democracy,Africa
+Ghana,2012,452,0.776,0.67,0.403,26858762,24511.663,8.956,0.175,Republic/Democracy,Africa
+Ghana,2013,452,0.756,0.643,0.38,27525597,26003.805,9.293,0.156,Republic/Democracy,Africa
+Ghana,2014,452,0.747,0.636,0.376,28196358,26911.565,9.434,0.156,Republic/Democracy,Africa
+Ghana,2015,452,0.74,0.633,0.37,28870939,27573.88,9.498,0.2,Republic/Democracy,Africa
+Ghana,2016,452,0.731,0.618,0.368,29554303,28680.897,9.692,0.179,Republic/Democracy,Africa
+Ghana,2017,452,0.743,0.636,0.385,30222262,30695.392,10.147,0.143,Republic/Democracy,Africa
+Ghana,2018,452,0.742,0.632,0.383,30870641,32525.605,10.531,0.179,Republic/Democracy,Africa
+Ghana,2019,452,0.722,0.613,0.355,31522290,34111.996,10.82,0.125,Republic/Democracy,Africa
+Ghana,2020,452,0.719,0.606,0.35,32180401,NA,NA,0.125,Republic/Democracy,Africa
+Ghana,2021,452,0.665,0.56,0.327,32833031,NA,NA,0.125,Republic/Democracy,Africa
+Ghana,2022,452,0.662,0.56,0.321,33475870,NA,NA,0.125,Republic/Democracy,Africa
+Ghana,2023,452,0.664,0.561,0.32,NA,NA,NA,0.125,Republic/Democracy,Africa
+Ghana,2024,452,0.669,0.567,0.32,NA,NA,NA,0.083,Republic/Democracy,Africa
+South Africa,2000,560,0.743,0.628,0.521,46813266,93269.837,19.393,0,Republic/Democracy,Africa
+South Africa,2001,560,0.743,0.628,0.519,47229714,96458.761,19.816,0,Republic/Democracy,Africa
+South Africa,2002,560,0.743,0.628,0.517,47661514,100146.494,20.325,0,Republic/Democracy,Africa
+South Africa,2003,560,0.743,0.627,0.515,48104048,104433.59,20.927,0,Republic/Democracy,Africa
+South Africa,2004,560,0.759,0.637,0.524,48556071,109606.829,21.669,0,Republic/Democracy,Africa
+South Africa,2005,560,0.77,0.647,0.53,49017147,115489.114,22.536,0.029,Republic/Democracy,Africa
+South Africa,2006,560,0.768,0.648,0.528,49491756,121417.831,23.398,0.029,Republic/Democracy,Africa
+South Africa,2007,560,0.768,0.651,0.528,49996094,126834.082,24.122,0.029,Republic/Democracy,Africa
+South Africa,2008,560,0.766,0.648,0.523,50565812,130577.283,24.519,0.029,Republic/Democracy,Africa
+South Africa,2009,560,0.767,0.65,0.521,51170779,132635.613,24.58,0.029,Republic/Democracy,Africa
+South Africa,2010,560,0.77,0.662,0.522,51784921,136893.242,24.992,0.028,Republic/Democracy,Africa
+South Africa,2011,560,0.77,0.658,0.518,52443325,140992.78,25.422,0.028,Republic/Democracy,Africa
+South Africa,2012,560,0.772,0.661,0.52,53145033,143858.2,25.607,0.028,Republic/Democracy,Africa
+South Africa,2013,560,0.76,0.645,0.506,53873616,146291.602,25.716,0.042,Republic/Democracy,Africa
+South Africa,2014,560,0.752,0.637,0.501,54729551,147382.095,25.611,0.042,Republic/Democracy,Africa
+South Africa,2015,560,0.755,0.649,0.503,55876504,146868.135,25.265,0.05,Republic/Democracy,Africa
+South Africa,2016,560,0.752,0.646,0.501,56422274,147222.344,25.019,0.05,Republic/Democracy,Africa
+South Africa,2017,560,0.743,0.627,0.495,56641209,148098.625,24.836,0.05,Republic/Democracy,Africa
+South Africa,2018,560,0.747,0.639,0.497,57339635,148109.538,24.533,0.05,Republic/Democracy,Africa
+South Africa,2019,560,0.721,0.617,0.473,58087055,147311.195,24.104,0.05,Republic/Democracy,Africa
+South Africa,2020,560,0.723,0.606,0.461,58801927,NA,NA,0,Republic/Democracy,Africa
+South Africa,2021,560,0.725,0.607,0.465,59392255,NA,NA,0,Republic/Democracy,Africa
+South Africa,2022,560,0.713,0.605,0.458,59893885,NA,NA,0,Republic/Democracy,Africa
+South Africa,2023,560,0.705,0.6,0.447,NA,NA,NA,0,Republic/Democracy,Africa
+South Africa,2024,560,0.734,0.652,0.468,NA,NA,NA,0,Republic/Democracy,Africa
+Japan,2000,740,0.845,0.77,0.555,126843000,1107800.12,81.458,0,Constitutional monarchy,Asia
+Japan,2001,740,0.845,0.77,0.556,127149000,1111604.836,81.666,0,Constitutional monarchy,Asia
+Japan,2002,740,0.845,0.77,0.556,127445000,1114867.34,81.855,0,Constitutional monarchy,Asia
+Japan,2003,740,0.845,0.77,0.556,127718000,1126386.85,82.614,0,Constitutional monarchy,Asia
+Japan,2004,740,0.845,0.77,0.556,127761000,1141673.305,83.665,0,Constitutional monarchy,Asia
+Japan,2005,740,0.847,0.772,0.559,127773000,1151829.847,84.371,0.031,Constitutional monarchy,Asia
+Japan,2006,740,0.852,0.777,0.562,127854000,1159111.143,84.983,0.031,Constitutional monarchy,Asia
+Japan,2007,740,0.852,0.777,0.562,128001000,1161837.432,85.134,0.031,Constitutional monarchy,Asia
+Japan,2008,740,0.857,0.781,0.563,128063000,1158764.637,84.761,0.031,Constitutional monarchy,Asia
+Japan,2009,740,0.859,0.785,0.567,128047000,1145218.024,83.712,0.031,Constitutional monarchy,Asia
+Japan,2010,740,0.857,0.783,0.566,128070000,1159487.331,84.66,0.031,Constitutional monarchy,Asia
+Japan,2011,740,0.857,0.783,0.566,127833000,1167039.626,85.177,0.031,Constitutional monarchy,Asia
+Japan,2012,740,0.85,0.776,0.564,127629000,1172182.982,85.758,0.031,Constitutional monarchy,Asia
+Japan,2013,740,0.823,0.749,0.537,127445000,1173949.005,86.26,0.038,Constitutional monarchy,Asia
+Japan,2014,740,0.823,0.747,0.537,127276000,1170203.1,86.254,0.038,Constitutional monarchy,Asia
+Japan,2015,740,0.825,0.748,0.533,127141000,1161504.039,86.196,0.042,Constitutional monarchy,Asia
+Japan,2016,740,0.825,0.748,0.533,127076000,1164975.406,86.69,0.042,Constitutional monarchy,Asia
+Japan,2017,740,0.823,0.747,0.538,126972000,1180743.117,88.071,0.042,Constitutional monarchy,Asia
+Japan,2018,740,0.84,0.76,0.545,126811000,1186901.195,88.681,0,Constitutional monarchy,Asia
+Japan,2019,740,0.838,0.762,0.542,126633000,1188376.154,88.837,0,Constitutional monarchy,Asia
+Japan,2020,740,0.836,0.748,0.541,126261000,NA,NA,0,Constitutional monarchy,Asia
+Japan,2021,740,0.827,0.738,0.529,125681593,NA,NA,0,Constitutional monarchy,Asia
+Japan,2022,740,0.823,0.738,0.528,125124989,NA,NA,0,Constitutional monarchy,Asia
+Japan,2023,740,0.828,0.742,0.535,NA,NA,NA,0,Constitutional monarchy,Asia
+Japan,2024,740,0.82,0.734,0.526,NA,NA,NA,0,Constitutional monarchy,Asia
+Poland,2000,290,0.878,0.804,0.633,38258629,120828.268,29.451,0,Republic/Democracy,Europe
+Poland,2001,290,0.878,0.804,0.635,38248076,124829.177,30.4,0,Republic/Democracy,Europe
+Poland,2002,290,0.879,0.812,0.642,38230364,130161.386,31.71,0,Republic/Democracy,Europe
+Poland,2003,290,0.879,0.812,0.642,38204570,134711.754,32.873,0,Republic/Democracy,Europe
+Poland,2004,290,0.879,0.812,0.642,38182222,140729.725,34.329,0,Republic/Democracy,Europe
+Poland,2005,290,0.881,0.814,0.645,38165445,147064.879,35.859,0,Republic/Democracy,Europe
+Poland,2006,290,0.875,0.805,0.64,38141267,155192.713,37.837,0,Republic/Democracy,Europe
+Poland,2007,290,0.873,0.804,0.639,38120560,164551.577,40.14,0,Republic/Democracy,Europe
+Poland,2008,290,0.895,0.831,0.656,38125759,173259.766,42.196,0,Republic/Democracy,Europe
+Poland,2009,290,0.895,0.831,0.654,38151603,180421.668,43.956,0,Republic/Democracy,Europe
+Poland,2010,290,0.894,0.831,0.658,38042794,188178.975,45.85,0,Republic/Democracy,Europe
+Poland,2011,290,0.894,0.833,0.647,38063255,195882.127,47.712,0,Republic/Democracy,Europe
+Poland,2012,290,0.894,0.832,0.64,38063164,200320.169,48.953,0,Republic/Democracy,Europe
+Poland,2013,290,0.891,0.827,0.639,38040196,204778.246,50.139,0,Republic/Democracy,Europe
+Poland,2014,290,0.884,0.817,0.631,38011735,209370.362,51.412,0,Republic/Democracy,Europe
+Poland,2015,290,0.875,0.779,0.616,37986412,212922.507,52.543,0,Republic/Democracy,Europe
+Poland,2016,290,0.727,0.593,0.488,37970087,218965.504,54.123,0,Republic/Democracy,Europe
+Poland,2017,290,0.697,0.544,0.46,37974826,228335.28,56.434,0,Republic/Democracy,Europe
+Poland,2018,290,0.697,0.523,0.458,37974750,235504.283,58.228,0,Republic/Democracy,Europe
+Poland,2019,290,0.681,0.508,0.445,37965475,238442.271,58.956,0,Republic/Democracy,Europe
+Poland,2020,290,0.614,0.449,0.397,37899070,NA,NA,0,Republic/Democracy,Europe
+Poland,2021,290,0.584,0.419,0.362,37747124,NA,NA,0,Republic/Democracy,Europe
+Poland,2022,290,0.576,0.417,0.356,37561599,NA,NA,0,Republic/Democracy,Europe
+Poland,2023,290,0.59,0.452,0.368,NA,NA,NA,0,Republic/Democracy,Europe
+Poland,2024,290,0.729,0.616,0.487,NA,NA,NA,0,Republic/Democracy,Europe
+Brazil,2000,140,0.857,0.717,0.594,175873720,378931.088,20.324,0.062,Republic/Democracy,Americas
+Brazil,2001,140,0.857,0.717,0.594,178211881,384117.25,20.344,0.062,Republic/Democracy,Americas
+Brazil,2002,140,0.858,0.72,0.596,180476685,390213.605,20.444,0.062,Republic/Democracy,Americas
+Brazil,2003,140,0.856,0.724,0.608,182629278,399872.743,20.69,0.062,Republic/Democracy,Americas
+Brazil,2004,140,0.856,0.724,0.608,184722043,416212.751,21.273,0.062,Republic/Democracy,Americas
+Brazil,2005,140,0.873,0.78,0.658,186797334,435280.503,21.978,0.19,Republic/Democracy,Americas
+Brazil,2006,140,0.874,0.778,0.658,188820682,458939.253,22.892,0.19,Republic/Democracy,Americas
+Brazil,2007,140,0.869,0.773,0.654,190779453,487924.654,24.045,0.19,Republic/Democracy,Americas
+Brazil,2008,140,0.869,0.773,0.652,192672317,516427.637,25.165,0.19,Republic/Democracy,Americas
+Brazil,2009,140,0.869,0.773,0.652,194517549,539353.626,26.01,0.19,Republic/Democracy,Americas
+Brazil,2010,140,0.872,0.778,0.649,196353492,573665.231,27.371,0.19,Republic/Democracy,Americas
+Brazil,2011,140,0.876,0.786,0.648,198185302,602407.643,28.437,0.19,Republic/Democracy,Americas
+Brazil,2012,140,0.872,0.782,0.637,199977707,617678.556,28.907,0.19,Republic/Democracy,Americas
+Brazil,2013,140,0.876,0.786,0.636,201721767,627952.28,29.178,0.222,Republic/Democracy,Americas
+Brazil,2014,140,0.877,0.784,0.633,203459650,626798.288,28.956,0.222,Republic/Democracy,Americas
+Brazil,2015,140,0.863,0.772,0.616,205188205,609790.25,28.086,0.222,Republic/Democracy,Americas
+Brazil,2016,140,0.782,0.662,0.524,206859578,586183.405,26.814,0.222,Republic/Democracy,Americas
+Brazil,2017,140,0.778,0.647,0.505,208504960,579108.257,26.291,0.235,Republic/Democracy,Americas
+Brazil,2018,140,0.753,0.617,0.487,210166592,576736.193,26.001,0.267,Republic/Democracy,Americas
+Brazil,2019,140,0.698,0.543,0.442,211782878,567241.795,25.458,0.233,Republic/Democracy,Americas
+Brazil,2020,140,0.699,0.54,0.448,213196304,NA,NA,0.2,Republic/Democracy,Americas
+Brazil,2021,140,0.688,0.532,0.437,214326223,NA,NA,0.2,Republic/Democracy,Americas
+Brazil,2022,140,0.699,0.545,0.449,215313498,NA,NA,0.214,Republic/Democracy,Americas
+Brazil,2023,140,0.789,0.698,0.547,NA,NA,NA,0.214,Republic/Democracy,Americas
+Brazil,2024,140,0.801,0.712,0.548,NA,NA,NA,0.208,Republic/Democracy,Americas
+United States of America,2000,2,0.868,0.807,0.625,282162411,3591474.635,117.521,0,Republic/Democracy,Americas
+United States of America,2001,2,0.821,0.761,0.588,284968955,3671109.644,118.912,0,Republic/Democracy,Americas
+United States of America,2002,2,0.826,0.765,0.59,287625193,3738134.18,120.073,0,Republic/Democracy,Americas
+United States of America,2003,2,0.859,0.795,0.619,290107933,3827943.989,121.91,0,Republic/Democracy,Americas
+United States of America,2004,2,0.862,0.799,0.621,292805298,3942969.909,124.364,0,Republic/Democracy,Americas
+United States of America,2005,2,0.861,0.801,0.621,295516599,4056444.433,126.724,0,Republic/Democracy,Americas
+United States of America,2006,2,0.867,0.807,0.625,298379912,4133063.944,127.985,0,Republic/Democracy,Americas
+United States of America,2007,2,0.897,0.841,0.651,301231207,4185541.747,128.343,0,Republic/Democracy,Americas
+United States of America,2008,2,0.898,0.842,0.652,304093966,4193640.282,127.439,0,Republic/Democracy,Americas
+United States of America,2009,2,0.902,0.85,0.656,306771529,4173487.429,125.791,0,Republic/Democracy,Americas
+United States of America,2010,2,0.902,0.85,0.656,309327143,4220471.057,126.031,0,Republic/Democracy,Americas
+United States of America,2011,2,0.9,0.848,0.654,311583481,4281379.388,126.679,0,Republic/Democracy,Americas
+United States of America,2012,2,0.899,0.847,0.653,313877662,4355062.567,127.92,0,Republic/Democracy,Americas
+United States of America,2013,2,0.902,0.85,0.656,316059947,4436710.397,129.498,0,Republic/Democracy,Americas
+United States of America,2014,2,0.9,0.847,0.653,318386329,4511708.745,131.003,0,Republic/Democracy,Americas
+United States of America,2015,2,0.9,0.848,0.654,320738994,4555767.002,132.423,0,Republic/Democracy,Americas
+United States of America,2016,2,0.887,0.832,0.644,323071755,4664115.485,134.775,0.036,Republic/Democracy,Americas
+United States of America,2017,2,0.827,0.745,0.593,325122128,4815059.495,138.542,0,Republic/Democracy,Americas
+United States of America,2018,2,0.823,0.742,0.589,326838199,4940947.595,141.503,0,Republic/Democracy,Americas
+United States of America,2019,2,0.812,0.735,0.579,328329953,5062048.078,144.274,0,Republic/Democracy,Americas
+United States of America,2020,2,0.807,0.725,0.574,331511512,NA,NA,0,Republic/Democracy,Americas
+United States of America,2021,2,0.821,0.752,0.583,332031554,NA,NA,0,Republic/Democracy,Americas
+United States of America,2022,2,0.829,0.763,0.59,333287557,NA,NA,0,Republic/Democracy,Americas
+United States of America,2023,2,0.843,0.771,0.603,NA,NA,NA,0,Republic/Democracy,Americas
+United States of America,2024,2,0.84,0.748,0.599,NA,NA,NA,0,Republic/Democracy,Americas
+Senegal,2000,433,0.676,0.513,0.402,9704287,5182.16,4.867,0.167,Republic/Democracy,Africa
+Senegal,2001,433,0.604,0.437,0.382,9938027,5370.091,4.926,0.167,Republic/Democracy,Africa
+Senegal,2002,433,0.688,0.531,0.429,10180950,5513.151,4.936,0.167,Republic/Democracy,Africa
+Senegal,2003,433,0.688,0.531,0.429,10434504,5774.946,5.034,0.167,Republic/Democracy,Africa
+Senegal,2004,433,0.688,0.531,0.429,10698691,6049.104,5.139,0.167,Republic/Democracy,Africa
+Senegal,2005,433,0.688,0.531,0.429,10974057,6329.391,5.234,0.25,Republic/Democracy,Africa
+Senegal,2006,433,0.688,0.531,0.427,11263387,6559.182,5.287,0.25,Republic/Democracy,Africa
+Senegal,2007,433,0.674,0.52,0.416,11563869,6834.635,5.359,0.25,Republic/Democracy,Africa
+Senegal,2008,433,0.669,0.516,0.41,11872929,7085.671,5.406,0.25,Republic/Democracy,Africa
+Senegal,2009,433,0.669,0.515,0.409,12195029,7325.334,5.44,0.25,Republic/Democracy,Africa
+Senegal,2010,433,0.683,0.529,0.416,12530121,7581.081,5.479,0.25,Republic/Democracy,Africa
+Senegal,2011,433,0.683,0.529,0.415,12875880,7803.071,5.494,0.25,Republic/Democracy,Africa
+Senegal,2012,433,0.692,0.535,0.424,13231833,8103.199,5.547,0.269,Republic/Democracy,Africa
+Senegal,2013,433,0.725,0.58,0.447,13595566,8419.602,5.619,0.333,Republic/Democracy,Africa
+Senegal,2014,433,0.729,0.584,0.447,13970308,8829.19,5.742,0.333,Republic/Democracy,Africa
+Senegal,2015,433,0.729,0.588,0.446,14356181,9252.526,5.883,0.333,Republic/Democracy,Africa
+Senegal,2016,433,0.728,0.579,0.461,14751356,9811.92,6.09,0.3,Republic/Democracy,Africa
+Senegal,2017,433,0.701,0.555,0.455,15157793,10505.563,6.365,0.333,Republic/Democracy,Africa
+Senegal,2018,433,0.694,0.542,0.452,15574909,11097.857,6.581,0.333,Republic/Democracy,Africa
+Senegal,2019,433,0.7,0.544,0.456,16000781,11504.25,6.748,0.333,Republic/Democracy,Africa
+Senegal,2020,433,0.742,0.574,0.48,16436120,NA,NA,0.333,Republic/Democracy,Africa
+Senegal,2021,433,0.724,0.564,0.467,16876720,NA,NA,0.312,Republic/Democracy,Africa
+Senegal,2022,433,0.695,0.539,0.448,17316449,NA,NA,0.357,Republic/Democracy,Africa
+Senegal,2023,433,0.626,0.466,0.402,NA,NA,NA,0.333,Republic/Democracy,Africa
+Senegal,2024,433,0.617,0.462,0.397,NA,NA,NA,0.3,Republic/Democracy,Africa
+Argentina,2000,160,0.836,0.676,0.579,37070774,142283.407,35.88,0,Republic/Democracy,Americas
+Argentina,2001,160,0.835,0.682,0.578,37480493,136861.895,34.16,0,Republic/Democracy,Americas
+Argentina,2002,160,0.825,0.666,0.57,37885028,128579.79,31.951,0,Republic/Democracy,Americas
+Argentina,2003,160,0.81,0.645,0.56,38278164,132797.324,32.676,0,Republic/Democracy,Americas
+Argentina,2004,160,0.804,0.641,0.552,38668796,141979.662,34.531,0,Republic/Democracy,Americas
+Argentina,2005,160,0.801,0.632,0.549,39070501,153105.727,36.84,0.036,Republic/Democracy,Americas
+Argentina,2006,160,0.789,0.621,0.539,39476851,164239.649,39.149,0.036,Republic/Democracy,Americas
+Argentina,2007,160,0.784,0.617,0.536,39876111,175394.038,41.325,0.036,Republic/Democracy,Americas
+Argentina,2008,160,0.765,0.593,0.524,40273769,183545.638,42.784,0.036,Republic/Democracy,Americas
+Argentina,2009,160,0.764,0.594,0.52,40684338,185920.005,42.92,0.036,Republic/Democracy,Americas
+Argentina,2010,160,0.761,0.591,0.512,40788453,196599.059,44.854,0.036,Republic/Democracy,Americas
+Argentina,2011,160,0.762,0.588,0.511,41261490,205414.912,46.333,0.036,Republic/Democracy,Americas
+Argentina,2012,160,0.766,0.589,0.515,41733271,208311.821,46.477,0.036,Republic/Democracy,Americas
+Argentina,2013,160,0.774,0.594,0.521,42202935,210111.659,46.377,0.042,Republic/Democracy,Americas
+Argentina,2014,160,0.786,0.604,0.53,42669500,206928.428,45.363,0.042,Republic/Democracy,Americas
+Argentina,2015,160,0.776,0.601,0.523,43131966,203685.3,44.416,0.042,Republic/Democracy,Americas
+Argentina,2016,160,0.753,0.616,0.503,43590368,201789.897,43.719,0.042,Republic/Democracy,Americas
+Argentina,2017,160,0.754,0.612,0.504,44044811,204337.516,43.878,0.042,Republic/Democracy,Americas
+Argentina,2018,160,0.783,0.637,0.521,44494502,203881.834,43.409,0.042,Republic/Democracy,Americas
+Argentina,2019,160,0.788,0.626,0.525,44938712,202247.286,42.896,0.042,Republic/Democracy,Americas
+Argentina,2020,160,0.805,0.644,0.543,45376763,NA,NA,0,Republic/Democracy,Americas
+Argentina,2021,160,0.797,0.64,0.539,45808747,NA,NA,0,Republic/Democracy,Americas
+Argentina,2022,160,0.832,0.661,0.565,46234830,NA,NA,0,Republic/Democracy,Americas
+Argentina,2023,160,0.838,0.695,0.57,NA,NA,NA,0,Republic/Democracy,Americas
+Argentina,2024,160,0.712,0.553,0.461,NA,NA,NA,0,Republic/Democracy,Americas
+India,2000,750,0.728,0.581,0.478,1059633675,707408.55,6.416,0,Republic/Democracy,Asia
+India,2001,750,0.728,0.581,0.478,1078970907,746691.12,6.654,0,Republic/Democracy,Asia
+India,2002,750,0.731,0.581,0.48,1098313039,785504.812,6.886,0,Republic/Democracy,Asia
+India,2003,750,0.732,0.582,0.487,1117415123,840645.415,7.247,0,Republic/Democracy,Asia
+India,2004,750,0.73,0.579,0.481,1136264583,905582.409,7.678,0,Republic/Democracy,Asia
+India,2005,750,0.72,0.57,0.476,1154638713,980366.464,8.185,0,Republic/Democracy,Asia
+India,2006,750,0.722,0.571,0.478,1172373788,1061969.848,8.727,0,Republic/Democracy,Asia
+India,2007,750,0.722,0.571,0.476,1189691809,1147634.156,9.284,0,Republic/Democracy,Asia
+India,2008,750,0.722,0.571,0.476,1206734806,1228164.245,9.8,0,Republic/Democracy,Asia
+India,2009,750,0.69,0.545,0.454,1223640160,1325190.994,10.414,0,Republic/Democracy,Asia
+India,2010,750,0.672,0.539,0.443,1240613620,1433046.518,11.109,0,Republic/Democracy,Asia
+India,2011,750,0.672,0.536,0.443,1257621191,1530767.43,11.71,0,Republic/Democracy,Asia
+India,2012,750,0.66,0.525,0.435,1274487215,1619520.687,12.23,0,Republic/Democracy,Asia
+India,2013,750,0.658,0.525,0.432,1291132063,1707596.081,12.748,0,Republic/Democracy,Asia
+India,2014,750,0.622,0.492,0.386,1307246509,1808355.857,13.365,0,Republic/Democracy,Asia
+India,2015,750,0.546,0.422,0.333,1322866505,1908329.688,13.992,0,Republic/Democracy,Asia
+India,2016,750,0.526,0.405,0.316,1338636340,2025217.003,14.682,0,Republic/Democracy,Asia
+India,2017,750,0.481,0.366,0.296,1354195680,2127623.783,15.262,0,Republic/Democracy,Asia
+India,2018,750,0.476,0.36,0.29,1369003306,2223466.703,15.794,0,Republic/Democracy,Asia
+India,2019,750,0.431,0.322,0.27,1383112050,2286924.969,16.082,0,Republic/Democracy,Asia
+India,2020,750,0.394,0.293,0.251,1396387127,NA,NA,0,Republic/Democracy,Asia
+India,2021,750,0.397,0.31,0.256,1407563842,NA,NA,0,Republic/Democracy,Asia
+India,2022,750,0.388,0.293,0.253,1417173173,NA,NA,0,Republic/Democracy,Asia
+India,2023,750,0.373,0.273,0.234,NA,NA,NA,0.091,Republic/Democracy,Asia
+India,2024,750,0.398,0.291,0.248,NA,NA,NA,0.05,Republic/Democracy,Asia
+Kenya,2000,501,0.373,0.249,0.221,30851606,16404.879,4.874,0.188,Republic/Democracy,Africa
+Kenya,2001,501,0.374,0.249,0.222,31800343,16826.59,4.867,0.188,Republic/Democracy,Africa
+Kenya,2002,501,0.416,0.285,0.239,32779823,17112.797,4.817,0.188,Republic/Democracy,Africa
+Kenya,2003,501,0.514,0.352,0.298,33767122,17554.155,4.806,0.188,Republic/Democracy,Africa
+Kenya,2004,501,0.514,0.352,0.298,34791836,18300.412,4.875,0.188,Republic/Democracy,Africa
+Kenya,2005,501,0.514,0.356,0.312,35843010,19338.591,5.004,0.25,Republic/Democracy,Africa
+Kenya,2006,501,0.514,0.356,0.299,36925253,20631.27,5.179,0.25,Republic/Democracy,Africa
+Kenya,2007,501,0.514,0.353,0.298,38036793,21875.178,5.331,0.25,Republic/Democracy,Africa
+Kenya,2008,501,0.41,0.3,0.248,39186895,22832.573,5.403,0.25,Republic/Democracy,Africa
+Kenya,2009,501,0.415,0.304,0.25,40364444,24014.452,5.527,0.25,Republic/Democracy,Africa
+Kenya,2010,501,0.426,0.357,0.295,41517895,25717.873,5.752,0.237,Republic/Democracy,Africa
+Kenya,2011,501,0.43,0.358,0.299,42635144,27326.174,5.94,0.263,Republic/Democracy,Africa
+Kenya,2012,501,0.432,0.359,0.3,43725806,28928.686,6.116,0.263,Republic/Democracy,Africa
+Kenya,2013,501,0.519,0.409,0.367,44792368,30549.716,6.297,0.286,Republic/Democracy,Africa
+Kenya,2014,501,0.535,0.422,0.378,45831863,32138.964,6.464,0.286,Republic/Democracy,Africa
+Kenya,2015,501,0.535,0.422,0.377,46851488,33562.02,6.615,0.286,Republic/Democracy,Africa
+Kenya,2016,501,0.533,0.419,0.373,47894670,35301.603,6.799,0.292,Republic/Democracy,Africa
+Kenya,2017,501,0.51,0.406,0.36,48948137,37315.069,7.027,0.318,Republic/Democracy,Africa
+Kenya,2018,501,0.493,0.391,0.343,49953304,39069.003,7.216,0.278,Republic/Democracy,Africa
+Kenya,2019,501,0.497,0.394,0.342,50951450,39931.362,7.28,0.167,Republic/Democracy,Africa
+Kenya,2020,501,0.498,0.398,0.349,51985780,NA,NA,0.222,Republic/Democracy,Africa
+Kenya,2021,501,0.511,0.427,0.345,53005614,NA,NA,0.278,Republic/Democracy,Africa
+Kenya,2022,501,0.548,0.449,0.373,54027487,NA,NA,0.143,Republic/Democracy,Africa
+Kenya,2023,501,0.566,0.457,0.373,NA,NA,NA,0.143,Republic/Democracy,Africa
+Kenya,2024,501,0.549,0.432,0.355,NA,NA,NA,0.143,Republic/Democracy,Africa
+South Korea,2000,732,0.842,0.765,0.595,47008111,269057.78,53.612,0,Republic/Democracy,Asia
+South Korea,2001,732,0.845,0.769,0.597,47370164,284019.598,56.166,0,Republic/Democracy,Asia
+South Korea,2002,732,0.845,0.771,0.593,47644736,300844.182,59.156,0,Republic/Democracy,Asia
+South Korea,2003,732,0.845,0.772,0.594,47892330,314094.924,61.438,0,Republic/Democracy,Asia
+South Korea,2004,732,0.845,0.772,0.594,48082519,327868.154,63.879,0,Republic/Democracy,Asia
+South Korea,2005,732,0.846,0.772,0.593,48184561,341510.16,66.28,0,Republic/Democracy,Asia
+South Korea,2006,732,0.846,0.772,0.591,48438292,355620.316,68.669,0,Republic/Democracy,Asia
+South Korea,2007,732,0.843,0.77,0.591,48683638,369809.171,70.993,0,Republic/Democracy,Asia
+South Korea,2008,732,0.77,0.67,0.522,49054708,378855.467,72.424,0,Republic/Democracy,Asia
+South Korea,2009,732,0.768,0.669,0.521,49307835,387987.388,73.769,0,Republic/Democracy,Asia
+South Korea,2010,732,0.769,0.67,0.519,49554112,404081.554,76.43,0,Republic/Democracy,Asia
+South Korea,2011,732,0.769,0.67,0.519,49936638,415095.489,78.073,0,Republic/Democracy,Asia
+South Korea,2012,732,0.756,0.66,0.51,50199853,424705.802,79.504,0,Republic/Democracy,Asia
+South Korea,2013,732,0.718,0.611,0.475,50428893,435683.9,81.202,0,Republic/Democracy,Asia
+South Korea,2014,732,0.71,0.602,0.469,50746659,446473.415,82.888,0,Republic/Democracy,Asia
+South Korea,2015,732,0.714,0.606,0.466,51014947,453049.557,84.006,0,Republic/Democracy,Asia
+South Korea,2016,732,0.729,0.628,0.475,51217803,464053.113,85.723,0,Republic/Democracy,Asia
+South Korea,2017,732,0.859,0.795,0.598,51361911,477731.759,87.955,0,Republic/Democracy,Asia
+South Korea,2018,732,0.864,0.797,0.601,51585058,488934.254,89.966,0,Republic/Democracy,Asia
+South Korea,2019,732,0.852,0.784,0.581,51764822,496191.6,91.211,0,Republic/Democracy,Asia
+South Korea,2020,732,0.858,0.79,0.591,51836239,NA,NA,0,Republic/Democracy,Asia
+South Korea,2021,732,0.861,0.781,0.592,51744876,NA,NA,0,Republic/Democracy,Asia
+South Korea,2022,732,0.81,0.729,0.546,51628117,NA,NA,0,Republic/Democracy,Asia
+South Korea,2023,732,0.733,0.63,0.488,NA,NA,NA,0,Republic/Democracy,Asia
+South Korea,2024,732,0.729,0.631,0.485,NA,NA,NA,0,Republic/Democracy,Asia
+Nigeria,2000,475,0.475,0.325,0.322,122851984,72671.258,5.639,0.167,Republic/Democracy,Africa
+Nigeria,2001,475,0.475,0.325,0.322,126152678,78840.542,5.944,0.167,Republic/Democracy,Africa
+Nigeria,2002,475,0.475,0.325,0.322,129583026,88065.285,6.448,0.167,Republic/Democracy,Africa
+Nigeria,2003,475,0.43,0.301,0.298,133119801,97268.682,6.924,0.167,Republic/Democracy,Africa
+Nigeria,2004,475,0.413,0.292,0.289,136756848,107627.649,7.432,0.167,Republic/Democracy,Africa
+Nigeria,2005,475,0.413,0.292,0.289,140490722,118018.977,7.903,0.152,Republic/Democracy,Africa
+Nigeria,2006,475,0.416,0.292,0.29,144329764,128256.448,8.34,0.152,Republic/Democracy,Africa
+Nigeria,2007,475,0.41,0.295,0.286,148294028,140213.924,8.88,0.13,Republic/Democracy,Africa
+Nigeria,2008,475,0.416,0.301,0.29,152382506,151885.514,9.363,0.152,Republic/Democracy,Africa
+Nigeria,2009,475,0.414,0.301,0.289,156595758,165644.66,9.938,0.152,Republic/Democracy,Africa
+Nigeria,2010,475,0.428,0.314,0.297,160952853,181870.381,10.596,0.152,Republic/Democracy,Africa
+Nigeria,2011,475,0.49,0.348,0.332,165463745,194299.511,11.013,0.152,Republic/Democracy,Africa
+Nigeria,2012,475,0.505,0.355,0.34,170075932,204682.411,11.3,0.152,Republic/Democracy,Africa
+Nigeria,2013,475,0.523,0.379,0.352,174726123,215012.346,11.572,0.125,Republic/Democracy,Africa
+Nigeria,2014,475,0.532,0.386,0.359,179379016,222812.977,11.703,0.125,Republic/Democracy,Africa
+Nigeria,2015,475,0.561,0.401,0.376,183995785,223438.392,11.496,0.125,Republic/Democracy,Africa
+Nigeria,2016,475,0.557,0.399,0.374,188666931,221912.341,11.155,0.125,Republic/Democracy,Africa
+Nigeria,2017,475,0.556,0.387,0.374,193495907,221081.079,10.862,0.175,Republic/Democracy,Africa
+Nigeria,2018,475,0.556,0.388,0.372,198387623,221631.605,10.675,0.175,Republic/Democracy,Africa
+Nigeria,2019,475,0.525,0.364,0.355,203304492,219440.23,10.467,0.184,Republic/Democracy,Africa
+Nigeria,2020,475,0.513,0.346,0.343,208327405,NA,NA,0.158,Republic/Democracy,Africa
+Nigeria,2021,475,0.491,0.329,0.33,213401323,NA,NA,0.211,Republic/Democracy,Africa
+Nigeria,2022,475,0.492,0.318,0.328,218541212,NA,NA,0.158,Republic/Democracy,Africa
+Nigeria,2023,475,0.49,0.314,0.331,NA,NA,NA,0.237,Republic/Democracy,Africa
+Nigeria,2024,475,0.502,0.315,0.337,NA,NA,NA,0.25,Republic/Democracy,Africa
+Thailand,2000,800,0.507,0.395,0.234,63066603,138924.72,20.904,0.3,Monarchy,Asia
+Thailand,2001,800,0.55,0.414,0.254,63649892,144394.916,21.558,0.3,Monarchy,Asia
+Thailand,2002,800,0.544,0.408,0.251,64222580,152331.777,22.569,0.3,Monarchy,Asia
+Thailand,2003,800,0.539,0.396,0.238,64776956,161566.808,23.751,0.3,Monarchy,Asia
+Thailand,2004,800,0.538,0.392,0.241,65311166,171067.094,24.964,0.3,Monarchy,Asia
+Thailand,2005,800,0.514,0.369,0.229,65821360,179588.829,26.061,0.364,Monarchy,Asia
+Thailand,2006,800,0.236,0.175,0.124,66319525,188430.961,27.17,0.455,Monarchy,Asia
+Thailand,2007,800,0.186,0.186,0.124,66826754,197602.906,28.29,0.909,Monarchy,Asia
+Thailand,2008,800,0.401,0.34,0.195,67328239,203766.663,28.967,0.455,Monarchy,Asia
+Thailand,2009,800,0.416,0.342,0.202,67813654,209089.498,29.559,0.455,Monarchy,Asia
+Thailand,2010,800,0.414,0.335,0.202,68270489,219508.243,30.849,0.455,Monarchy,Asia
+Thailand,2011,800,0.466,0.378,0.223,68712846,227558.916,31.806,0.409,Monarchy,Asia
+Thailand,2012,800,0.497,0.405,0.236,69157023,238159.022,33.12,0.409,Monarchy,Asia
+Thailand,2013,800,0.432,0.348,0.208,69578602,243927.913,33.801,0.444,Monarchy,Asia
+Thailand,2014,800,0.158,0.118,0.069,69960943,246272.095,34.071,0.5,Monarchy,Asia
+Thailand,2015,800,0.152,0.106,0.07,70294397,249500.08,34.475,0.5,Monarchy,Asia
+Thailand,2016,800,0.155,0.108,0.077,70607037,256069.449,35.338,0.444,Monarchy,Asia
+Thailand,2017,800,0.15,0.105,0.095,70898202,265683.2,36.58,0.333,Monarchy,Asia
+Thailand,2018,800,0.168,0.115,0.099,71127802,273400.655,37.501,0.438,Monarchy,Asia
+Thailand,2019,800,0.206,0.189,0.111,71307763,277994.449,37.955,0.286,Monarchy,Asia
+Thailand,2020,800,0.198,0.185,0.108,71475664,NA,NA,0.357,Monarchy,Asia
+Thailand,2021,800,0.203,0.185,0.113,71601103,NA,NA,0.417,Monarchy,Asia
+Thailand,2022,800,0.208,0.191,0.11,71697030,NA,NA,0.417,Monarchy,Asia
+Thailand,2023,800,0.289,0.24,0.142,NA,NA,NA,0.4,Monarchy,Asia
+Thailand,2024,800,0.389,0.289,0.186,NA,NA,NA,0.4,Monarchy,Asia
+Indonesia,2000,850,0.671,0.501,0.389,214072421,260871.38,11.572,0.125,Republic/Democracy,Asia
+Indonesia,2001,850,0.671,0.501,0.428,217112437,268799.14,11.761,0.125,Republic/Democracy,Asia
+Indonesia,2002,850,0.671,0.512,0.428,220115092,279036.311,12.05,0.125,Republic/Democracy,Asia
+Indonesia,2003,850,0.671,0.513,0.428,223080121,290795.861,12.393,0.125,Republic/Democracy,Asia
+Indonesia,2004,850,0.696,0.535,0.45,225938595,305433.254,12.856,0.125,Republic/Democracy,Asia
+Indonesia,2005,850,0.707,0.537,0.462,228805144,322998.498,13.413,0.15,Republic/Democracy,Asia
+Indonesia,2006,850,0.707,0.54,0.463,231797427,344474.942,14.122,0.15,Republic/Democracy,Asia
+Indonesia,2007,850,0.709,0.543,0.462,234858289,369037.849,14.933,0.15,Republic/Democracy,Asia
+Indonesia,2008,850,0.711,0.546,0.468,237936543,399477.385,15.957,0.15,Republic/Democracy,Asia
+Indonesia,2009,850,0.69,0.528,0.453,240981299,429848.067,16.931,0.15,Republic/Democracy,Asia
+Indonesia,2010,850,0.688,0.542,0.45,244016173,465417.699,18.058,0.15,Republic/Democracy,Asia
+Indonesia,2011,850,0.688,0.538,0.45,247099697,500902.985,19.201,0.15,Republic/Democracy,Asia
+Indonesia,2012,850,0.689,0.538,0.453,250222695,530345.543,20.114,0.15,Republic/Democracy,Asia
+Indonesia,2013,850,0.678,0.523,0.458,253275918,555382.183,20.829,0.156,Republic/Democracy,Asia
+Indonesia,2014,850,0.665,0.517,0.449,256229761,576760.863,21.438,0.156,Republic/Democracy,Asia
+Indonesia,2015,850,0.654,0.511,0.442,259091970,594186.617,21.93,0.233,Republic/Democracy,Asia
+Indonesia,2016,850,0.645,0.5,0.433,261850182,615428.258,22.494,0.233,Republic/Democracy,Asia
+Indonesia,2017,850,0.628,0.486,0.418,264498852,634748.396,22.959,0.2,Republic/Democracy,Asia
+Indonesia,2018,850,0.603,0.464,0.404,267066843,653121.799,23.392,0.25,Republic/Democracy,Asia
+Indonesia,2019,850,0.602,0.462,0.399,269582878,660136.744,23.4,0.318,Republic/Democracy,Asia
+Indonesia,2020,850,0.574,0.415,0.377,271857970,NA,NA,0.25,Republic/Democracy,Asia
+Indonesia,2021,850,0.551,0.4,0.359,273753191,NA,NA,0.286,Republic/Democracy,Asia
+Indonesia,2022,850,0.557,0.393,0.372,275501339,NA,NA,0.429,Republic/Democracy,Asia
+Indonesia,2023,850,0.538,0.356,0.351,NA,NA,NA,0.333,Republic/Democracy,Asia
+Indonesia,2024,850,0.483,0.326,0.318,NA,NA,NA,0.417,Republic/Democracy,Asia
+Canada,2000,20,0.843,0.766,0.594,30685730,287869.261,87.745,0,Republic/Democracy,Americas
+Canada,2001,20,0.838,0.76,0.587,31020902,294980.286,89.07,0,Republic/Democracy,Americas
+Canada,2002,20,0.831,0.753,0.578,31360079,302496.169,90.516,0,Republic/Democracy,Americas
+Canada,2003,20,0.831,0.753,0.574,31644028,311567.69,92.239,0,Republic/Democracy,Americas
+Canada,2004,20,0.83,0.758,0.571,31940655,321981.593,94.384,0,Republic/Democracy,Americas
+Canada,2005,20,0.829,0.756,0.571,32243753,333637.504,96.879,0,Republic/Democracy,Americas
+Canada,2006,20,0.834,0.765,0.571,32571174,344016.676,98.833,0,Republic/Democracy,Americas
+Canada,2007,20,0.834,0.766,0.572,32889025,353249.525,100.383,0,Republic/Democracy,Americas
+Canada,2008,20,0.832,0.762,0.57,33247118,359202.016,100.847,0,Republic/Democracy,Americas
+Canada,2009,20,0.833,0.764,0.57,33628895,358171.735,99.467,0,Republic/Democracy,Americas
+Canada,2010,20,0.833,0.763,0.57,34004889,364873.331,100.167,0,Republic/Democracy,Americas
+Canada,2011,20,0.818,0.746,0.559,34339328,373139.42,101.336,0,Republic/Democracy,Americas
+Canada,2012,20,0.814,0.742,0.557,34714222,380046.948,102.114,0,Republic/Democracy,Americas
+Canada,2013,20,0.817,0.746,0.55,35082954,386752.414,102.856,0,Republic/Democracy,Americas
+Canada,2014,20,0.812,0.743,0.547,35437435,391090.833,103.101,0,Republic/Democracy,Americas
+Canada,2015,20,0.814,0.745,0.557,35702908,387512.859,101.801,0,Republic/Democracy,Americas
+Canada,2016,20,0.837,0.765,0.575,36109487,390855.523,101.859,0,Republic/Democracy,Americas
+Canada,2017,20,0.84,0.769,0.58,36545236,399327.209,103.064,0,Republic/Democracy,Americas
+Canada,2018,20,0.84,0.765,0.584,37065084,405526.444,103.69,0,Republic/Democracy,Americas
+Canada,2019,20,0.851,0.768,0.592,37601230,408577.729,104.068,0,Republic/Democracy,Americas
+Canada,2020,20,0.849,0.75,0.59,38007166,NA,NA,0,Republic/Democracy,Americas
+Canada,2021,20,0.846,0.756,0.588,38226498,NA,NA,0,Republic/Democracy,Americas
+Canada,2022,20,0.847,0.749,0.589,38929902,NA,NA,0,Republic/Democracy,Americas
+Canada,2023,20,0.848,0.746,0.59,NA,NA,NA,0,Republic/Democracy,Americas
+Canada,2024,20,0.842,0.744,0.585,NA,NA,NA,0,Republic/Democracy,Americas
+Australia,2000,900,0.883,0.84,0.642,19028802,186328.239,90.492,0,Republic/Democracy,Oceania
+Australia,2001,900,0.882,0.839,0.642,19274701,192221.545,92.287,0,Republic/Democracy,Oceania
+Australia,2002,900,0.876,0.834,0.637,19495210,198993.631,94.516,0,Republic/Democracy,Oceania
+Australia,2003,900,0.876,0.834,0.637,19720737,206237.206,96.803,0,Republic/Democracy,Oceania
+Australia,2004,900,0.877,0.833,0.633,19932722,214492.073,99.329,0,Republic/Democracy,Oceania
+Australia,2005,900,0.877,0.832,0.628,20176844,222362.97,101.62,0,Republic/Democracy,Oceania
+Australia,2006,900,0.877,0.832,0.625,20450966,230154.074,103.464,0,Republic/Democracy,Oceania
+Australia,2007,900,0.881,0.836,0.627,20827622,238131.289,105.39,0,Republic/Democracy,Oceania
+Australia,2008,900,0.89,0.85,0.64,21249199,246371.758,106.992,0,Republic/Democracy,Oceania
+Australia,2009,900,0.89,0.85,0.637,21691653,252963.011,107.859,0,Republic/Democracy,Oceania
+Australia,2010,900,0.898,0.86,0.642,22031750,261189.152,109.397,0,Republic/Democracy,Oceania
+Australia,2011,900,0.903,0.864,0.641,22340024,269322.019,110.829,0,Republic/Democracy,Oceania
+Australia,2012,900,0.903,0.864,0.641,22733465,276144.548,111.805,0,Republic/Democracy,Oceania
+Australia,2013,900,0.863,0.823,0.598,23128129,281368.646,112.16,0,Republic/Democracy,Oceania
+Australia,2014,900,0.857,0.815,0.593,23475686,284138.819,111.923,0,Republic/Democracy,Oceania
+Australia,2015,900,0.872,0.829,0.604,23815995,281840.936,110.23,0,Republic/Democracy,Oceania
+Australia,2016,900,0.872,0.832,0.605,24190907,286863.228,110.881,0,Republic/Democracy,Oceania
+Australia,2017,900,0.868,0.825,0.631,24594202,296328.391,113.022,0,Republic/Democracy,Oceania
+Australia,2018,900,0.858,0.813,0.624,24966643,304253.976,114.599,0,Republic/Democracy,Oceania
+Australia,2019,900,0.825,0.779,0.59,25340217,308292.493,115.34,0,Republic/Democracy,Oceania
+Australia,2020,900,0.843,0.797,0.607,25655289,NA,NA,0,Republic/Democracy,Oceania
+Australia,2021,900,0.832,0.785,0.599,25688079,NA,NA,0,Republic/Democracy,Oceania
+Australia,2022,900,0.851,0.8,0.613,25978935,NA,NA,0,Republic/Democracy,Oceania
+Australia,2023,900,0.855,0.804,0.637,NA,NA,NA,0,Republic/Democracy,Oceania
+Australia,2024,900,0.857,0.808,0.637,NA,NA,NA,0,Republic/Democracy,Oceania
+France,2000,220,0.877,0.8,0.657,60921384,527883.813,81.999,0.05,Republic/Democracy,Europe
+France,2001,220,0.877,0.8,0.657,61367388,540466,83.249,0.05,Republic/Democracy,Europe
+France,2002,220,0.875,0.798,0.655,61816234,550747.135,83.616,0.05,Republic/Democracy,Europe
+France,2003,220,0.874,0.797,0.659,62256970,557438.695,83.886,0.05,Republic/Democracy,Europe
+France,2004,220,0.874,0.797,0.659,62716306,569078.094,84.887,0.05,Republic/Democracy,Europe
+France,2005,220,0.874,0.797,0.655,63188395,579673.059,85.831,0.018,Republic/Democracy,Europe
+France,2006,220,0.874,0.797,0.655,63628261,591800.09,86.971,0.018,Republic/Democracy,Europe
+France,2007,220,0.878,0.805,0.657,64021737,604459.316,88.278,0.018,Republic/Democracy,Europe
+France,2008,220,0.886,0.814,0.661,64379696,609004.357,88.325,0.018,Republic/Democracy,Europe
+France,2009,220,0.886,0.814,0.661,64710879,608616.594,87.686,0.018,Republic/Democracy,Europe
+France,2010,220,0.886,0.814,0.659,65030575,614156.564,87.975,0.018,Republic/Democracy,Europe
+France,2011,220,0.889,0.815,0.655,65345233,620848.645,88.543,0.018,Republic/Democracy,Europe
+France,2012,220,0.891,0.818,0.653,65662240,623667.286,88.64,0.018,Republic/Democracy,Europe
+France,2013,220,0.892,0.82,0.65,66002289,626918.179,88.718,0,Republic/Democracy,Europe
+France,2014,220,0.891,0.82,0.644,66312067,625540.41,88.267,0,Republic/Democracy,Europe
+France,2015,220,0.885,0.813,0.63,66548272,617962.411,87.435,0,Republic/Democracy,Europe
+France,2016,220,0.885,0.813,0.626,66724104,621447.891,87.842,0,Republic/Democracy,Europe
+France,2017,220,0.887,0.815,0.623,66918020,635540.727,89.675,0,Republic/Democracy,Europe
+France,2018,220,0.875,0.797,0.608,67158348,643582.343,90.691,0,Republic/Democracy,Europe
+France,2019,220,0.867,0.793,0.607,67388001,650809.825,91.636,0,Republic/Democracy,Europe
+France,2020,220,0.866,0.789,0.605,67571107,NA,NA,0,Republic/Democracy,Europe
+France,2021,220,0.867,0.788,0.612,67749632,NA,NA,0,Republic/Democracy,Europe
+France,2022,220,0.878,0.808,0.608,67935660,NA,NA,0,Republic/Democracy,Europe
+France,2023,220,0.876,0.81,0.611,NA,NA,NA,0,Republic/Democracy,Europe
+France,2024,220,0.866,0.799,0.605,NA,NA,NA,0,Republic/Democracy,Europe
+Germany,2000,255,0.895,0.856,0.649,82211508,693795.367,79.41,0,Republic/Democracy,Europe
+Germany,2001,255,0.895,0.856,0.649,82349925,707915.579,80.842,0,Republic/Democracy,Europe
+Germany,2002,255,0.896,0.857,0.65,82488495,724691.368,82.509,0,Republic/Democracy,Europe
+Germany,2003,255,0.897,0.857,0.651,82534176,734814.913,83.519,0,Republic/Democracy,Europe
+Germany,2004,255,0.897,0.857,0.651,82516260,744665.291,84.643,0,Republic/Democracy,Europe
+Germany,2005,255,0.897,0.861,0.651,82469422,757337.251,86.164,0,Republic/Democracy,Europe
+Germany,2006,255,0.906,0.869,0.66,82376451,776250.609,88.43,0,Republic/Democracy,Europe
+Germany,2007,255,0.906,0.869,0.66,82266372,795187.267,90.585,0,Republic/Democracy,Europe
+Germany,2008,255,0.906,0.869,0.66,82110097,804383.579,91.771,0,Republic/Democracy,Europe
+Germany,2009,255,0.901,0.863,0.654,81902307,797777.343,91.272,0,Republic/Democracy,Europe
+Germany,2010,255,0.899,0.862,0.652,81776930,811271.321,93.049,0,Republic/Democracy,Europe
+Germany,2011,255,0.903,0.867,0.656,80274983,831515.373,95.57,0,Republic/Democracy,Europe
+Germany,2012,255,0.902,0.867,0.656,80425823,841744.058,96.673,0,Republic/Democracy,Europe
+Germany,2013,255,0.895,0.854,0.649,80645605,850603.256,97.564,0,Republic/Democracy,Europe
+Germany,2014,255,0.888,0.847,0.643,80982500,857261.732,98.126,0,Republic/Democracy,Europe
+Germany,2015,255,0.885,0.847,0.641,81686611,853078.361,97.654,0,Republic/Democracy,Europe
+Germany,2016,255,0.888,0.85,0.644,82348669,862183.764,98.286,0,Republic/Democracy,Europe
+Germany,2017,255,0.888,0.843,0.644,82657002,878436.684,99.729,0,Republic/Democracy,Europe
+Germany,2018,255,0.88,0.834,0.636,82905782,888447.359,100.587,0,Republic/Democracy,Europe
+Germany,2019,255,0.882,0.836,0.638,83092962,889131.398,100.56,0,Republic/Democracy,Europe
+Germany,2020,255,0.872,0.824,0.631,83160871,NA,NA,0,Republic/Democracy,Europe
+Germany,2021,255,0.864,0.816,0.624,83196078,NA,NA,0,Republic/Democracy,Europe
+Germany,2022,255,0.854,0.805,0.616,84079811,NA,NA,0,Republic/Democracy,Europe
+Germany,2023,255,0.854,0.812,0.616,NA,NA,NA,0,Republic/Democracy,Europe
+Germany,2024,255,0.839,0.792,0.596,NA,NA,NA,0,Republic/Democracy,Europe
+Papua New Guinea,2000,910,0.528,0.406,0.309,5508297,4495.99,7.223,0.25,Republic,Oceania
+Papua New Guinea,2001,910,0.528,0.406,0.309,5698489,4484.955,7.058,0.25,Republic,Oceania
+Papua New Guinea,2002,910,0.524,0.404,0.307,5892596,4517.364,6.961,0.25,Republic,Oceania
+Papua New Guinea,2003,910,0.521,0.403,0.306,6090980,4608.837,6.953,0.25,Republic,Oceania
+Papua New Guinea,2004,910,0.52,0.401,0.306,6293166,4764.019,7.026,0.25,Republic,Oceania
+Papua New Guinea,2005,910,0.52,0.401,0.306,6498818,4995.283,7.197,0.143,Republic,Oceania
+Papua New Guinea,2006,910,0.526,0.405,0.31,6708217,5267.9,7.405,0.143,Republic,Oceania
+Papua New Guinea,2007,910,0.495,0.386,0.294,6921066,5580.906,7.651,0.143,Republic,Oceania
+Papua New Guinea,2008,910,0.464,0.368,0.279,7137988,5886.108,7.864,0.143,Republic,Oceania
+Papua New Guinea,2009,910,0.464,0.368,0.279,7358890,6282.058,8.183,0.143,Republic,Oceania
+Papua New Guinea,2010,910,0.458,0.36,0.275,7583269,6728.353,8.55,0.143,Republic,Oceania
+Papua New Guinea,2011,910,0.457,0.353,0.274,7806637,7111.469,8.821,0.143,Republic,Oceania
+Papua New Guinea,2012,910,0.445,0.347,0.269,8026545,7511.878,9.124,0.143,Republic,Oceania
+Papua New Guinea,2013,910,0.439,0.344,0.266,8245627,7919.594,9.431,0.143,Republic,Oceania
+Papua New Guinea,2014,910,0.438,0.34,0.266,8464153,8379.514,9.812,0.143,Republic,Oceania
+Papua New Guinea,2015,910,0.438,0.341,0.264,8682174,8678.677,10.03,0.1,Republic,Oceania
+Papua New Guinea,2016,910,0.441,0.343,0.266,8899169,8989.769,10.239,0.1,Republic,Oceania
+Papua New Guinea,2017,910,0.44,0.34,0.267,9114796,9235.424,10.366,0.1,Republic,Oceania
+Papua New Guinea,2018,910,0.453,0.349,0.272,9329227,9408.579,10.423,0.125,Republic,Oceania
+Papua New Guinea,2019,910,0.455,0.346,0.273,9542486,9578.885,10.506,0.125,Republic,Oceania
+Papua New Guinea,2020,910,0.446,0.353,0.27,9749640,NA,NA,0,Republic,Oceania
+Papua New Guinea,2021,910,0.446,0.347,0.27,9949437,NA,NA,0,Republic,Oceania
+Papua New Guinea,2022,910,0.465,0.37,0.278,10142619,NA,NA,0,Republic,Oceania
+Papua New Guinea,2023,910,0.467,0.377,0.28,NA,NA,NA,0,Republic,Oceania
+Papua New Guinea,2024,910,0.461,0.384,0.278,NA,NA,NA,0,Republic,Oceania
+Spain,2000,230,0.892,0.812,0.632,40567864,290499.549,66.776,0.083,Constitutional monarchy,Europe
+Spain,2001,230,0.891,0.81,0.63,40850412,302642.131,68.82,0.083,Constitutional monarchy,Europe
+Spain,2002,230,0.891,0.81,0.628,41431558,314099.805,70.307,0.083,Constitutional monarchy,Europe
+Spain,2003,230,0.875,0.792,0.612,42187645,324610.223,71.347,0.083,Constitutional monarchy,Europe
+Spain,2004,230,0.873,0.803,0.608,42921895,335859.073,72.567,0.083,Constitutional monarchy,Europe
+Spain,2005,230,0.877,0.805,0.637,43653155,348094.405,73.946,0.028,Constitutional monarchy,Europe
+Spain,2006,230,0.873,0.805,0.636,44397319,361522.958,75.559,0.028,Constitutional monarchy,Europe
+Spain,2007,230,0.874,0.804,0.636,45226803,374369.342,76.921,0.028,Constitutional monarchy,Europe
+Spain,2008,230,0.886,0.817,0.646,45954106,379132.171,76.808,0.028,Constitutional monarchy,Europe
+Spain,2009,230,0.889,0.82,0.651,46362946,375515.492,75.279,0.028,Constitutional monarchy,Europe
+Spain,2010,230,0.891,0.822,0.652,46576897,372207.939,74.152,0.025,Constitutional monarchy,Europe
+Spain,2011,230,0.893,0.822,0.651,46742697,367476.776,73.011,0.025,Constitutional monarchy,Europe
+Spain,2012,230,0.892,0.805,0.643,46773055,361882.498,71.805,0.025,Constitutional monarchy,Europe
+Spain,2013,230,0.872,0.776,0.623,46620045,358588.41,71.299,0,Constitutional monarchy,Europe
+Spain,2014,230,0.872,0.776,0.625,46480882,359067.705,71.722,0,Constitutional monarchy,Europe
+Spain,2015,230,0.854,0.762,0.61,46444832,360013.341,72.38,0,Constitutional monarchy,Europe
+Spain,2016,230,0.847,0.767,0.604,46484062,373909.209,75.014,0,Constitutional monarchy,Europe
+Spain,2017,230,0.833,0.756,0.589,46593236,389866.403,78.042,0,Constitutional monarchy,Europe
+Spain,2018,230,0.854,0.776,0.604,46797754,400171.432,79.879,0,Constitutional monarchy,Europe
+Spain,2019,230,0.872,0.802,0.622,47134837,408746.708,81.503,0,Constitutional monarchy,Europe
+Spain,2020,230,0.873,0.788,0.625,47365655,NA,NA,0,Constitutional monarchy,Europe
+Spain,2021,230,0.853,0.778,0.606,47415750,NA,NA,0,Constitutional monarchy,Europe
+Spain,2022,230,0.868,0.785,0.613,47615034,NA,NA,0,Constitutional monarchy,Europe
+Spain,2023,230,0.85,0.763,0.597,NA,NA,NA,0,Constitutional monarchy,Europe
+Spain,2024,230,0.829,0.745,0.575,NA,NA,NA,0,Constitutional monarchy,Europe
+Fiji,2000,950,0.346,0.208,0.208,832509,1358.536,15.762,0.75,Republic,Oceania
+Fiji,2001,950,0.257,0.186,0.169,841320,1383.187,15.998,0.75,Republic,Oceania
+Fiji,2002,950,0.319,0.254,0.19,849891,1415.743,16.32,0.25,Republic,Oceania
+Fiji,2003,950,0.538,0.374,0.29,858306,1450.332,16.668,0.25,Republic,Oceania
+Fiji,2004,950,0.538,0.374,0.29,866694,1489.372,17.036,0.25,Republic,Oceania
+Fiji,2005,950,0.538,0.374,0.29,874923,1521.23,17.311,0.278,Republic,Oceania
+Fiji,2006,950,0.397,0.266,0.219,883083,1545.002,17.451,0.278,Republic,Oceania
+Fiji,2007,950,0.137,0.108,0.087,890648,1561.514,17.506,0.389,Republic,Oceania
+Fiji,2008,950,0.134,0.107,0.086,896731,1587.072,17.591,0.333,Republic,Oceania
+Fiji,2009,950,0.13,0.098,0.082,901383,1611.142,17.711,0.333,Republic,Oceania
+Fiji,2010,950,0.134,0.107,0.083,905169,1654.263,18.049,0.333,Republic,Oceania
+Fiji,2011,950,0.134,0.107,0.083,908355,1710.845,18.54,0.333,Republic,Oceania
+Fiji,2012,950,0.137,0.107,0.084,911059,1763.675,19.037,0.333,Republic,Oceania
+Fiji,2013,950,0.142,0.115,0.088,913453,1828.496,19.68,0.333,Republic,Oceania
+Fiji,2014,950,0.197,0.145,0.114,915560,1891.369,20.35,0.278,Republic,Oceania
+Fiji,2015,950,0.387,0.268,0.192,917200,1927.401,20.755,0.278,Republic,Oceania
+Fiji,2016,950,0.398,0.278,0.196,918371,1974.743,21.237,0.222,Republic,Oceania
+Fiji,2017,950,0.405,0.287,0.203,919019,2030.776,21.751,0.278,Republic,Oceania
+Fiji,2018,950,0.404,0.285,0.199,918996,2084.642,22.207,0.278,Republic,Oceania
+Fiji,2019,950,0.393,0.267,0.184,918465,2106.733,22.338,0.25,Republic,Oceania
+Fiji,2020,950,0.408,0.273,0.195,920422,NA,NA,0.429,Republic,Oceania
+Fiji,2021,950,0.402,0.272,0.203,924610,NA,NA,0.357,Republic,Oceania
+Fiji,2022,950,0.399,0.266,0.213,929766,NA,NA,0.375,Republic,Oceania
+Fiji,2023,950,0.511,0.415,0.268,NA,NA,NA,0.375,Republic,Oceania
+Fiji,2024,950,0.516,0.414,0.271,NA,NA,NA,0.25,Republic,Oceania
+New Zealand,2000,920,0.881,0.827,0.715,3857700,27242.895,65.971,0,Republic/Democracy,Oceania
+New Zealand,2001,920,0.881,0.827,0.713,3880500,28131.014,67.444,0,Republic/Democracy,Oceania
+New Zealand,2002,920,0.881,0.827,0.708,3948500,29293.934,69.167,0,Republic/Democracy,Oceania
+New Zealand,2003,920,0.881,0.828,0.704,4027200,30460.746,70.794,0,Republic/Democracy,Oceania
+New Zealand,2004,920,0.881,0.828,0.697,4087500,31422.27,72.003,0,Republic/Democracy,Oceania
+New Zealand,2005,920,0.881,0.828,0.69,4133900,32262.554,73.048,0,Republic/Democracy,Oceania
+New Zealand,2006,920,0.881,0.827,0.684,4184600,33074.06,74.072,0,Republic/Democracy,Oceania
+New Zealand,2007,920,0.881,0.827,0.676,4223800,33924.596,75.132,0,Republic/Democracy,Oceania
+New Zealand,2008,920,0.883,0.829,0.669,4259800,34292.284,75.229,0,Republic/Democracy,Oceania
+New Zealand,2009,920,0.895,0.843,0.682,4302600,34908.487,75.725,0,Republic/Democracy,Oceania
+New Zealand,2010,920,0.896,0.845,0.677,4350700,35676.819,76.563,0,Republic/Democracy,Oceania
+New Zealand,2011,920,0.893,0.842,0.698,4384000,36495.965,77.579,0,Republic/Democracy,Oceania
+New Zealand,2012,920,0.893,0.841,0.694,4408100,37311.127,78.622,0,Republic/Democracy,Oceania
+New Zealand,2013,920,0.887,0.834,0.689,4442100,38036.839,79.368,0,Republic/Democracy,Oceania
+New Zealand,2014,920,0.886,0.833,0.687,4516500,38735.779,79.883,0,Republic/Democracy,Oceania
+New Zealand,2015,920,0.887,0.835,0.689,4609400,38708.175,79.225,0,Republic/Democracy,Oceania
+New Zealand,2016,920,0.887,0.835,0.688,4714100,39590.694,79.96,0,Republic/Democracy,Oceania
+New Zealand,2017,920,0.884,0.829,0.692,4813600,41075.239,81.678,0,Republic/Democracy,Oceania
+New Zealand,2018,920,0.888,0.835,0.691,4900600,42054.348,82.87,0,Republic/Democracy,Oceania
+New Zealand,2019,920,0.886,0.835,0.686,4979200,42614.317,83.507,0,Republic/Democracy,Oceania
+New Zealand,2020,920,0.883,0.829,0.677,5090200,NA,NA,0,Republic/Democracy,Oceania
+New Zealand,2021,920,0.874,0.817,0.671,5111400,NA,NA,0,Republic/Democracy,Oceania
+New Zealand,2022,920,0.878,0.823,0.666,5124100,NA,NA,0,Republic/Democracy,Oceania
+New Zealand,2023,920,0.878,0.825,0.66,NA,NA,NA,0,Republic/Democracy,Oceania
+New Zealand,2024,920,0.863,0.809,0.614,NA,NA,NA,0,Republic/Democracy,Oceania

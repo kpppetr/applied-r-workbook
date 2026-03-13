@@ -1652,7 +1652,7 @@ We can also visualise predicted probabilities with `plot_predictions()`. This al
 
 ```{r}
 plot_predictions(
-  logit1,
+  logit2,
   condition = "edu"
 )
 ```
